@@ -203,10 +203,10 @@ start http://localhost:8000
 ## 📞 Contacto
 
 Pierre Flores
-- GitHub: [@A3InfinitaAfinidad](https://github.com/A3InfinitaAfinidad)
+- GitHub: [@a3culturaytecnologia](https://github.com/a3culturaytecnologia)
 - Instagram: [@pmftours](https://instagram.com/pmftours)
 - WhatsApp: [+507 6534-7412](https://wa.me/50765347412)
-- Email: pfloresmanito19@gmail.com
+- Email: aidigitalstudio.pa@gmail.com
 
 ## 🔄 Actualizaciones
 
@@ -264,3 +264,18 @@ npm run deploy
 - [ ] Blog de viajes
 - [ ] Sistema de reviews
 - [ ] App móvil nativa
+
+## 📝 Registro de Despliegue
+
+### Último despliegue exitoso
+```bash
+Writing objects: 100% (89/89), 25.16 MiB | 1.04 MiB/s, done.
+To https://github.com/a3culturaytecnologia/pmftours.git
+ * [new branch]      main -> main
+```
+
+- **Fecha**: 4 de octubre de 2025
+- **Repositorio**: a3culturaytecnologia/pmftours
+- **Branch**: main
+- **Estado**: ✅ Completado
+- **URL**: https://a3culturaytecnologia.github.io/pmftours/
