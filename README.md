@@ -44,21 +44,52 @@ pmftours-website/
 └── index.html
 ```
 
-## 🚦 Cómo Iniciar
+## ⚙️ Instalación
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/tuusuario/pmftours-website.git
+git clone https://github.com/A3InfinitaAfinidad/pmftours-website.git
 ```
 
-2. Abre el proyecto en tu editor favorito (recomendamos VS Code)
-
-3. Inicia un servidor local. Por ejemplo, con Python:
+2. Navega al directorio del proyecto:
 ```bash
-python -m http.server 8000
+cd pmftours-website
 ```
 
-4. Abre tu navegador y visita: `http://localhost:8000`
+3. Abre el proyecto en VS Code:
+```bash
+code .
+```
+
+4. Instala la extensión "Live Server" en VS Code
+
+5. Click derecho en index.html y selecciona "Open with Live Server"
+
+## 📦 Despliegue
+
+El sitio está optimizado para ser desplegado en:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- Cualquier servidor web estático
+
+### Pasos para despliegue en GitHub Pages:
+
+1. Crear un repositorio en GitHub
+2. Subir el código:
+```bash
+git add .
+git commit -m "Initial commit"
+git push origin main
+```
+3. Activar GitHub Pages en la configuración del repositorio
+
+## 📋 Prerrequisitos
+
+- Node.js (versión 14 o superior)
+- Navegador web moderno
+- Conexión a internet para las CDN (Boxicons, Google Fonts)
 
 ## 🎨 Personalización
 
@@ -88,11 +119,34 @@ El sitio está optimizado para:
 
 ## 🌐 SEO y Rendimiento
 
-- Metadatos optimizados
+- Meta tags optimizados para redes sociales
+- Schema.org markup para mejor indexación
 - Imágenes optimizadas y con lazy loading
 - Favicons para múltiples dispositivos
 - Web App Manifest incluido
 - Estructura semántica HTML5
+- CSS y JavaScript minificados
+- Caché optimizado
+- Core Web Vitals optimizados
+
+## 🔧 Mantenimiento
+
+### Actualización de contenido
+- Las imágenes se deben optimizar antes de subirlas a `/image`
+- Los textos multiidioma se encuentran en `/js/language-switcher.js`
+- Las animaciones del carro se pueden modificar en `/js/car-animation.js`
+
+### Optimización
+- Comprimir imágenes con [TinyPNG](https://tinypng.com/)
+- Minificar CSS y JS para producción
+- Verificar PageSpeed Insights regularmente
+
+## 🔒 Seguridad
+
+- El sitio no almacena datos sensibles
+- Las comunicaciones se realizan por HTTPS
+- Los formularios incluyen validación
+- Se siguen las mejores prácticas de OWASP
 
 ## 📄 Licencia
 
@@ -108,11 +162,62 @@ Las contribuciones son bienvenidas:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
+## 🌟 Demo
+
+Visita la demo en vivo: [PMF Tours Website](https://a3infinitaafinidad.github.io/pmftours-website/)
+
+## 📈 Estado del Proyecto
+
+![GitHub last commit](https://img.shields.io/github/last-commit/A3InfinitaAfinidad/pmftours-website)
+![GitHub issues](https://img.shields.io/github/issues/A3InfinitaAfinidad/pmftours-website)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/A3InfinitaAfinidad/pmftours-website)
+
+## 🚦 Tests y Calidad
+
+- HTML validado con W3C Validator
+- CSS validado con W3C CSS Validator
+- JavaScript siguiendo ESLint
+- Lighthouse Score > 90 en todas las categorías
+
+## 💻 Comandos Útiles
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/A3InfinitaAfinidad/pmftours-website.git
+
+# Navegar al directorio
+cd pmftours-website
+
+# Abrir en VS Code
+code .
+
+# Iniciar servidor local con Python
+python -m http.server 8000
+
+# Abrir en el navegador
+start http://localhost:8000
+```
+
 ## 📞 Contacto
 
-Pierre Flores - [@pmftours](https://instagram.com/pmftours)
+Pierre Flores
+- GitHub: [@A3InfinitaAfinidad](https://github.com/A3InfinitaAfinidad)
+- Instagram: [@pmftours](https://instagram.com/pmftours)
+- WhatsApp: [+507 6534-7412](https://wa.me/50765347412)
+- Email: pfloresmanito19@gmail.com
 
-WhatsApp: [+507 6534-7412](https://wa.me/50765347412)
+## 🔄 Actualizaciones
+
+El sitio se actualiza regularmente con:
+- Nuevas funcionalidades
+- Mejoras de rendimiento
+- Correcciones de bugs
+- Actualizaciones de contenido
+
+Para estar al tanto de las últimas actualizaciones:
+1. Dale ⭐ al repositorio
+2. Activa las notificaciones de GitHub
+3. Sigue el [canal de cambios](https://github.com/A3InfinitaAfinidad/pmftours-website/releases)
 
 ## 🙏 Agradecimientos
 

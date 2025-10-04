@@ -172,7 +172,26 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 2px;
 }
 
-/* Estado activo del botón */
+/* Overlay del menú móvil */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estados activos del botón y menú */
 .mobile-menu-toggle.active span:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -1824,21 +1843,21 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================================
    LANGUAGE SWITCHER
    ============================================ */
+/* Selector de idioma - Versión minimalista */
 .language-switcher {
     position: relative;
     margin-left: 20px;
-    z-index: 1001;
 }
 
 .lang-btn {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     padding: 8px 12px;
-    border: 2px solid var(--pmf-rojo);
+    border: 1.5px solid var(--pmf-rojo);
     border-radius: 8px;
     background: transparent;
-    color: var(--negro);
+    color: var(--pmf-rojo);
     font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1849,11 +1868,16 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
 }
 
+.current-lang {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
 .lang-dropdown {
     position: absolute;
     top: calc(100% + 8px);
     right: 0;
-    min-width: 150px;
+    min-width: 120px;
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -1862,7 +1886,6 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-10px);
     transition: all 0.3s ease;
     z-index: 1000;
-    padding: 8px 0;
 }
 
 .lang-dropdown.show {
@@ -1874,7 +1897,6 @@ h1, h2, h3, h4, h5, h6 {
 .lang-option {
     display: flex;
     align-items: center;
-    gap: 10px;
     padding: 10px 16px;
     color: var(--negro);
     text-decoration: none;
@@ -1884,19 +1906,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .lang-option:hover {
     background: var(--gris-claro);
+    color: var(--pmf-rojo);
 }
 
 .lang-option.active {
-    background: var(--pmf-teal);
+    background: var(--pmf-rojo);
     color: white;
 }
 
-.flag-emoji {
-    font-size: 20px;
-    line-height: 1;
+.lang-name {
+    font-weight: 500;
 }
 
-.lang-name {
-    font-size: 14px;
-    font-weight: 500;
+/* Responsive */
+@media (max-width: 768px) {
+    .lang-btn {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
 }
