@@ -4,6 +4,9 @@
 
 Sitio web oficial de PMF Tours, empresa de transporte privado y tours en Panamá. Diseñado para ofrecer una experiencia de usuario intuitiva y atractiva.
 
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fa3culturaytecnologia.github.io%2Fpmftours)
+![License](https://img.shields.io/github/license/a3culturaytecnologia/pmftours)
+
 ## 🚀 Características
 
 - Diseño responsive y moderno
@@ -225,3 +228,40 @@ Para estar al tanto de las últimas actualizaciones:
 - [AOS Library](https://michalsnik.github.io/aos/)
 - [Swiper](https://swiperjs.com/)
 - [Google Fonts](https://fonts.google.com/)
+
+## 📊 Analytics y Métricas
+- Google Analytics implementado
+- Seguimiento de conversiones WhatsApp
+- Métricas de velocidad de carga
+- Monitoreo de UX
+
+## 🔄 Workflow de Desarrollo
+```bash
+# Desarrollo local
+npm install
+npm start
+
+# Build para producción
+npm run build
+
+# Despliegue a GitHub Pages
+npm run deploy
+```
+
+## 📱 PWA Support
+- Instalable como app
+- Funciona offline
+- Notificaciones push
+- Actualización automática
+
+## 🌍 Optimización Internacional
+- Contenido bilingüe (ES/EN)
+- Precios en USD
+- Horarios en zona horaria local
+- Formatos internacionales
+
+## 📈 Roadmap 2024
+- [ ] Reservas en línea
+- [ ] Blog de viajes
+- [ ] Sistema de reviews
+- [ ] App móvil nativa
