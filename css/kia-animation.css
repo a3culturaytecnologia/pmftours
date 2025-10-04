@@ -1,0 +1,79 @@
+/* ============================================
+   KIA SPORTAGE PMF TOURS - ANIMACIÓN CSS
+   ============================================ */
+
+:root {
+    --pmf-rojo: #a70007;
+    --pmf-verde: #058600;
+    --pmf-teal: #01979e;
+    --pmf-amarillo: #ffd202;
+}
+
+.tour-progress-bar {
+    position: fixed;
+    bottom: 0; /* Cambiado de top a bottom */
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.08);
+    z-index: 1001;
+    overflow: visible;
+}
+
+.progress-label {
+    position: absolute;
+    left: 15px;
+    bottom: 15px; /* Ajustado para que aparezca arriba de la barra */
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--pmf-verde);
+    background: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tour-checkpoints {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background: transparent;
+}
+
+.pmf-car {
+    position: fixed;
+    bottom: 30px;
+    left: -200px; /* Posición inicial fuera de la pantalla */
+    z-index: 9999; /* Asegurarse que esté por encima de todo */
+    transition: all 0.15s ease-out;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
+    will-change: transform;
+    pointer-events: auto;
+    cursor: pointer;
+    width: 120px;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 3;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Asegúrate de que el footer no tape al Kia */
+.footer {
+    position: relative;
+    z-index: 998;
+}
+
+/* Resto del código CSS del Kia que te proporcioné anteriormente */
+/* ...ruedas, efectos de velocidad, sombra, badge, estados, etc... */

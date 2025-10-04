@@ -1,0 +1,60 @@
+{
+    "name": "PMF Tours Panamá",
+    "short_name": "PMF Tours",
+    "description": "Tours privados y transporte en Panamá con guía local bilingüe",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#a70007",
+    "icons": [
+        {
+            "src": "favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "web-app-manifest-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "web-app-manifest-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "orientation": "portrait",
+    "categories": ["travel", "tourism", "transportation"],
+    "lang": "es",
+    "dir": "ltr",
+    "prefer_related_applications": false,
+    "shortcuts": [
+        {
+            "name": "Reservar Tour",
+            "url": "/#contacto",
+            "description": "Reserva rápida de tours"
+        },
+        {
+            "name": "Ver Paquetes",
+            "url": "/#servicios",
+            "description": "Explora nuestros paquetes"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "../gallery/imagen1.jpg",
+            "type": "image/jpeg",
+            "sizes": "1280x720",
+            "platform": "wide",
+            "label": "Tour por el interior de Panamá"
+        }
+    ]
+}
