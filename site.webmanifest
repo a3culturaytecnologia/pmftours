@@ -1,10 +1,11 @@
 {
-    "name": "PMF Tours",
+    "name": "PMF Tours Panamá",
     "short_name": "PMF Tours",
-    "start_url": ".",
+    "description": "Transporte privado y tours auténticos en Panamá",
+    "start_url": "./",
     "display": "standalone",
     "background_color": "#ffffff",
-    "theme_color": "#ffffff",
+    "theme_color": "#a70007",
     "icons": [
         {
             "src": "./image/favicon/favicon-96x96.png",
@@ -19,7 +20,8 @@
         {
             "src": "./image/favicon/web-app-manifest-512x512.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }

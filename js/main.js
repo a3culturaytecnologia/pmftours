@@ -208,3 +208,16 @@ function showNotification(message, type = 'info') {
     // Remover después de 5 segundos
     setTimeout(() => notification.remove(), 5000);
 }
+
+// Registrar Service Worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+            .then(registration => {
+                console.log('✅ Service Worker registrado:', registration);
+            })
+            .catch(error => {
+                console.error('❌ Error al registrar Service Worker:', error);
+            });
+    });
+}
