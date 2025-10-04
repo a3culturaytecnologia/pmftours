@@ -150,24 +150,29 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 
+/* Menú móvil */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
-    cursor: pointer;
-    background: none;
+    justify-content: center;
+    background: transparent;
     border: none;
+    cursor: pointer;
     padding: 5px;
+    z-index: 1002;
 }
 
 .mobile-menu-toggle span {
+    display: block;
     width: 25px;
-    height: 3px;
+    height: 2px;
     background: var(--pmf-rojo);
-    margin: 3px 0;
+    margin: 4px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
 }
 
+/* Estado activo del botón */
 .mobile-menu-toggle.active span:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -1262,6 +1267,7 @@ h1, h2, h3, h4, h5, h6 {
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
         align-items: flex-start;
         gap: 20px;
+        z-index: 1001;
     }
     
     .nav-links.active {
@@ -1710,6 +1716,7 @@ h1, h2, h3, h4, h5, h6 {
         box-shadow: 2px 0 10px rgba(0,0,0,0.1);
         align-items: flex-start;
         gap: 20px;
+        z-index: 1001;
     }
     
     .nav-links.active {

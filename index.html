@@ -73,10 +73,13 @@
                     </div>
                 </div>
 
-                <!-- Botón WhatsApp -->
-                <a href="https://wa.me/50765347412" class="btn-whatsapp-nav" target="_blank">
-                    <i class='bx bxl-whatsapp'></i>
-                    WhatsApp
+                <!-- Botón WhatsApp - Versión mejorada -->
+                <a href="https://wa.me/50765347412?text=¡Hola!%20Estoy%20lista%20para%20descubrir%20Panamá%20con%20PMF%20Tours.%20¿Me%20puedes%20dar%20más%20información%20sobre%20los%20tours%20y%20reservas?" 
+                   class="btn-whatsapp-nav" 
+                   target="_blank"
+                   aria-label="Contactar por WhatsApp">
+                   <i class='bx bxl-whatsapp'></i>
+                   <span>WhatsApp</span>
                 </a>
             </div>
 
@@ -448,9 +451,16 @@
         </div>
     </section>
 
-    <!-- Kia Car Animation -->
+    <!-- Kia Car Animation - Versión mejorada -->
     <div id="pmfCar" class="pmf-car">
-        <img src="./image/Kia.png" alt="Kia Sportage PMF Tours" class="car-image">
+        <div class="car-container">
+            <img src="./image/Kia.png" alt="Kia Sportage PMF Tours" class="car-image">
+            <div class="car-shadow"></div>
+        </div>
+        <div class="car-tooltip">
+            <i class='bx bx-map-pin'></i>
+            <span>¡Transporte seguro y confiable!</span>
+        </div>
     </div>
 
     <!-- Progress Bar -->
@@ -495,6 +505,7 @@
     <script src="./js/hero-slider.js"></script>
     <script src="./js/form-handler.js"></script>
     <script src="./js/car-animation.js"></script>
+    <script src="./js/mobile-menu.js"></script>
 </body>
 
 </html>

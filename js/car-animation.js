@@ -30,6 +30,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2500);
     }
     
+    // Iniciar animación
+    setTimeout(() => {
+        carElement.classList.add('driving');
+    }, 1000);
+
+    // Reiniciar animación cuando termine
+    carElement.addEventListener('animationend', () => {
+        carElement.style.left = '-150px';
+        setTimeout(() => {
+            carElement.classList.remove('driving');
+            requestAnimationFrame(() => {
+                carElement.classList.add('driving');
+            });
+        }, 100);
+    });
+
+    // Click en el carro
+    carElement.addEventListener('click', () => {
+        window.location.href = '#servicios';
+    });
+    
     // Event Listeners
     window.addEventListener('load', () => {
         setTimeout(playIntro, 1000);

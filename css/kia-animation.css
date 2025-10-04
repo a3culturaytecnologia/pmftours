@@ -46,27 +46,102 @@
     background: transparent;
 }
 
+/* Estilos mejorados para el carro animado */
 .pmf-car {
     position: fixed;
-    bottom: 30px;
-    left: -200px; /* Posición inicial fuera de la pantalla */
-    z-index: 9999; /* Asegurarse que esté por encima de todo */
-    transition: all 0.15s ease-out;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
-    will-change: transform;
-    pointer-events: auto;
+    bottom: 20px;
+    left: -150px; /* Comienza fuera de la pantalla */
+    width: 150px;
+    z-index: 1000;
     cursor: pointer;
-    width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.car-container {
+    position: relative;
 }
 
 .car-image {
     width: 100%;
     height: auto;
     display: block;
-    position: relative;
-    z-index: 3;
-    user-select: none;
-    -webkit-user-select: none;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    transition: transform 0.3s ease;
+}
+
+.car-shadow {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 10px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%);
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.car-tooltip {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--pmf-rojo);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.car-tooltip i {
+    font-size: 16px;
+}
+
+/* Animaciones */
+.pmf-car:hover {
+    transform: translateY(-5px);
+}
+
+.pmf-car:hover .car-tooltip {
+    opacity: 1;
+}
+
+.pmf-car.driving {
+    animation: driveCar 20s linear infinite;
+}
+
+@keyframes driveCar {
+    0% {
+        left: -150px;
+    }
+    45% {
+        left: calc(50% - 75px);
+    }
+    55% {
+        left: calc(50% - 75px);
+    }
+    100% {
+        left: calc(100% + 150px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .pmf-car {
+        width: 120px;
+    }
+    
+    .car-tooltip {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 }
 
 /* Asegúrate de que el footer no tape al Kia */
