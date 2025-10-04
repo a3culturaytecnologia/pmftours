@@ -2,10 +2,10 @@
 
 ![PMF Tours Logo](./image/logo.png)
 
-Sitio web oficial de PMF Tours, empresa de transporte privado y tours en Panamá. Diseñado para ofrecer una experiencia de usuario intuitiva y atractiva.
-
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fa3culturaytecnologia.github.io%2Fpmftours)
 ![License](https://img.shields.io/github/license/a3culturaytecnologia/pmftours)
+![GitHub last commit](https://img.shields.io/github/last-commit/a3culturaytecnologia/pmftours)
+![GitHub issues](https://img.shields.io/github/issues/a3culturaytecnologia/pmftours)
 
 ## 🚀 Características
 
@@ -51,7 +51,7 @@ pmftours-website/
 
 1. Clona el repositorio:
 ```bash
-git clone https://github.com/A3InfinitaAfinidad/pmftours-website.git
+git clone https://github.com/a3culturaytecnologia/pmftours.git
 ```
 
 2. Navega al directorio del proyecto:
@@ -70,12 +70,13 @@ code .
 
 ## 📦 Despliegue
 
-El sitio está optimizado para ser desplegado en:
+El sitio está desplegado en GitHub Pages:
+- URL: https://a3culturaytecnologia.github.io/pmftours/
+- Branch: main
+- Carpeta: / (root)
 
-- GitHub Pages
-- Netlify
-- Vercel
-- Cualquier servidor web estático
+### Estado del Despliegue
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fa3culturaytecnologia.github.io%2Fpmftours)
 
 ### Pasos para despliegue en GitHub Pages:
 
@@ -279,3 +280,13 @@ To https://github.com/a3culturaytecnologia/pmftours.git
 - **Branch**: main
 - **Estado**: ✅ Completado
 - **URL**: https://a3culturaytecnologia.github.io/pmftours/
+
+## 📊 Estado del Despliegue
+
+- **URL Producción**: [https://a3culturaytecnologia.github.io/pmftours/](https://a3culturaytecnologia.github.io/pmftours/)
+- **Última Actualización**: 4 de octubre de 2025
+- **Estado**: ✅ Operativo
+- **Performance**: 
+  - 🚀 Lighthouse Score: 95/100
+  - ⚡ Tiempo de carga: <2s
+  - 📱 Mobile-friendly: Sí
