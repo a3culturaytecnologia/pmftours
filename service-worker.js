@@ -7,15 +7,14 @@ const ASSETS = [
     './js/main.js',
     './js/car-animation.js',
     './js/form-handler.js',
-    './image/logo.png',
-    './image/logo-blanco.png',
-    './image/Pierre.png',
+    './js/hero-slider.js',
+    './js/language-switcher.js',
+    './js/mobile-menu.js',
     './image/kia.png',
+    './image/Pierre.png',
     './image/testimonios/Usuario1.jpg',
     './image/testimonios/Usuario2.jpg',
-    './image/testimonios/Usuario3.jpg',
-    './image/favicon/favicon-96x96.png',
-    './image/favicon/apple-touch-icon.png'
+    './image/testimonios/Usuario3.jpg'
 ];
 
 // Instalación
