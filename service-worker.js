@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pmf-tours-v1';
+const CACHE_NAME = 'pmf-tours-v2.1';
 const ASSETS = [
     './',
     './index.html',
@@ -10,48 +10,57 @@ const ASSETS = [
     './js/hero-slider.js',
     './js/language-switcher.js',
     './js/mobile-menu.js',
+    './image/logo.png',
     './image/kia.png',
-    './image/Pierre.png',
-    './image/testimonios/Usuario1.jpg',
-    './image/testimonios/Usuario2.jpg',
-    './image/testimonios/Usuario3.jpg'
+    './image/Hero.png'
 ];
 
-// Instalación
+// Instalación mejorada
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => cache.addAll(ASSETS))
+            .then(() => self.skipWaiting())
     );
-    self.skipWaiting();
 });
 
-// Activación
+// Activación mejorada
 self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then((keys) => {
-            return Promise.all(
-                keys.filter(key => key !== CACHE_NAME)
-                    .map(key => caches.delete(key))
-            );
-        })
+        caches.keys()
+            .then((keys) => Promise.all(
+                keys.map(key => {
+                    if (key !== CACHE_NAME) {
+                        return caches.delete(key);
+                    }
+                })
+            ))
+            .then(() => self.clients.claim())
     );
 });
 
-// Estrategia de caché
+// Estrategia de caché mejorada
 self.addEventListener('fetch', (event) => {
+    // Ignorar peticiones de chrome-extension
+    if (event.request.url.startsWith('chrome-extension://')) {
+        return;
+    }
+
     event.respondWith(
         caches.match(event.request)
             .then((cached) => {
-                const networked = fetch(event.request)
+                return fetch(event.request)
                     .then((response) => {
-                        const cacheCopy = response.clone();
-                        caches.open(CACHE_NAME)
-                            .then(cache => cache.put(event.request, cacheCopy));
+                        // Solo cachear peticiones GET y recursos locales
+                        if (event.request.method === 'GET' && 
+                            event.request.url.startsWith(self.location.origin)) {
+                            const cacheCopy = response.clone();
+                            caches.open(CACHE_NAME)
+                                .then(cache => cache.put(event.request, cacheCopy));
+                        }
                         return response;
                     })
                     .catch(() => cached);
-                return cached || networked;
             })
     );
 });
