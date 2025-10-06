@@ -7,6 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
     initBackToTop();
     initContactForm(); // Inicializar formulario de contacto
 
+    // Verificar que el elemento existe antes de acceder a sus propiedades
+    const elementToMeasure = document.querySelector('.elemento-a-medir');
+    if (elementToMeasure) {
+        const width = elementToMeasure.offsetWidth;
+        // ...resto del código que usa width
+    }
+
+    // Registro del Service Worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js')
+            .then(registration => {
+                console.log('✅ Service Worker registrado:', registration);
+            })
+            .catch(error => {
+                console.error('❌ Error al registrar Service Worker:', error);
+            });
+    }
+
     // Animación del coche que sigue el scroll
     const car = document.getElementById('movingCar');
     
@@ -207,17 +225,4 @@ function showNotification(message, type = 'info') {
     
     // Remover después de 5 segundos
     setTimeout(() => notification.remove(), 5000);
-}
-
-// Registrar Service Worker
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-            .then(registration => {
-                console.log('✅ Service Worker registrado:', registration);
-            })
-            .catch(error => {
-                console.error('❌ Error al registrar Service Worker:', error);
-            });
-    });
 }
