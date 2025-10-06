@@ -22,46 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             initScrollEffects();
             initBackToTop();
             initContactForm();
-
-            // Manejar animación del carro de forma segura
-            const car = document.getElementById('movingCar');
-            if (car) {
-                const updateCarPosition = () => {
-                    requestAnimationFrame(() => {
-                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                        const windowHeight = window.innerHeight;
-                        const documentHeight = Math.max(
-                            document.body.scrollHeight,
-                            document.documentElement.scrollHeight
-                        );
-                        
-                        const maxScroll = documentHeight - windowHeight;
-                        const scrollProgress = Math.max(0, Math.min(1, scrollTop / maxScroll));
-                        
-                        // Calcular posición solo si el elemento existe y tiene dimensiones
-                        if (car.offsetWidth) {
-                            const maxX = window.innerWidth - car.offsetWidth;
-                            const newX = scrollProgress * maxX;
-                            car.style.transform = `translateX(${newX}px)`;
-                        }
-                    });
-                };
-
-                // Agregar listener de scroll con throttling
-                let ticking = false;
-                window.addEventListener('scroll', () => {
-                    if (!ticking) {
-                        window.requestAnimationFrame(() => {
-                            updateCarPosition();
-                            ticking = false;
-                        });
-                        ticking = true;
-                    }
-                });
-                
-                // Posición inicial
-                updateCarPosition();
-            }
+            initCarAnimation(); // Agregar inicialización del carro
         } catch (error) {
             console.error('❌ Error al inicializar componentes:', error);
         }
@@ -287,4 +248,59 @@ function showNotification(message, type = 'info') {
     
     // Remover después de 5 segundos
     setTimeout(() => notification.remove(), 5000);
+}
+
+// Animación del carro
+function initCarAnimation() {
+    const car = document.getElementById('movingCar');
+    if (!car) {
+        console.warn('⚠️ Elemento del carro no encontrado');
+        return;
+    }
+
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
+
+    const updateCarPosition = () => {
+        try {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = Math.max(
+                document.body.scrollHeight,
+                document.documentElement.scrollHeight
+            );
+            
+            // Calcular progreso del scroll
+            const maxScroll = documentHeight - windowHeight;
+            const scrollProgress = Math.max(0, Math.min(1, scrollTop / maxScroll));
+            
+            // Calcular nueva posición
+            const carWidth = car.offsetWidth || 100; // Valor por defecto si no está disponible
+            const maxX = window.innerWidth - carWidth;
+            const newX = scrollProgress * maxX;
+            
+            // Aplicar transformación
+            car.style.transform = `translateX(${newX}px)`;
+            car.style.opacity = '1'; // Asegurar visibilidad
+            
+        } catch (error) {
+            console.error('❌ Error en animación del carro:', error);
+        }
+    };
+
+    // Optimizar eventos de scroll
+    window.addEventListener('scroll', () => {
+        lastKnownScrollPosition = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateCarPosition();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Inicializar posición
+    updateCarPosition();
+    console.log('✅ Animación del carro inicializada');
 }
