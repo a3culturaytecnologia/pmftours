@@ -1,80 +1,125 @@
 // PMF Tours - JavaScript Principal
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 PMF Tours cargado exitosamente');
-    
-    initMobileMenu();
-    initScrollEffects();
-    initBackToTop();
-    initContactForm(); // Inicializar formulario de contacto
 
-    // Verificar que el elemento existe antes de acceder a sus propiedades
-    const elementToMeasure = document.querySelector('.elemento-a-medir');
-    if (elementToMeasure) {
-        const width = elementToMeasure.offsetWidth;
-        // ...resto del código que usa width
-    }
-
-    // Registro del Service Worker
+    // Registro del Service Worker con manejo de errores mejorado
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./service-worker.js')
-            .then(registration => {
-                console.log('✅ Service Worker registrado:', registration);
-            })
-            .catch(error => {
-                console.error('❌ Error al registrar Service Worker:', error);
-            });
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./service-worker.js')
+                .then(registration => {
+                    console.log('✅ Service Worker registrado:', registration);
+                })
+                .catch(error => {
+                    console.error('❌ Error al registrar Service Worker:', error);
+                });
+        });
     }
 
-    // Animación del coche que sigue el scroll
-    const car = document.getElementById('movingCar');
-    
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset;
-        const maxScroll = document.body.scrollHeight - window.innerHeight;
-        const progress = Math.max(0, Math.min(1, scrollTop / maxScroll));
-        
-        // Mover coche de izquierda a derecha
-        const maxX = window.innerWidth - car.offsetWidth;
-        const newX = progress * (maxX * 1.5);
-        
-        car.style.left = `${newX}px`;
-        car.style.transform = `rotate(${progress * 5}deg)`;
-    });
+    // Inicialización segura de componentes
+    const initializeComponents = () => {
+        try {
+            initMobileMenu();
+            initScrollEffects();
+            initBackToTop();
+            initContactForm();
+
+            // Manejar animación del carro de forma segura
+            const car = document.getElementById('movingCar');
+            if (car) {
+                const updateCarPosition = () => {
+                    requestAnimationFrame(() => {
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        const windowHeight = window.innerHeight;
+                        const documentHeight = Math.max(
+                            document.body.scrollHeight,
+                            document.documentElement.scrollHeight
+                        );
+                        
+                        const maxScroll = documentHeight - windowHeight;
+                        const scrollProgress = Math.max(0, Math.min(1, scrollTop / maxScroll));
+                        
+                        // Calcular posición solo si el elemento existe y tiene dimensiones
+                        if (car.offsetWidth) {
+                            const maxX = window.innerWidth - car.offsetWidth;
+                            const newX = scrollProgress * maxX;
+                            car.style.transform = `translateX(${newX}px)`;
+                        }
+                    });
+                };
+
+                // Agregar listener de scroll con throttling
+                let ticking = false;
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(() => {
+                            updateCarPosition();
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+                
+                // Posición inicial
+                updateCarPosition();
+            }
+        } catch (error) {
+            console.error('❌ Error al inicializar componentes:', error);
+        }
+    };
+
+    // Inicializar componentes al cargar
+    initializeComponents();
 });
 
 // Menú móvil
 function initMobileMenu() {
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
     const navLinks = document.getElementById('navLinks');
+    const overlay = document.getElementById('menuOverlay');
     
     if (!mobileMenuToggle || !navLinks) return;
     
-    mobileMenuToggle.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active');
-        
-        const spans = mobileMenuToggle.querySelectorAll('span');
-        if (navLinks.classList.contains('active')) {
-            spans[0].style.transform = 'rotate(45deg) translateY(10px)';
-            spans[1].style.opacity = '0';
-            spans[2].style.transform = 'rotate(-45deg) translateY(-10px)';
+    // Crear overlay si no existe
+    if (!overlay) {
+        const newOverlay = document.createElement('div');
+        newOverlay.id = 'menuOverlay';
+        newOverlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            display: none;
+            transition: opacity 0.3s ease;
+        `;
+        document.body.appendChild(newOverlay);
+    }
+
+    function toggleMenu(show) {
+        const overlay = document.getElementById('menuOverlay');
+        if (show) {
+            navLinks.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            if (overlay) overlay.style.display = 'block';
         } else {
-            spans[0].style.transform = '';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = '';
-        }
-    });
-    
-    // Cerrar menú al hacer clic en un enlace
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
             navLinks.classList.remove('active');
             mobileMenuToggle.classList.remove('active');
-            const spans = mobileMenuToggle.querySelectorAll('span');
-            spans[0].style.transform = '';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = '';
-        });
+            if (overlay) overlay.style.display = 'none';
+        }
+    }
+
+    mobileMenuToggle.addEventListener('click', function() {
+        const isOpening = !navLinks.classList.contains('active');
+        toggleMenu(isOpening);
+    });
+
+    // Cerrar menú al hacer clic en un enlace o en el overlay
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('#navLinks a') || e.target.id === 'menuOverlay') {
+            toggleMenu(false);
+        }
     });
 }
 
@@ -141,65 +186,82 @@ function initContactForm() {
     const form = document.getElementById('contactForm');
     
     if (!form) {
-        console.log('⚠️ Formulario no encontrado');
+        console.warn('⚠️ Formulario no encontrado');
         return;
     }
     
-    form.addEventListener('submit', function(e) {
+    console.log('🔄 Cargando form handler...');
+    
+    form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        console.log('📝 Procesando formulario...');
-        
-        // Obtener valores
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const tourType = document.getElementById('tourType').value;
-        const message = document.getElementById('message').value.trim();
-        
+        // Validación de campos
+        const formFields = {
+            name: document.getElementById('name'),
+            email: document.getElementById('email'),
+            tourType: document.getElementById('tourType'),
+            message: document.getElementById('message')
+        };
+
+        // Verificar que existan todos los campos
+        for (const [key, field] of Object.entries(formFields)) {
+            if (!field) {
+                console.error(`❌ Campo ${key} no encontrado`);
+                showNotification('⚠️ Error en el formulario. Contacta al administrador', 'error');
+                return;
+            }
+        }
+
+        // Obtener y validar valores
+        const formData = {
+            name: formFields.name.value.trim(),
+            email: formFields.email.value.trim(),
+            tourType: formFields.tourType.value,
+            message: formFields.message.value.trim()
+        };
+
         // Validaciones
-        if (!name || !email || !tourType) {
+        if (!formData.name || !formData.email || !formData.tourType) {
             showNotification('⚠️ Por favor completa todos los campos requeridos', 'error');
             return;
         }
-        
-        // Construir mensaje WhatsApp
-        const tourNames = {
-            'city-tour': 'Welcome City Tour',
-            'beach': 'Beach Day Escape',
-            'cultural': 'Cultural & History Tour',
-            'airport': 'Traslado Aeropuerto',
-            'custom': 'Tour Personalizado'
-        };
-        
-        let whatsappMessage = `¡Hola! Mi nombre es ${name}\n\n`;
-        whatsappMessage += `📧 Email: ${email}\n`;
-        whatsappMessage += `🗺️ Tour: ${tourNames[tourType]}\n`;
-        
-        if (message) {
-            whatsappMessage += `\n💬 Mensaje:\n${message}\n`;
-        }
-        
-        // Número de WhatsApp de PMF Tours
-        const phoneNumber = '50765347412'; // Actualiza este número
-        
-        // URL de WhatsApp
-        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-        
+
         try {
-            // Abrir WhatsApp
-            window.open(whatsappURL, '_blank');
-            
-            // Mostrar confirmación
+            // Procesar formulario
+            await processContactForm(formData);
             showNotification('✅ ¡Mensaje enviado! Te contactaremos pronto', 'success');
-            
-            // Limpiar formulario
             form.reset();
-            
         } catch (error) {
-            console.error('❌ Error:', error);
-            showNotification('❌ Hubo un problema. Intenta contactarnos directamente por WhatsApp', 'error');
+            console.error('❌ Error al procesar formulario:', error);
+            showNotification('❌ Hubo un problema. Intenta nuevamente', 'error');
         }
     });
+
+    console.log('✅ Form handler inicializado');
+}
+
+// Función para procesar el formulario
+async function processContactForm(formData) {
+    const tourNames = {
+        'city-tour': 'Welcome City Tour',
+        'beach': 'Beach Day Escape',
+        'cultural': 'Cultural & History Tour',
+        'airport': 'Traslado Aeropuerto',
+        'custom': 'Tour Personalizado'
+    };
+
+    let whatsappMessage = `¡Hola! Mi nombre es ${formData.name}\n\n`;
+    whatsappMessage += `📧 Email: ${formData.email}\n`;
+    whatsappMessage += `🗺️ Tour: ${tourNames[formData.tourType]}\n`;
+    
+    if (formData.message) {
+        whatsappMessage += `\n💬 Mensaje:\n${formData.message}\n`;
+    }
+
+    const phoneNumber = '50765347412';
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    window.open(whatsappURL, '_blank');
 }
 
 // Sistema de notificaciones
