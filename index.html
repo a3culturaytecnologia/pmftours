@@ -45,6 +45,12 @@
     <!-- PWA Icons -->
     <link rel="icon" type="image/png" sizes="96x96" href="./image/favicon/favicon-96x96.png">
     <link rel="apple-touch-icon" href="./image/favicon/apple-touch-icon.png">
+
+    <!-- Preload de recursos críticos -->
+    <link rel="preload" href="./image/logo.png" as="image">
+    <link rel="preload" href="./image/Hero.png" as="image">
+    <link rel="preload" href="./css/styles.css" as="style">
+    <link rel="preload" href="./js/main.js" as="script">
 </head>
 
 <body>
@@ -52,7 +58,12 @@
     <header class="header" id="header">
         <div class="nav-container">
             <div class="logo-container">
-                <img src="./image/logo.png" alt="PMF Tours Logo" class="logo-image" loading="eager">
+                <!-- Logo - Carga prioritaria -->
+                <img src="./image/logo.png" 
+                     alt="PMF Tours Logo" 
+                     class="logo-image" 
+                     loading="eager" 
+                     fetchpriority="high">
                 <span class="logo-text">PMF TOURS</span>
             </div>
 
@@ -103,7 +114,11 @@
     <section class="hero" id="inicio">
         <div class="hero-slider" id="heroSlider">
             <div class="hero-slide active">
-                <img src="./image/Hero.png" alt="Ciudad de Panamá" loading="eager">
+                <!-- Hero image - Carga prioritaria -->
+                <img src="./image/Hero.png" 
+                     alt="Ciudad de Panamá" 
+                     loading="eager" 
+                     fetchpriority="high">
             </div>
             <div class="hero-slide">
                 <img src="./image/gallery/casco-viejo.png" alt="Tours en Casco Antiguo" loading="lazy">
@@ -461,7 +476,12 @@
     <!-- Kia Car Animation - Versión mejorada -->
     <div id="pmfCar" class="pmf-car">
         <div class="car-container">
-            <img src="./image/kia.png" alt="Kia Sportage PMF Tours" class="car-image" loading="eager">
+            <!-- Kia - Carga prioritaria por ser parte de la animación -->
+            <img src="./image/kia.png" 
+                 alt="Kia Sportage PMF Tours" 
+                 class="car-image" 
+                 loading="eager" 
+                 fetchpriority="high">
             <div class="car-shadow"></div>
         </div>
         <div class="car-tooltip">
