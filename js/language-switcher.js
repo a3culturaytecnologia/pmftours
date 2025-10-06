@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const langDropdown = document.querySelector('.lang-dropdown');
     const currentLangSpan = document.querySelector('.current-lang');
     const langOptions = document.querySelectorAll('.lang-option');
+    const menuOverlay = document.createElement('div');
+    
+    // Configurar overlay
+    menuOverlay.className = 'menu-overlay';
+    document.body.appendChild(menuOverlay);
 
     // Diccionario completo de traducciones
     const translations = {
@@ -172,10 +177,14 @@ document.addEventListener('DOMContentLoaded', () => {
         langBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             langDropdown.classList.toggle('show');
+            menuOverlay.style.display = langDropdown.classList.contains('show') ? 'block' : 'none';
         });
 
-        document.addEventListener('click', () => {
-            langDropdown.classList.remove('show');
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.language-switcher')) {
+                langDropdown.classList.remove('show');
+                menuOverlay.style.display = 'none';
+            }
         });
 
         langDropdown.addEventListener('click', (e) => {
@@ -186,8 +195,20 @@ document.addEventListener('DOMContentLoaded', () => {
             option.addEventListener('click', (e) => {
                 e.preventDefault();
                 const lang = option.getAttribute('data-lang');
-                translatePage(lang);
+                
+                if (currentLangSpan) {
+                    currentLangSpan.textContent = lang.toUpperCase();
+                }
+                
+                // Guardar preferencia
+                localStorage.setItem('pmf_lang', lang);
+                
+                // Cerrar dropdown
                 langDropdown.classList.remove('show');
+                menuOverlay.style.display = 'none';
+                
+                // Aquí iría la lógica de traducción
+                console.log('🌍 Cambiando idioma a:', lang);
             });
         });
     }
