@@ -2,28 +2,74 @@
 document.addEventListener('DOMContentLoaded', function() {
     const translations = {
         en: {
+            // Navegación
             navHome: "Home",
             navAbout: "About Us",
             navServices: "Services",
             navValues: "Values",
             navGallery: "Gallery",
             navContact: "Contact",
+            
+            // Hero Section
             heroTitle: "Your Gateway to Panama",
             heroSubtitle: "Private Transportation & Authentic Tours with safety, punctuality, and authentic experiences.",
-            btnReserve: "Book Tour",
-            btnPackages: "View Packages"
+            heroBookBtn: "Book Tour",
+            heroViewBtn: "View Packages",
+            
+            // Botones y CTA
+            ctaBook: "Book Now",
+            ctaWhatsapp: "WhatsApp",
+            
+            // Secciones Principales
+            aboutTitle: "About PMF Tours",
+            aboutDesc: "Your trusted partner for exploring Panama",
+            servicesTitle: "Our Services",
+            servicesDesc: "Discover what we offer",
+            valuesTitle: "Our Values",
+            galleryTitle: "Gallery",
+            contactTitle: "Contact Us",
+            
+            // Formulario
+            formName: "Name",
+            formEmail: "Email",
+            formTour: "Select Tour",
+            formMessage: "Message",
+            formSubmit: "Send Message"
         },
         es: {
+            // Navegación
             navHome: "Inicio",
             navAbout: "Nosotros",
             navServices: "Servicios",
             navValues: "Valores",
             navGallery: "Galería",
             navContact: "Contacto",
+            
+            // Hero Section
             heroTitle: "Tu puerta a Panamá",
             heroSubtitle: "Transporte & Tours Privados con seguridad, puntualidad y experiencias auténticas.",
-            btnReserve: "Reservar Tour",
-            btnPackages: "Ver Paquetes"
+            heroBookBtn: "Reservar Tour",
+            heroViewBtn: "Ver Paquetes",
+            
+            // Botones y CTA
+            ctaBook: "Reservar Ahora",
+            ctaWhatsapp: "WhatsApp",
+            
+            // Secciones Principales
+            aboutTitle: "Sobre PMF Tours",
+            aboutDesc: "Tu socio de confianza para explorar Panamá",
+            servicesTitle: "Nuestros Servicios",
+            servicesDesc: "Descubre lo que ofrecemos",
+            valuesTitle: "Nuestros Valores",
+            galleryTitle: "Galería",
+            contactTitle: "Contáctanos",
+            
+            // Formulario
+            formName: "Nombre",
+            formEmail: "Correo",
+            formTour: "Seleccionar Tour",
+            formMessage: "Mensaje",
+            formSubmit: "Enviar Mensaje"
         }
     };
 
