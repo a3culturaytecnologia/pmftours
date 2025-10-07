@@ -1852,17 +1852,11 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--pmf-rojo);
     color: var(--pmf-rojo);
     padding: 8px 16px;
+    border-radius: 4px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 8px;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-.lang-btn:hover {
-    background: var(--pmf-rojo);
-    color: white;
 }
 
 .lang-dropdown {
@@ -1879,31 +1873,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .lang-dropdown.active {
     display: block;
-    animation: fadeIn 0.3s ease;
 }
 
 .lang-option {
     display: block;
     padding: 8px 16px;
-    color: #333;
+    color: var(--pmf-rojo);
     text-decoration: none;
-    transition: all 0.3s ease;
 }
 
 .lang-option:hover {
     background: var(--pmf-rojo);
     color: white;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Overlay para el selector de idiomas */
