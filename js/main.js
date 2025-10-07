@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             initBackToTop();
             initContactForm();
             initCarAnimation(); // Agregar inicialización del carro
+            initFAQ(); // Agregar esta línea
         } catch (error) {
             console.error('❌ Error al inicializar componentes:', error);
         }
@@ -303,4 +304,25 @@ function initCarAnimation() {
     // Inicializar posición
     updateCarPosition();
     console.log('✅ Animación del carro inicializada');
+}
+
+// Inicializar FAQ
+function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Cerrar otros items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle item actual
+            item.classList.toggle('active');
+        });
+    });
 }

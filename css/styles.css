@@ -1865,6 +1865,71 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   FAQ SECTION
+   ============================================ */
+.faq {
+    background: var(--gris-claro);
+    padding: 80px 0;
+}
+
+.faq-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 15px;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    padding: 18px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--pmf-rojo);
+    cursor: pointer;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 10px;
+    height: 10px;
+    background: var(--pmf-rojo);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.faq-answer {
+    padding: 0 25px 18px;
+    font-size: 15px;
+    color: var(--gris);
+    display: none;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+/* Estados activos de la respuesta */
+.faq-item.active .faq-answer {
+    display: block;
+    max-height: 200px; /* Altura máxima para la animación */
+    padding: 18px 25px;
+}
+
+/* ============================================
    LANGUAGE SWITCHER
    ============================================ */
 /* Selector de idioma - Versión minimalista */
