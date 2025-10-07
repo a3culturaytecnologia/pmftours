@@ -73,66 +73,73 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    // Obtener elementos
     const langBtn = document.querySelector('.lang-btn');
     const langDropdown = document.querySelector('.lang-dropdown');
     const currentLang = document.querySelector('.current-lang');
-    const langOverlay = document.querySelector('.lang-overlay');
-    
+    const langOptions = document.querySelectorAll('.lang-option');
+
     function toggleDropdown(show) {
         if (show) {
             langDropdown.classList.add('active');
-            langOverlay.classList.add('active');
         } else {
             langDropdown.classList.remove('active');
-            langOverlay.classList.remove('active');
         }
     }
 
-    // Click en el botón de idioma
-    langBtn?.addEventListener('click', (e) => {
+    // Toggle dropdown
+    langBtn?.addEventListener('click', function(e) {
         e.stopPropagation();
-        const isActive = langDropdown.classList.contains('active');
-        toggleDropdown(!isActive);
+        langDropdown?.classList.toggle('active');
     });
 
-    // Click en el overlay o fuera del dropdown
-    document.addEventListener('click', (e) => {
+    // Cerrar dropdown al hacer click fuera
+    document.addEventListener('click', function(e) {
         if (!e.target.closest('.language-switcher')) {
-            toggleDropdown(false);
+            langDropdown?.classList.remove('active');
         }
     });
 
-    function updateLanguage(lang) {
-        // Update text content
+    // Función para actualizar textos
+    function updateTexts(lang) {
         document.querySelectorAll('[data-translate]').forEach(element => {
             const key = element.getAttribute('data-translate');
-            if (translations[lang] && translations[lang][key]) {
-                element.textContent = translations[lang][key];
+            if (translations[lang]?.[key]) {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = translations[lang][key];
+                } else {
+                    element.textContent = translations[lang][key];
+                }
             }
         });
-
-        // Update current language display
-        if (currentLang) {
-            currentLang.textContent = lang.toUpperCase();
-        }
-
-        // Save preference
-        localStorage.setItem('preferredLanguage', lang);
-        console.log(`🌍 Idioma actualizado: ${lang}`);
     }
 
     // Click en las opciones de idioma
-    document.querySelectorAll('.lang-option').forEach(option => {
-        option.addEventListener('click', (e) => {
+    langOptions.forEach(option => {
+        option.addEventListener('click', function(e) {
             e.preventDefault();
-            e.stopPropagation();
-            const lang = option.dataset.lang;
-            updateLanguage(lang);
-            toggleDropdown(false);
+            const lang = this.getAttribute('data-lang');
+            
+            // Actualizar idioma actual
+            currentLang.textContent = lang.toUpperCase();
+            
+            // Actualizar textos
+            updateTexts(lang);
+            
+            // Guardar preferencia
+            localStorage.setItem('preferredLanguage', lang);
+            
+            // Cerrar dropdown
+            langDropdown.classList.remove('active');
+            
+            console.log('🌍 Idioma cambiado a:', lang);
         });
     });
 
-    // Cargar idioma guardado
+    // Cargar idioma guardado al iniciar
     const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-    updateLanguage(savedLang);
+    currentLang.textContent = savedLang.toUpperCase();
+    updateTexts(savedLang);
+
+    console.log('✅ Sistema de traducción inicializado');
 });
