@@ -32,7 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
             tourCityTour: "Welcome City Tour",
             tourBeach: "Beach Day Escape",
             formMessage: "Message",
-            formSubmit: "Send Message"
+            formSubmit: "Send Message",
+            
+            // Meta datos
+            siteTitle: "PMF Tours - Your Gateway to Panama",
+            metaDescription: "Discover Panama with PMF Tours. We offer private transportation and authentic tours to make your visit unforgettable."
         },
         es: {
             // Navegación
@@ -65,7 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
             tourCityTour: "Tour de Bienvenida a la Ciudad",
             tourBeach: "Escapada de Playa",
             formMessage: "Mensaje",
-            formSubmit: "Enviar Mensaje"
+            formSubmit: "Enviar Mensaje",
+            
+            // Meta datos
+            siteTitle: "PMF Tours - Tu puerta a Panamá",
+            metaDescription: "Descubre Panamá con PMF Tours. Ofrecemos transporte privado y tours auténticos para hacer de tu visita algo inolvidable."
         }
     };
 
@@ -98,27 +106,69 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función mejorada para actualizar textos
     function updateTexts(lang) {
-        document.querySelectorAll('[data-translate]').forEach(element => {
-            const key = element.getAttribute('data-translate');
-            if (translations[lang]?.[key]) {
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.placeholder = translations[lang][key];
-                } else if (element.tagName === 'SELECT') {
-                    element.options[0].text = translations[lang][key];
-                } else {
-                    element.textContent = translations[lang][key];
+        try {
+            // Actualizar título del documento
+            document.title = translations[lang].siteTitle || 'PMF Tours';
+            
+            // Actualizar atributo lang del HTML
+            document.documentElement.lang = lang;
+
+            // Actualizar todos los elementos traducibles
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                
+                if (!translations[lang]?.[key]) {
+                    console.warn(`⚠️ No se encontró traducción para: ${key} en ${lang}`);
+                    return;
                 }
+
+                switch (element.tagName.toLowerCase()) {
+                    case 'input':
+                        element.placeholder = translations[lang][key];
+                        break;
+                    case 'textarea':
+                        element.placeholder = translations[lang][key];
+                        break;
+                    case 'select':
+                        // Manejar opciones de select
+                        if (element.options && element.options[0]) {
+                            element.options[0].text = translations[lang][key];
+                        }
+                        break;
+                    case 'a':
+                        // Mantener href original
+                        const href = element.getAttribute('href');
+                        element.textContent = translations[lang][key];
+                        if (href) element.setAttribute('href', href);
+                        break;
+                    default:
+                        element.textContent = translations[lang][key];
+                }
+            });
+
+            // Actualizar metadatos
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription) {
+                metaDescription.content = translations[lang].metaDescription || '';
             }
-        });
+
+            console.log(`✅ Textos actualizados a: ${lang}`);
+            
+        } catch (error) {
+            console.error('❌ Error al actualizar textos:', error);
+        }
     }
 
-    // Manejar cambio de idioma
+    // Mejorar el manejo del cambio de idioma
     langOptions.forEach(option => {
         option.addEventListener('click', function(e) {
             e.preventDefault();
-            const lang = this.getAttribute('data-lang');
+            e.stopPropagation();
             
-            // Actualizar idioma actual
+            const lang = this.getAttribute('data-lang');
+            if (!lang) return;
+            
+            // Actualizar interfaz
             if (currentLang) {
                 currentLang.textContent = lang.toUpperCase();
             }
@@ -133,6 +183,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (langDropdown) {
                 langDropdown.classList.remove('active');
             }
+            
+            // Disparar evento personalizado
+            const event = new CustomEvent('languageChanged', { detail: { language: lang } });
+            document.dispatchEvent(event);
             
             console.log('🌍 Idioma cambiado a:', lang);
         });
