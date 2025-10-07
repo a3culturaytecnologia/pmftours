@@ -835,6 +835,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   MEJORA DE ESTRELLAS EN TESTIMONIOS
+   ============================================ */
+.testimonial-stars {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.testimonial-stars span {
+    color: #ffd202 !important;
+    font-size: 24px !important;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(255, 210, 2, 0.3);
+    display: inline-block;
+    animation: starGlow 2s ease-in-out infinite;
+}
+
+@keyframes starGlow {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.2);
+    }
+}
+
+/* ============================================
    CONTACT SECTION
    ============================================ */
 .contact {
