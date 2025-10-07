@@ -16,23 +16,21 @@ document.addEventListener('DOMContentLoaded', function() {
             heroBookBtn: "Book Tour",
             heroViewBtn: "View Packages",
             
-            // Botones y CTA
-            ctaBook: "Book Now",
-            ctaWhatsapp: "WhatsApp",
+            // About Section
+            aboutLabel: "Our Story",
+            aboutTitle: "More Than Transportation",
+            aboutDesc1: "We were born from a simple idea: to welcome travelers as friends.",
             
-            // Secciones Principales
-            aboutTitle: "About PMF Tours",
-            aboutDesc: "Your trusted partner for exploring Panama",
-            servicesTitle: "Our Services",
-            servicesDesc: "Discover what we offer",
-            valuesTitle: "Our Values",
-            galleryTitle: "Gallery",
-            contactTitle: "Contact Us",
+            // Services Section
+            servicesLabel: "Our Packages",
+            servicesTitle: "Experiences Designed for You",
             
-            // Formulario
+            // Contact Form
             formName: "Name",
             formEmail: "Email",
             formTour: "Select Tour",
+            tourCityTour: "Welcome City Tour",
+            tourBeach: "Beach Day Escape",
             formMessage: "Message",
             formSubmit: "Send Message"
         },
@@ -51,23 +49,21 @@ document.addEventListener('DOMContentLoaded', function() {
             heroBookBtn: "Reservar Tour",
             heroViewBtn: "Ver Paquetes",
             
-            // Botones y CTA
-            ctaBook: "Reservar Ahora",
-            ctaWhatsapp: "WhatsApp",
+            // About Section
+            aboutLabel: "Nuestra Historia",
+            aboutTitle: "Más Que Transporte",
+            aboutDesc1: "Nacimos de una idea simple: recibir a los viajeros como amigos.",
             
-            // Secciones Principales
-            aboutTitle: "Sobre PMF Tours",
-            aboutDesc: "Tu socio de confianza para explorar Panamá",
-            servicesTitle: "Nuestros Servicios",
-            servicesDesc: "Descubre lo que ofrecemos",
-            valuesTitle: "Nuestros Valores",
-            galleryTitle: "Galería",
-            contactTitle: "Contáctanos",
+            // Services Section
+            servicesLabel: "Nuestros Paquetes",
+            servicesTitle: "Experiencias Diseñadas Para Ti",
             
-            // Formulario
+            // Contact Form
             formName: "Nombre",
             formEmail: "Correo",
             formTour: "Seleccionar Tour",
+            tourCityTour: "Tour de Bienvenida a la Ciudad",
+            tourBeach: "Escapada de Playa",
             formMessage: "Mensaje",
             formSubmit: "Enviar Mensaje"
         }
@@ -100,13 +96,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Función para actualizar textos
+    // Función mejorada para actualizar textos
     function updateTexts(lang) {
         document.querySelectorAll('[data-translate]').forEach(element => {
             const key = element.getAttribute('data-translate');
             if (translations[lang]?.[key]) {
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                     element.placeholder = translations[lang][key];
+                } else if (element.tagName === 'SELECT') {
+                    element.options[0].text = translations[lang][key];
                 } else {
                     element.textContent = translations[lang][key];
                 }
@@ -114,14 +112,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Click en las opciones de idioma
+    // Manejar cambio de idioma
     langOptions.forEach(option => {
         option.addEventListener('click', function(e) {
             e.preventDefault();
             const lang = this.getAttribute('data-lang');
             
             // Actualizar idioma actual
-            currentLang.textContent = lang.toUpperCase();
+            if (currentLang) {
+                currentLang.textContent = lang.toUpperCase();
+            }
             
             // Actualizar textos
             updateTexts(lang);
@@ -130,15 +130,19 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('preferredLanguage', lang);
             
             // Cerrar dropdown
-            langDropdown.classList.remove('active');
+            if (langDropdown) {
+                langDropdown.classList.remove('active');
+            }
             
             console.log('🌍 Idioma cambiado a:', lang);
         });
     });
 
-    // Cargar idioma guardado al iniciar
+    // Inicializar con el idioma guardado
     const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-    currentLang.textContent = savedLang.toUpperCase();
+    if (currentLang) {
+        currentLang.textContent = savedLang.toUpperCase();
+    }
     updateTexts(savedLang);
 
     console.log('✅ Sistema de traducción inicializado');

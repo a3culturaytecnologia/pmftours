@@ -160,10 +160,10 @@
         <div class="section-container">
             <div class="about-content">
                 <div class="about-text">
-                    <span class="section-label">Nuestra Historia</span>
-                    <h2 class="section-title">Mucho más que transporte</h2>
+                    <span class="section-label" data-translate="aboutLabel">Nuestra Historia</span>
+                    <h2 class="section-title" data-translate="aboutTitle">Mucho más que transporte</h2>
 
-                    <p>Nacimos de una idea sencilla: recibir al viajero como se recibe a un amigo. Somos de aquí,
+                    <p data-translate="aboutDesc1">Nacimos de una idea sencilla: recibir al viajero como se recibe a un amigo. Somos de aquí,
                         conocemos cada playa, cada esquina histórica y cada secreto de Panamá.</p>
 
                     <p>Nuestro trabajo no es solo llevarte del punto A al B, sino abrirte la puerta a un país cálido,
@@ -232,8 +232,8 @@
     <section class="section services" id="servicios">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-label">Nuestros Paquetes</span>
-                <h2 class="section-title">Experiencias diseñadas para ti</h2>
+                <span class="section-label" data-translate="servicesLabel">Nuestros Paquetes</span>
+                <h2 class="section-title" data-translate="servicesTitle">Experiencias diseñadas para ti</h2>
                 <p class="section-subtitle">Descubre lo mejor de Panamá con la comodidad y seguridad que mereces. Cada
                     tour incluye transporte privado, guía local y flexibilidad total.</p>
             </div>
@@ -377,6 +377,10 @@
             <div class="testimonials-slider">
                 <div class="testimonial-item">
                     <div class="testimonial-content">
+                        <!-- Agregar ANTES del texto del testimonio -->
+                        <div class="testimonial-stars">
+                            <span style="color: #ffd202; font-size: 20px;">⭐⭐⭐⭐⭐</span>
+                        </div>
                         <p>"Una experiencia inolvidable. El trato fue excepcional y conocí lugares que nunca hubiera
                             encontrado sola."</p>
                     </div>
@@ -391,6 +395,10 @@
 
                 <div class="testimonial-item">
                     <div class="testimonial-content">
+                        <!-- Agregar ANTES del texto del testimonio -->
+                        <div class="testimonial-stars">
+                            <span style="color: #ffd202; font-size: 20px;">⭐⭐⭐⭐⭐</span>
+                        </div>
                         <p>"100% recomendados. Hicieron de mi viaje una aventura maravillosa. ¡Gracias PMF Tours!"</p>
                     </div>
                     <div class="testimonial-author">
@@ -404,6 +412,10 @@
 
                 <div class="testimonial-item">
                     <div class="testimonial-content">
+                        <!-- Agregar ANTES del texto del testimonio -->
+                        <div class="testimonial-stars">
+                            <span style="color: #ffd202; font-size: 20px;">⭐⭐⭐⭐⭐</span>
+                        </div>
                         <p>"El mejor servicio de transporte en Panamá. Siempre puntuales y con vehículos muy cómodos."
                         </p>
                     </div>
@@ -441,18 +453,18 @@
                     <form id="contactForm" class="contact-form">
                         <div class="form-group">
                             <i class='bx bx-user'></i>
-                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                            <input type="text" id="name" data-translate="formName" placeholder="Tu nombre" required>
                         </div>
                         <div class="form-group">
                             <i class='bx bx-envelope'></i>
-                            <input type="email" id="email" name="email" placeholder="Tu email" required>
+                            <input type="email" id="email" data-translate="formEmail" placeholder="Tu email" required>
                         </div>
                         <div class="form-group">
                             <i class='bx bx-package'></i>
-                            <select id="tourType" name="tourType" required>
+                            <select id="tourType" data-translate="formTour" required>
                                 <option value="">Selecciona un tour</option>
-                                <option value="city-tour">Welcome City Tour</option>
-                                <option value="beach">Beach Day Escape</option>
+                                <option value="city-tour" data-translate="tourCityTour">Welcome City Tour</option>
+                                <option value="beach" data-translate="tourBeach">Beach Day Escape</option>
                                 <option value="cultural">Cultural & History Tour</option>
                                 <option value="airport">Traslado Aeropuerto</option>
                                 <option value="custom">Tour Personalizado</option>
@@ -538,6 +550,44 @@
     <script src="./js/car-animation.js"></script>
     <script src="./js/mobile-menu.js"></script>
     <script src="./js/main.js"></script>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/50765347412?text=Hola!%20Quiero%20información%20sobre%20tours" 
+       class="floating-whatsapp"
+       target="_blank">
+        💬
+    </a>
+
+    <style>
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.15);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+    </style>
 </body>
 
 </html>
