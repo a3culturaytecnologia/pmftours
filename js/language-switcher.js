@@ -1,5 +1,32 @@
 // Sistema de traducción para PMF Tours
 document.addEventListener('DOMContentLoaded', function() {
+    const translations = {
+        en: {
+            navHome: "Home",
+            navAbout: "About Us",
+            navServices: "Services",
+            navValues: "Values",
+            navGallery: "Gallery",
+            navContact: "Contact",
+            heroTitle: "Your Gateway to Panama",
+            heroSubtitle: "Private Transportation & Authentic Tours with safety, punctuality, and authentic experiences.",
+            btnReserve: "Book Tour",
+            btnPackages: "View Packages"
+        },
+        es: {
+            navHome: "Inicio",
+            navAbout: "Nosotros",
+            navServices: "Servicios",
+            navValues: "Valores",
+            navGallery: "Galería",
+            navContact: "Contacto",
+            heroTitle: "Tu puerta a Panamá",
+            heroSubtitle: "Transporte & Tours Privados con seguridad, puntualidad y experiencias auténticas.",
+            btnReserve: "Reservar Tour",
+            btnPackages: "Ver Paquetes"
+        }
+    };
+
     const langBtn = document.querySelector('.lang-btn');
     const langDropdown = document.querySelector('.lang-dropdown');
     const currentLang = document.querySelector('.current-lang');
@@ -29,56 +56,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    function updateLanguage(lang) {
+        // Update text content
+        document.querySelectorAll('[data-translate]').forEach(element => {
+            const key = element.getAttribute('data-translate');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+
+        // Update current language display
+        if (currentLang) {
+            currentLang.textContent = lang.toUpperCase();
+        }
+
+        // Save preference
+        localStorage.setItem('preferredLanguage', lang);
+        console.log(`🌍 Idioma actualizado: ${lang}`);
+    }
+
     // Click en las opciones de idioma
     document.querySelectorAll('.lang-option').forEach(option => {
         option.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             const lang = option.dataset.lang;
-            currentLang.textContent = lang.toUpperCase();
-            
-            // Cambiar idioma
-            document.documentElement.lang = lang;
-            localStorage.setItem('preferredLanguage', lang);
-            
-            // Actualizar textos
-            updateTexts(lang);
-            
+            updateLanguage(lang);
             toggleDropdown(false);
         });
     });
 
     // Cargar idioma guardado
     const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-    currentLang.textContent = savedLang.toUpperCase();
-    document.documentElement.lang = savedLang;
-    updateTexts(savedLang);
+    updateLanguage(savedLang);
 });
-
-function updateTexts(lang) {
-    const translations = {
-        en: {
-            navHome: "Home",
-            navAbout: "About Us",
-            navServices: "Services",
-            navGallery: "Gallery",
-            navContact: "Contact",
-            // ... más traducciones
-        },
-        es: {
-            navHome: "Inicio",
-            navAbout: "Nosotros",
-            navServices: "Servicios",
-            navGallery: "Galería",
-            navContact: "Contacto",
-            // ... más traducciones
-        }
-    };
-
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[lang]?.[key]) {
-            element.textContent = translations[lang][key];
-        }
-    });
-}
