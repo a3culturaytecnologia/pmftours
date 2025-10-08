@@ -310,19 +310,34 @@ function initCarAnimation() {
 function initFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
     
+    if (!faqItems.length) {
+        console.warn('⚠️ No se encontraron elementos FAQ');
+        return;
+    }
+    
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        if (!question || !answer) return;
         
         question.addEventListener('click', () => {
-            // Cerrar otros items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
+            const isActive = item.classList.contains('active');
+            
+            // Cerrar todos los items
+            faqItems.forEach(faq => {
+                faq.classList.remove('active');
+                const otherAnswer = faq.querySelector('.faq-answer');
+                if (otherAnswer) otherAnswer.style.maxHeight = null;
             });
             
-            // Toggle item actual
-            item.classList.toggle('active');
+            // Abrir el clickeado si estaba cerrado
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = `${answer.scrollHeight}px`;
+            }
         });
     });
+    
+    console.log('✅ FAQ inicializado con animaciones mejoradas');
 }

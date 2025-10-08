@@ -712,6 +712,47 @@ h1, h2, h3, h4, h5, h6 {
     margin: 15px 0;
 }
 
+.price-container {
+    margin: 15px 0;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--gris-claro);
+}
+
+.price {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--pmf-rojo);
+    margin-bottom: 5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.price-details {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    opacity: 0.9;
+}
+
+.price-details span {
+    color: var(--negro);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.price-details small {
+    color: var(--gris);
+    font-size: 12px;
+}
+
+/* Hover effect */
+.price-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
 .custom-tour-cta {
     background: var(--gris-claro);
     padding: 40px 35px;
