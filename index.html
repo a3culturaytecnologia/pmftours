@@ -638,7 +638,7 @@
     <script>
         const translations = window.translations || {};
         const keys = new Set();
-        document.querySelectorAll('[data-translate]').forEach(el => keys.add(el.getAttribute('data-translate')));
+        document.querySelectorAll('[data-translate]').forEach(el => keys.add(((el.dataset && el.dataset.translate) || el.getAttribute('data-translate'))));
         const missing = [...keys].filter(k => !(translations.en && translations.en[k]));
         console.log('Total elementos con [data-translate]:', document.querySelectorAll('[data-translate]').length);
         console.log('Claves únicas encontradas:', keys.size);
@@ -668,7 +668,7 @@
     function updateTexts(lang) {
       const dict = translations[lang] || {};
       document.querySelectorAll('[data-translate]').forEach(el => {
-        const key = el.getAttribute('data-translate');
+        const key = ((el.dataset && el.dataset.translate) || el.getAttribute('data-translate'));
         const val = dict[key];
         if (!val) {
           console.warn(`⚠️ No se encontró traducción para: ${key} en ${lang}`);
