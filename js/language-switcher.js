@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateTexts(lang) {
       const dict = window.translations && window.translations[lang] ? window.translations[lang] : (translations && translations[lang] ? translations[lang] : {});
       document.querySelectorAll('[data-translate]').forEach(el => {
-        const key = (el.dataset && el.dataset.translate) || el.getAttribute('data-translate');
+        const key = (el.dataset && el.dataset.translate) || (el.dataset && el.dataset.translate) || el.getAttribute('data-translate');
         const val = dict[key];
         if (!val) {
           console.warn(`⚠️ No se encontró traducción para: ${key} en ${lang}`);
