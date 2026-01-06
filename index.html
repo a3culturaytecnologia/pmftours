@@ -583,7 +583,7 @@
     </section>
 
     <!-- Scripts -->
-    <script src="js/i18n.js"></script>
+    <script src="js/translations.en.js"></script>
     <script src="./js/language-switcher.js"></script>
     <script src="./js/hero-slider.js"></script>
     <script src="./js/form-handler.js"></script>
@@ -658,7 +658,7 @@
             if(!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
             const el = node.parentElement;
             if(!el) return NodeFilter.FILTER_REJECT;
-            if(el.closest('script,style,[data-translate,meta]')) return NodeFilter.FILTER_REJECT;
+            if(el.closest('script,style,[data-translate],meta')) return NodeFilter.FILTER_REJECT;
             return NodeFilter.FILTER_ACCEPT;
           }
         });
@@ -693,3 +693,4 @@
 </body>
 
 </html>
+
