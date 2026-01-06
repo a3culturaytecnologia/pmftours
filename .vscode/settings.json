@@ -1,1 +1,8 @@
-{ "files.trimTrailingWhitespace": true }
+{
+  "files.trimTrailingWhitespace": true,
+  "cSpell.words": [
+    "Divekar",
+    "Sportage",
+    "Tocumen"
+  ]
+}
