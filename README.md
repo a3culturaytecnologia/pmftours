@@ -50,16 +50,19 @@ pmftours-website/
 ## ⚙️ Instalación
 
 1. Clona el repositorio:
+
 ```bash
 git clone https://github.com/a3culturaytecnologia/pmftours.git
 ```
 
 2. Navega al directorio del proyecto:
+
 ```bash
 cd pmftours-website
 ```
 
 3. Abre el proyecto en VS Code:
+
 ```bash
 code .
 ```
@@ -71,22 +74,26 @@ code .
 ## 📦 Despliegue
 
 El sitio está desplegado en GitHub Pages:
+
 - URL: https://a3culturaytecnologia.github.io/pmftours/
 - Branch: main
 - Carpeta: / (root)
 
 ### Estado del Despliegue
+
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fa3culturaytecnologia.github.io%2Fpmftours)
 
 ### Pasos para despliegue en GitHub Pages:
 
 1. Crear un repositorio en GitHub
 2. Subir el código:
+
 ```bash
 git add .
 git commit -m "Initial commit"
 git push origin main
 ```
+
 3. Activar GitHub Pages en la configuración del repositorio
 
 ## 📋 Prerrequisitos
@@ -98,24 +105,29 @@ git push origin main
 ## 🎨 Personalización
 
 ### Colores
+
 Los colores principales se pueden modificar en las variables CSS:
+
 ```css
 :root {
-    --pmf-rojo: #a70007;
-    --pmf-verde: #058600;
-    --pmf-teal: #01979e;
-    --pmf-amarillo: #ffd202;
+  --pmf-rojo: #a70007;
+  --pmf-verde: #058600;
+  --pmf-teal: #01979e;
+  --pmf-amarillo: #ffd202;
 }
 ```
 
 ### Fuentes
+
 El sitio utiliza:
+
 - Montserrat (600, 700, 800) para títulos
 - Open Sans (400, 600) para texto
 
 ## 📱 Responsive Design
 
 El sitio está optimizado para:
+
 - Móviles (< 576px)
 - Tablets (< 768px)
 - Laptops (< 992px)
@@ -136,11 +148,13 @@ El sitio está optimizado para:
 ## 🔧 Mantenimiento
 
 ### Actualización de contenido
+
 - Las imágenes se deben optimizar antes de subirlas a `/image`
 - Los textos multiidioma se encuentran en `/js/language-switcher.js`
 - Las animaciones del carro se pueden modificar en `/js/car-animation.js`
 
 ### Optimización
+
 - Comprimir imágenes con [TinyPNG](https://tinypng.com/)
 - Minificar CSS y JS para producción
 - Verificar PageSpeed Insights regularmente
@@ -167,6 +181,7 @@ Las contribuciones son bienvenidas:
 5. Abre un Pull Request
 
 ## 🌟 Demo
+
 Visita la demo en vivo: [PMF Tours Website](https://a3culturaytecnologia.github.io/pmftours/)
 
 ## 📈 Estado del Proyecto
@@ -204,6 +219,7 @@ start http://localhost:8000
 ## 📞 Contacto
 
 Pierre Flores
+
 - GitHub: [@a3culturaytecnologia](https://github.com/a3culturaytecnologia)
 - Instagram: [@pmftours](https://instagram.com/pmftours)
 - WhatsApp: [+507 6534-7412](https://wa.me/50765347412)
@@ -212,12 +228,14 @@ Pierre Flores
 ## 🔄 Actualizaciones
 
 El sitio se actualiza regularmente con:
+
 - Nuevas funcionalidades
 - Mejoras de rendimiento
 - Correcciones de bugs
 - Actualizaciones de contenido
 
 Para estar al tanto de las últimas actualizaciones:
+
 1. Dale ⭐ al repositorio
 2. Activa las notificaciones de GitHub
 3. Sigue el [canal de cambios](https://github.com/A3InfinitaAfinidad/pmftours-website/releases)
@@ -230,12 +248,14 @@ Para estar al tanto de las últimas actualizaciones:
 - [Google Fonts](https://fonts.google.com/)
 
 ## 📊 Analytics y Métricas
+
 - Google Analytics implementado
 - Seguimiento de conversiones WhatsApp
 - Métricas de velocidad de carga
 - Monitoreo de UX
 
 ## 🔄 Workflow de Desarrollo
+
 ```bash
 # Desarrollo local
 npm install
@@ -249,18 +269,21 @@ npm run deploy
 ```
 
 ## 📱 PWA Support
+
 - Instalable como app
 - Funciona offline
 - Notificaciones push
 - Actualización automática
 
 ## 🌍 Optimización Internacional
+
 - Contenido bilingüe (ES/EN)
 - Precios en USD
 - Horarios en zona horaria local
 - Formatos internacionales
 
 ## 📈 Roadmap 2024
+
 - [ ] Reservas en línea
 - [ ] Blog de viajes
 - [ ] Sistema de reviews
@@ -269,6 +292,7 @@ npm run deploy
 ## 📝 Registro de Despliegue
 
 ### Último despliegue exitoso
+
 ```bash
 Writing objects: 100% (89/89), 25.16 MiB | 1.04 MiB/s, done.
 To https://github.com/a3culturaytecnologia/pmftours.git
@@ -286,7 +310,7 @@ To https://github.com/a3culturaytecnologia/pmftours.git
 - **URL Producción**: [https://a3culturaytecnologia.github.io/pmftours/](https://a3culturaytecnologia.github.io/pmftours/)
 - **Última Actualización**: 4 de octubre de 2025
 - **Estado**: ✅ Operativo
-- **Performance**: 
+- **Performance**:
   - 🚀 Lighthouse Score: 95/100
   - ⚡ Tiempo de carga: <2s
   - 📱 Mobile-friendly: Sí

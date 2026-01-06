@@ -1,7 +1,7 @@
 /* Todo el código JavaScript de la animación */
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🔄 Iniciando animación del carro...');
-    
+
     const car = document.querySelector('#pmfCar');
     if (!car) {
         console.warn('⚠️ Elemento del carro no encontrado');
@@ -21,12 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
             );
             const windowHeight = window.innerHeight;
             const scrollPercent = (scrollPos / (height - windowHeight)) * 100;
-            
+
             // Calcular posición horizontal con límites seguros
             const carWidth = car.offsetWidth || 100;
             const maxX = Math.max(0, window.innerWidth - carWidth);
             const posX = Math.min(maxX, (scrollPercent / 100) * maxX);
-            
+
             // Aplicar transformación con suavizado
             requestAnimationFrame(() => {
                 car.style.transform = `translateX(${posX}px)`;
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Optimizar evento de scroll con throttling
     window.addEventListener('scroll', function() {
         lastKnownScrollPosition = window.scrollY;
-        
+
         if (!ticking) {
             requestAnimationFrame(() => {
                 updateCarPosition(lastKnownScrollPosition);

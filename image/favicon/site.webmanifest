@@ -52,9 +52,7 @@
         {
             "src": "../gallery/imagen1.jpg",
             "type": "image/jpeg",
-            "sizes": "1280x720",
-            "platform": "wide",
-            "label": "Tour por el interior de Panamá"
+            "sizes": "1280x720"
         }
     ]
 }

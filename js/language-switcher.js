@@ -9,22 +9,22 @@ document.addEventListener('DOMContentLoaded', function() {
             navValues: "Values",
             navGallery: "Gallery",
             navContact: "Contact",
-            
+
             // Hero Section
             heroTitle: "Your Gateway to Panama",
             heroSubtitle: "Private Transportation & Authentic Tours with safety, punctuality, and authentic experiences.",
             heroBookBtn: "Book Tour",
             heroViewBtn: "View Packages",
-            
+
             // About Section
             aboutLabel: "Our Story",
             aboutTitle: "More Than Transportation",
             aboutDesc1: "We were born from a simple idea: to welcome travelers as friends.",
-            
+
             // Services Section
             servicesLabel: "Our Packages",
             servicesTitle: "Experiences Designed for You",
-            
+
             // Contact Form
             formName: "Name",
             formEmail: "Email",
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             tourBeach: "Beach Day Escape",
             formMessage: "Message",
             formSubmit: "Send Message",
-            
+
             // Meta datos
             siteTitle: "PMF Tours - Your Gateway to Panama",
             metaDescription: "Discover Panama with PMF Tours. We offer private transportation and authentic tours to make your visit unforgettable."
@@ -46,22 +46,22 @@ document.addEventListener('DOMContentLoaded', function() {
             navValues: "Valores",
             navGallery: "Galería",
             navContact: "Contacto",
-            
+
             // Hero Section
             heroTitle: "Tu puerta a Panamá",
             heroSubtitle: "Transporte & Tours Privados con seguridad, puntualidad y experiencias auténticas.",
             heroBookBtn: "Reservar Tour",
             heroViewBtn: "Ver Paquetes",
-            
+
             // About Section
             aboutLabel: "Nuestra Historia",
             aboutTitle: "Más Que Transporte",
             aboutDesc1: "Nacimos de una idea simple: recibir a los viajeros como amigos.",
-            
+
             // Services Section
             servicesLabel: "Nuestros Paquetes",
             servicesTitle: "Experiencias Diseñadas Para Ti",
-            
+
             // Contact Form
             formName: "Nombre",
             formEmail: "Correo",
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             tourBeach: "Escapada de Playa",
             formMessage: "Mensaje",
             formSubmit: "Enviar Mensaje",
-            
+
             // Meta datos
             siteTitle: "PMF Tours - Tu puerta a Panamá",
             metaDescription: "Descubre Panamá con PMF Tours. Ofrecemos transporte privado y tours auténticos para hacer de tu visita algo inolvidable."
@@ -104,59 +104,37 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    function setElementTextPreserveChildren(el, val) {
+      const textNodes = [...el.childNodes].filter(n => n.nodeType === Node.TEXT_NODE);
+      if (textNodes.length) {
+        textNodes[textNodes.length - 1].nodeValue = ' ' + val;
+      } else {
+        el.appendChild(document.createTextNode(' ' + val));
+      }
+    }
+
     // Función mejorada para actualizar textos
     function updateTexts(lang) {
-        try {
-            // Actualizar título del documento
-            document.title = translations[lang].siteTitle || 'PMF Tours';
-            
-            // Actualizar atributo lang del HTML
-            document.documentElement.lang = lang;
-
-            // Actualizar todos los elementos traducibles
-            document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.getAttribute('data-translate');
-                
-                if (!translations[lang]?.[key]) {
-                    console.warn(`⚠️ No se encontró traducción para: ${key} en ${lang}`);
-                    return;
-                }
-
-                switch (element.tagName.toLowerCase()) {
-                    case 'input':
-                        element.placeholder = translations[lang][key];
-                        break;
-                    case 'textarea':
-                        element.placeholder = translations[lang][key];
-                        break;
-                    case 'select':
-                        // Manejar opciones de select
-                        if (element.options && element.options[0]) {
-                            element.options[0].text = translations[lang][key];
-                        }
-                        break;
-                    case 'a':
-                        // Mantener href original
-                        const href = element.getAttribute('href');
-                        element.textContent = translations[lang][key];
-                        if (href) element.setAttribute('href', href);
-                        break;
-                    default:
-                        element.textContent = translations[lang][key];
-                }
-            });
-
-            // Actualizar metadatos
-            const metaDescription = document.querySelector('meta[name="description"]');
-            if (metaDescription) {
-                metaDescription.content = translations[lang].metaDescription || '';
-            }
-
-            console.log(`✅ Textos actualizados a: ${lang}`);
-            
-        } catch (error) {
-            console.error('❌ Error al actualizar textos:', error);
+      const dict = window.translations && window.translations[lang] ? window.translations[lang] : (translations && translations[lang] ? translations[lang] : {});
+      document.querySelectorAll('[data-translate]').forEach(el => {
+        const key = el.getAttribute('data-translate');
+        const val = dict[key];
+        if (!val) {
+          console.warn(`⚠️ No se encontró traducción para: ${key} en ${lang}`);
+          return;
         }
+        const tag = el.tagName.toUpperCase();
+        if (tag === 'INPUT' || tag === 'TEXTAREA') {
+          el.placeholder = val;
+        } else if (tag === 'OPTION') {
+          el.textContent = val;
+        } else if (tag === 'META') {
+          el.setAttribute('content', val);
+        } else {
+          setElementTextPreserveChildren(el, val);
+        }
+      });
+      console.log('✅ Textos actualizados a:', lang);
     }
 
     // Mejorar el manejo del cambio de idioma
@@ -164,30 +142,30 @@ document.addEventListener('DOMContentLoaded', function() {
         option.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            
+
             const lang = this.getAttribute('data-lang');
             if (!lang) return;
-            
+
             // Actualizar interfaz
             if (currentLang) {
                 currentLang.textContent = lang.toUpperCase();
             }
-            
+
             // Actualizar textos
             updateTexts(lang);
-            
+
             // Guardar preferencia
             localStorage.setItem('preferredLanguage', lang);
-            
+
             // Cerrar dropdown
             if (langDropdown) {
                 langDropdown.classList.remove('active');
             }
-            
+
             // Disparar evento personalizado
             const event = new CustomEvent('languageChanged', { detail: { language: lang } });
             document.dispatchEvent(event);
-            
+
             console.log('🌍 Idioma cambiado a:', lang);
         });
     });
@@ -200,4 +178,18 @@ document.addEventListener('DOMContentLoaded', function() {
     updateTexts(savedLang);
 
     console.log('✅ Sistema de traducción inicializado');
+});
+
+// Asegura que translations esté en window (si translations es una variable local)
+window.translations = window.translations || (typeof translations !== 'undefined' ? translations : { es: {}, en: {} });
+
+// Expone updateTexts para poder invocarlo desde la consola o desde otras partes
+if (typeof updateTexts === 'function') {
+  window.updateTexts = updateTexts;
+}
+
+// Inicializa el idioma guardado al cargar
+document.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('preferredLanguage') || 'es';
+  if (typeof window.updateTexts === 'function') window.updateTexts(saved);
 });

@@ -52,7 +52,7 @@ self.addEventListener('fetch', (event) => {
                 return fetch(event.request)
                     .then((response) => {
                         // Solo cachear peticiones GET y recursos locales
-                        if (event.request.method === 'GET' && 
+                        if (event.request.method === 'GET' &&
                             event.request.url.startsWith(self.location.origin)) {
                             const cacheCopy = response.clone();
                             caches.open(CACHE_NAME)
