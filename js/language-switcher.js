@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateTexts(lang) {
       const dict = window.translations && window.translations[lang] ? window.translations[lang] : (translations && translations[lang] ? translations[lang] : {});
       document.querySelectorAll('[data-translate]').forEach(el => {
-        const key = (el.dataset && el.dataset.translate) || (el.dataset && el.dataset.translate) || el.getAttribute('data-translate');
+        const key = (el.dataset && el.dataset.translate) || (el.dataset && el.dataset.translate) || el.($1.dataset && $1.dataset.translate) || getDataTranslate($1);
         const val = dict[key];
         if (!val) {
           console.warn(`⚠️ No se encontró traducción para: ${key} en ${lang}`);
@@ -193,3 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem('preferredLanguage') || 'es';
   if (typeof window.updateTexts === 'function') window.updateTexts(saved);
 });
+
+function getDataTranslate(el) {
+  if (!el) return null;
+  return (el.dataset && el.dataset.translate) || getDataTranslate(el);
+}
