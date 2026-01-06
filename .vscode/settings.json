@@ -1,18 +1,1 @@
-{
-  "cSpell.words": [
-    "Anand",
-    "Blas",
-    "Boxicons",
-    "Divekar",
-    "historico",
-    "iconito",
-    "INICIALIZACIÓN",
-    "minmax",
-    "Sportage",
-    "STYLESHEET",
-    "tocumen"
-  ],
-  "commentTranslate.targetLanguage": "es",
-  "commentTranslate.hover.enabled": true,
-  "files.trimTrailingWhitespace": true
-}
+{ "files.trimTrailingWhitespace": true }
