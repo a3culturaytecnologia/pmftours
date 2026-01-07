@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pmf-cache-v3';
+/***const CACHE_NAME = 'pmf-cache-v3';
 const OFFLINE_URL = '/offline.html';
 
 // Assets críticos para cachear (solo locales)
@@ -109,4 +109,4 @@ globalThis.addEventListener('message', event => {
   if (event.data?.type === 'SKIP_WAITING') {
     globalThis.skipWaiting();
   }
-});
+});///*** */
