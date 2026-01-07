@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Obtener elementos
     const langBtn = document.querySelector('.lang-btn');
     const langDropdown = document.querySelector('.lang-dropdown');
-    const currentLang = document.querySelector('.current-lang');
+    const currentLangEls = document.querySelectorAll('.current-lang');
     const langOptions = document.querySelectorAll('.lang-option');
 
     function toggleDropdown(show) {
@@ -201,9 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!lang) return;
 
             // Actualizar interfaz
-            if (currentLang) {
-                currentLang.textContent = lang.toUpperCase();
-            }
+            currentLangEls.forEach(el => el.textContent = lang.toUpperCase());
 
             // Actualizar textos
             updateTexts(lang);
@@ -226,10 +224,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Inicializar con el idioma guardado
     const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-    if (currentLang) {
-        currentLang.textContent = savedLang.toUpperCase();
-    }
+    currentLangEls.forEach(el => el.textContent = savedLang.toUpperCase());
     updateTexts(savedLang);
 
     console.log('✅ Sistema de traducción inicializado');
 });
+
