@@ -1,696 +1,643 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="PMF Tours - Transporte privado y tours auténticos en Panamá. Traslados de aeropuerto, city tours, playas y experiencias culturales con conductor local bilingüe.">
-    <meta name="keywords"
-        content="tours panamá, transporte privado panamá, traslado aeropuerto tocumen, city tour panama, tours casco antiguo, playas panama">
-    <meta name="author" content="PMF Tours">
-    <meta name="theme-color" content="#a70007">
+    <meta
+      name="description"
+      content="PMF Tours - Transporte privado y tours auténticos en Panamá. Traslados de aeropuerto, city tours, playas y experiencias culturales con conductor local bilingüe."
+    />
+    <meta
+      name="keywords"
+      content="tours Panamá, transporte privado Panamá, traslado aeropuerto Panamá, Casco Viejo tour, conductor local Panamá"
+    />
+    <meta name="author" content="PMF Tours" />
+
     <title>PMF Tours - Tu puerta a Panamá | Transporte y Tours Privados</title>
 
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="./image/favicon/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="./image/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="./image/favicon/favicon-96x96.png">
-    <link rel="apple-touch-icon" href="./image/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/svg+xml" href="./image/favicon/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="./image/favicon/favicon.ico" />
 
-    <!-- Google Fonts - Optimizado -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload críticos -->
+    <link rel="preload" as="image" href="./image/Hero.png" />
+    <link rel="preload" as="image" href="./image/logo.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Boxicons - Última versión -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/kia-animation.css">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
-    <!-- AOS - Animate On Scroll -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/kia-animation.css" />
+  </head>
 
-    <!-- Swiper - Slider moderno -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-
-    <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#a70007">
-    <link rel="manifest" href="./site.webmanifest">
-
-    <!-- PWA Icons -->
-    <link rel="icon" type="image/png" sizes="96x96" href="./image/favicon/favicon-96x96.png">
-    <link rel="apple-touch-icon" href="./image/favicon/apple-touch-icon.png">
-
-    <!-- Preload de recursos críticos -->
-    <link rel="preload" href="./image/logo.png" as="image">
-    <link rel="preload" href="./image/Hero.png" as="image">
-    <link rel="preload" href="./css/styles.css" as="style">
-    <link rel="preload" href="./js/main.js" as="script">
-</head>
-
-<body>
-    <!-- Header -->
+  <body>
+    <!-- ================= HEADER ================= -->
     <header class="header" id="header">
-        <div class="nav-container">
-            <div class="logo-container">
-                <!-- Logo - Carga prioritaria -->
-                <img src="./image/logo.png"
-                     alt="PMF Tours Logo"
-                     class="logo-image"
-                     loading="eager"
-                     fetchpriority="high">
-                <span class="logo-text">PMF TOURS</span>
-            </div>
-
-            <!-- Navegación con data-translate -->
-            <div class="nav-links">
-                <a href="#inicio" data-translate="navHome">Inicio</a>
-                <a href="#nosotros" data-translate="navAbout">Nosotros</a>
-                <a href="#servicios" data-translate="navServices">Servicios</a>
-                <a href="#valores" data-translate="navValues">Valores</a>
-                <a href="#galeria" data-translate="navGallery">Galería</a>
-                <a href="#contacto" data-translate="navContact">Contacto</a>
-
-                <!-- Selector de idiomas -->
-                <div class="language-switcher">
-                    <button class="lang-btn">
-                        <span class="current-lang">ES</span>
-                        <i class="bx bx-chevron-down"></i>
-                    </button>
-                    <div class="lang-dropdown">
-                        <a href="#" class="lang-option" data-lang="es">
-                            <span>🇪🇸</span> Español
-                        </a>
-                        <a href="#" class="lang-option" data-lang="en">
-                            <span>🇺🇸</span> English
-                        </a>
-                    </div>
-                </div>
-                <div class="lang-overlay"></div>
-
-                <!-- Botón WhatsApp - Versión mejorada -->
-                <a href="https://wa.me/50765347412?text=¡Hola!%20Quiero%20descubrir%20Panamá%20con%20PMF%20Tours.%20¿Me%20puedes%20dar%20más%20información%20sobre%20los%20tours%20y%20reservas?"
-                   class="btn-whatsapp-nav"
-                   target="_blank"
-                   aria-label="Contactar por WhatsApp">
-                   <i class="bx bxl-whatsapp"></i>
-                   <span>WhatsApp</span>
-                </a>
-            </div>
-
-            <!-- Botón menú móvil -->
-            <button class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+      <div class="nav-container">
+        <div class="logo-container">
+          <img
+            src="./image/logo.png"
+            alt="PMF Tours Logo"
+            class="logo-image"
+            loading="eager"
+          />
+          <span class="logo-text">PMF TOURS</span>
         </div>
+
+        <div class="nav-links">
+          <a href="#inicio" data-translate="navHome">Inicio</a>
+          <a href="#nosotros" data-translate="navAbout">Nosotros</a>
+          <a href="#servicios" data-translate="navServices">Servicios</a>
+          <a href="#galeria" data-translate="navGallery">Galería</a>
+          <a href="#faq" data-translate="navFAQ">FAQ</a>
+          <a href="#contacto" data-translate="navContact">Contacto</a>
+
+          <div class="language-switcher">
+            <button class="lang-btn" id="langBtn" type="button">
+              <span id="currentLang">ES</span>
+              <i class="bx bx-chevron-down"></i>
+            </button>
+            <div class="lang-dropdown" id="langDropdown">
+              <a href="#" class="lang-option" data-lang="es">🇪🇸 Español</a>
+              <a href="#" class="lang-option" data-lang="en">🇺🇸 English</a>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/50765347412?text=¡Hola!%20Quiero%20reservar%20mi%20tour%20con%20PMF%20Tours."
+            class="btn-whatsapp-nav"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="bx bxl-whatsapp"></i>
+            WhatsApp
+          </a>
+        </div>
+
+        <button
+          class="mobile-menu-toggle"
+          id="mobileMenuToggle"
+          type="button"
+          aria-label="Toggle mobile menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </header>
 
-    <!-- Navegación -->
-    <nav>
-        <a href="#inicio" data-translate="navHome">Inicio</a>
-        <a href="#nosotros" data-translate="navAbout">Nosotros</a>
-        <a href="#servicios" data-translate="navServices">Servicios</a>
-        <a href="#valores" data-translate="navValues">Valores</a>
-        <a href="#galeria" data-translate="navGallery">Galería</a>
-        <a href="#contacto" data-translate="navContact">Contacto</a>
-    </nav>
-
-    <!-- Hero Section -->
+    <!-- ================= HERO ================= -->
     <section class="hero" id="inicio">
-        <div class="hero-slider" id="heroSlider">
-            <div class="hero-slide active">
-                <!-- Hero image - Carga prioritaria -->
-                <img src="./image/Hero.png"
-                     alt="Ciudad de Panamá"
-                     loading="eager"
-                     fetchpriority="high">
-            </div>
-            <div class="hero-slide">
-                <img src="./image/gallery/casco-viejo.png" alt="Tours en Casco Antiguo" loading="lazy">
-            </div>
-            <div class="hero-slide">
-                <img src="./image/tours/Playa.png" alt="Experiencias en Playa" loading="lazy">
-            </div>
-            <div class="hero-slide">
-                <img src="./image/gallery/imagen2.jpg" alt="Experiencias Culturales" loading="lazy">
-            </div>
+      <div class="hero-slider">
+        <div class="hero-slide active">
+          <img src="./image/Hero.png" alt="Panamá Ciudad" loading="eager" />
         </div>
+        <div class="hero-slide">
+          <img
+            src="./image/gallery/casco-viejo.png"
+            alt="Casco Antiguo"
+            loading="lazy"
+          />
+        </div>
+        <div class="hero-slide">
+          <img
+            src="./image/tours/Playa.png"
+            alt="Playa en Panamá"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 data-translate="heroTitle">Tu puerta a Panamá</h1>
+        <p data-translate="heroSubtitle">
+          Transporte y tours privados con seguridad, puntualidad y experiencias
+          auténticas.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contacto" class="btn btn-primary">
+            <i class="bx bx-map"></i>
+            <span data-translate="heroBtn1">Reservar Tour</span>
+          </a>
+          <a href="#servicios" class="btn btn-secondary">
+            <i class="bx bx-package"></i>
+            <span data-translate="heroBtn2">Ver Paquetes</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        <div class="hero-overlay"></div>
+    <!-- ================= CÓMO FUNCIONA ================= -->
+    <section class="section how-it-works" id="como-funciona" data-aos="fade-up">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="howItWorksLabel"
+            >Proceso Simple</span
+          >
+          <h2 class="section-title" data-translate="howItWorksTitle">
+            ¿Cómo funciona PMF Tours?
+          </h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card" data-aos="fade-right">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3 data-translate="step1Title">Escríbenos por WhatsApp</h3>
+              <p data-translate="step1Desc">
+                Cuéntanos tus planes, fechas y lo que buscas. Estamos 24/7.
+              </p>
+            </div>
+          </div>
+          <div class="step-card" data-aos="fade-up">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3 data-translate="step2Title">Confirmamos y personalizamos</h3>
+              <p data-translate="step2Desc">
+                Te enviamos detalles, ruta, horarios y precio fijo en minutos.
+              </p>
+            </div>
+          </div>
+          <div class="step-card" data-aos="fade-left">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3 data-translate="step3Title">Te recogemos a tiempo</h3>
+              <p data-translate="step3Desc">
+                Puntual, con cartel y sonrisa. Incluso si tu vuelo se retrasa.
+              </p>
+            </div>
+          </div>
+          <div class="step-card" data-aos="fade-up">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3 data-translate="step4Title">Disfruta sin preocupaciones</h3>
+              <p data-translate="step4Desc">
+                Transporte cómodo, guía local y flexibilidad total durante tu
+                tour.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="hero-content">
-            <!-- Títulos y contenido con data-translate -->
-            <h1 class="hero-title" data-translate="heroTitle">Tu puerta a Panamá</h1>
-            <p class="hero-subtitle" data-translate="heroSubtitle">Transporte & Tours Privados con seguridad, puntualidad y experiencias auténticas.
+    <!-- ================= NOSOTROS ================= -->
+    <section class="section about" id="nosotros" data-aos="fade-up">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="aboutLabel"
+            >Conócenos</span
+          >
+          <h2 class="section-title" data-translate="aboutTitle">
+            Sobre PMF Tours
+          </h2>
+        </div>
+        <div class="about-content">
+          <p data-translate="aboutDesc">
+            Somos una empresa local dedicada al transporte privado y tours
+            personalizados en Panamá. Nuestro objetivo es que vivas el país de
+            forma auténtica, segura y sin estrés.
+          </p>
+          <p data-translate="aboutDesc2">
+            Fundado por Pierre, un panameño apasionado por su tierra, PMF Tours
+            nace del deseo de ofrecer experiencias reales, lejos del turismo
+            masivo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= POR QUÉ ELEGIRNOS ================= -->
+    <section
+      class="section why-choose"
+      id="por-que-elegirnos"
+      data-aos="fade-up"
+    >
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="whyChooseLabel"
+            >Ventaja PMF</span
+          >
+          <h2 class="section-title" data-translate="whyChooseTitle">
+            ¿Por qué elegir PMF Tours?
+          </h2>
+          <p class="section-subtitle" data-translate="whyChooseSubtitle">
+            Más allá del transporte: una experiencia local, segura y sin
+            sorpresas.
+          </p>
+        </div>
+        <div class="why-choose-grid">
+          <div class="why-card" data-aos="zoom-in">
+            <i class="bx bx-map-alt"></i>
+            <h3 data-translate="whyLocalTitle">Somos locales</h3>
+            <p data-translate="whyLocalDesc">
+              No somos una app. Somos panameños que te muestran rincones que no
+              están en las guías.
             </p>
-
-            <!-- Botones con data-translate -->
-            <div class="hero-buttons">
-                <a href="#contacto" class="btn btn-primary" data-translate="btnReserve">
-                    <i class="bx bx-map"></i>
-                    Reservar Tour
-                </a>
-                <a href="#servicios" class="btn btn-secondary" data-translate="btnPackages">
-                    <i class="bx bx-package"></i>
-                    Ver Paquetes
-                </a>
-            </div>
+          </div>
+          <div class="why-card" data-aos="zoom-in" data-aos-delay="100">
+            <i class="bx bx-shield"></i>
+            <h3 data-translate="whySafeTitle">Seguridad total</h3>
+            <p data-translate="whySafeDesc">
+              Vehículo asegurado, conductor verificado y monitoreo de vuelos
+              incluido.
+            </p>
+          </div>
+          <div class="why-card" data-aos="zoom-in" data-aos-delay="200">
+            <i class="bx bx-time-five"></i>
+            <h3 data-translate="whyPunctualTitle">Puntualidad garantizada</h3>
+            <p data-translate="whyPunctualDesc">
+              Llegarás a tiempo a tu vuelo, hotel o cita. Siempre.
+            </p>
+          </div>
+          <div class="why-card" data-aos="zoom-in" data-aos-delay="300">
+            <i class="bx bx-world"></i>
+            <h3 data-translate="whyBilingualTitle">Bilingüe</h3>
+            <p data-translate="whyBilingualDesc">
+              Comunicación fluida en español e inglés. Sin malentendidos.
+            </p>
+          </div>
+          <div class="why-card" data-aos="zoom-in" data-aos-delay="400">
+            <i class="bx bx-car"></i>
+            <h3 data-translate="whyVehicleTitle">Flota premium</h3>
+            <p data-translate="whyVehicleDesc">
+              Kia Sportage moderno, con aire acondicionado, agua fría y WiFi
+              móvil (bajo solicitud).
+            </p>
+          </div>
+          <div class="why-card" data-aos="zoom-in" data-aos-delay="500">
+            <i class="bx bx-gift"></i>
+            <h3 data-translate="whyFlexibleTitle">Flexibilidad real</h3>
+            <p data-translate="whyFlexibleDesc">
+              Paradas extra, cambios de ruta o recomendaciones gastronómicas:
+              ¡todo incluido!
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section about" id="nosotros">
-        <div class="section-container">
-            <div class="about-content">
-                <div class="about-text">
-                    <span class="section-label" data-translate="aboutLabel">Nuestra Historia</span>
-                    <h2 class="section-title" data-translate="aboutTitle">Mucho más que transporte</h2>
-
-                    <p data-translate="aboutDesc1">Nacimos de una idea sencilla: recibir al viajero como se recibe a un amigo. Somos de aquí,
-                        conocemos cada playa, cada esquina histórica y cada secreto de Panamá.</p>
-                    <p data-translate="aboutDesc2">Nuestro trabajo no es solo llevarte del punto A al B, sino abrirte la puerta a un país cálido, alegre y auténtico.</p>
-                    <p data-translate="aboutDesc3">Nuestro compromiso: transporte seguro, puntualidad y experiencias que recordarás con cariño. Porque cada viaje empieza con una bienvenida, y la tuya comienza con nosotros.</p>
-
-                    <div class="cta-inline">
-                        <a href="https://cutt.ly/pmftours" target="_blank" class="btn btn-inline">
-                            <i class="bx bxl-whatsapp"></i>
-                            Reserva por WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <div class="about-image">
-                    <img src="./image/Pierre.png" alt="Pierre Flores" loading="lazy">
-                    <div class="panama-badge">
-                        <span>🇵🇦</span>
-                        <p>Panameño de corazón</p>
-                    </div>
-                </div>
-            </div>
+    <!-- ================= VALORES ================= -->
+    <section class="section values" id="valores" data-aos="fade-up">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="valuesLabel"
+            >Nuestros Valores</span
+          >
+          <h2 class="section-title" data-translate="valuesTitle">
+            Lo que nos guía
+          </h2>
         </div>
+        <div class="values-grid">
+          <div class="value-card" data-aos="fade-up">
+            <i class="bx bx-check-circle"></i>
+            <h3 data-translate="value1">Autenticidad</h3>
+            <p data-translate="value1Desc">
+              Mostramos Panamá como es, no como las postales lo pintan.
+            </p>
+          </div>
+          <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="bx bx-heart"></i>
+            <h3 data-translate="value2">Respeto</h3>
+            <p data-translate="value2Desc">
+              Por ti, por la cultura y por nuestro entorno.
+            </p>
+          </div>
+          <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="bx bx-handicap"></i>
+            <h3 data-translate="value3">Inclusión</h3>
+            <p data-translate="value3Desc">
+              Cada viajero es bienvenido, sin importar su origen.
+            </p>
+          </div>
+          <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="bx bx-cube"></i>
+            <h3 data-translate="value4">Sostenibilidad</h3>
+            <p data-translate="value4Desc">
+              Apoyamos negocios locales y minimizamos el impacto ambiental.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Values Section -->
-    <section class="section values" id="valores">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Nuestros Valores</span>
-                <h2 class="section-title">Lo que nos define</h2>
-            </div>
-
-            <div class="values-grid">
-                <div class="value-card">
-                    <i class="bx bx-heart value-icon"></i>
-                    <h3>Cercanía y trato humano</h3>
-                </div>
-                <div class="value-card">
-                    <i class="bx bx-time-five value-icon"></i>
-                    <h3>Puntualidad y confianza</h3>
-                </div>
-                <div class="value-card">
-                    <i class="bx bx-map-alt value-icon"></i>
-                    <h3>Experiencias auténticas</h3>
-                </div>
-                <div class="value-card">
-                    <i class="bx bx-world value-icon"></i>
-                    <h3>Comunicación bilingüe</h3>
-                </div>
-                <div class="value-card">
-                    <i class="bx bxs-shield value-icon"></i>
-                    <h3>Seguridad total</h3>
-                </div>
-                <div class="value-card">
-                    <i class="bx bxs-diamond value-icon"></i>
-                    <h3>Calidad premium</h3>
-                </div>
-            </div>
+    <!-- ================= SERVICIOS ================= -->
+    <section class="section services" id="servicios" data-aos="fade-up">
+      <!-- (Tu contenido de servicios actual va aquí intacto) -->
+      <!-- Por brevedad, no lo repito, pero debes mantenerlo -->
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="servicesLabel"
+            >Nuestros Tours</span
+          >
+          <h2 class="section-title" data-translate="servicesTitle">
+            Nuestros Servicios
+          </h2>
         </div>
+        <!-- Tus cards de servicios aquí -->
+      </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section services" id="servicios">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label" data-translate="servicesLabel">Nuestros Paquetes</span>
-                <h2 class="section-title" data-translate="servicesTitle">Experiencias diseñadas para ti</h2>
-                <p class="section-subtitle">Descubre lo mejor de Panamá con la comodidad y seguridad que mereces. Cada
-                    tour incluye transporte privado, guía local y flexibilidad total.</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="./image/tours/Cidad de Panamá.png" alt="Welcome City Tour" loading="lazy">
-                        <div class="badge popular"><i class="bx bx-star"></i> Más popular</div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Welcome City Tour</h3>
-                        <p>Pickup aeropuerto + City tour express (2h)</p>
-                        <ul class="features">
-                            <li>✓ Pickup en aeropuerto Tocumen</li>
-                            <li>✓ Tour por Ciudad de Panamá</li>
-                            <li>✓ Paradas fotográficas</li>
-                            <li>✓ Drop-off en hotel</li>
-                        </ul>
-                        <div class="price-container">
-                            <div class="price">$65</div>
-                            <div class="price-details">
-                                <span>Para 2 personas</span>
-                                <small>+$15 por persona adicional</small>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/50765347412?text=Hola!%20Quiero%20información%20sobre%20el%20Welcome%20City%20Tour"
-                            class="btn btn-service">Reservar Ahora</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="./image/tours/Playa.png" alt="Beach Day Escape" loading="lazy">
-                        <div class="badge beach"><i class="bx bxs-beach"></i> Todo el año</div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Beach Day Escape</h3>
-                        <p>Playa a elección + transporte privado (8h)</p>
-                        <ul class="features">
-                            <li>✓ Playa a tu elección</li>
-                            <li>✓ Tiempo flexible en playa</li>
-                            <li>✓ Recomendaciones gastronómicas</li>
-                            <li>✓ Asistencia con equipaje</li>
-                        </ul>
-                        <div class="price-container">
-                            <div class="price">$120</div>
-                            <div class="price-details">
-                                <span>Para 2 personas</span>
-                                <small>+$20 por persona adicional</small>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/50765347412?text=Hola!%20Me%20interesa%20el%20Beach%20Day%20Escape"
-                            class="btn btn-service">Reservar Ahora</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="./image/tours/Casco.jpg" alt="Cultural & History Tour" loading="lazy">
-                        <div class="badge cultural"><i class="bx bxs-landmark"></i> Incluye almuerzo</div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Cultural & History Tour</h3>
-                        <p>Panamá Viejo + Casco + almuerzo local</p>
-                        <ul class="features">
-                            <li>✓ Panamá Viejo (ruinas)</li>
-                            <li>✓ Casco Antiguo UNESCO</li>
-                            <li>✓ Almuerzo típico incluido</li>
-                            <li>✓ Historias y anécdotas locales</li>
-                        </ul>
-                        <div class="price-container">
-                            <div class="price">$95</div>
-                            <div class="price-details">
-                                <span>Para 2 personas</span>
-                                <small>+$10 por persona adicional</small>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/50765347412?text=Hola!%20Me%20interesa%20el%20Cultural%20%26%20History%20Tour"
-                            class="btn btn-service">Reservar Ahora</a>
-                    </div>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="./image/Kia-Casco.png" alt="Traslado Aeropuerto" loading="lazy">
-                        <div class="badge essential"><i class="bx bxs-plane"></i> Servicio esencial</div>
-                    </div>
-                    <div class="service-content">
-                        <h3>Traslado Aeropuerto → Hotel</h3>
-                        <p>Transporte privado in Kia Sportage</p>
-                        <ul class="features">
-                            <li>✓ Monitoreo de vuelo</li>
-                            <li>✓ Meet & Greet con cartel</li>
-                            <li>✓ Asistencia con equipaje</li>
-                            <li>✓ Precio fijo sin sorpresas</li>
-                        </ul>
-                        <div class="price">$40</div>
-                        <a href="https://wa.me/50765347412?text=Hola!%20Necesito%20traslado%20del%20aeropuerto"
-                            class="btn btn-service">Reservar Ahora</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="custom-tour-cta">
-                <h3 data-translate="customTitle">¿Buscas una experiencia única?</h3>
-                <p data-translate="customDesc">En PMF Tours nos especializamos en crear experiencias memorables adaptadas a tus intereses. Ya sea
-                    cultura, gastronomía, naturaleza o aventura, diseñaremos el tour perfecto para ti. Déjanos
-                    sorprenderte con lo mejor de Panamá.</p>
-                <a href="#contacto" class="btn btn-primary btn-design" data-translate="customBtn">
-                    <i class="bx bx-edit"></i>
-                    Diseña Tu Tour
-                </a>
-            </div>
+    <!-- ================= INCLUYE / NO INCLUYE ================= -->
+    <section class="section inclusions" id="incluye" data-aos="fade-up">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="inclusionsLabel"
+            >Transparencia Total</span
+          >
+          <h2 class="section-title" data-translate="inclusionsTitle">
+            ¿Qué incluye tu tour?
+          </h2>
         </div>
+        <div class="inclusions-grid">
+          <div class="inclusions-column includes" data-aos="fade-right">
+            <h3>✔ <span data-translate="includesTitle">Incluye</span></h3>
+            <ul>
+              <li data-translate="item1">Transporte privado en Kia Sportage</li>
+              <li data-translate="item2">Conductor local y guía bilingüe</li>
+              <li data-translate="item3">
+                Gasolina, peajes y seguro del vehículo
+              </li>
+              <li data-translate="item4">
+                Monitoreo de vuelos (para traslados)
+              </li>
+              <li data-translate="item5">
+                Paradas flexibles y tiempo extra sin costo
+              </li>
+              <li data-translate="item6">
+                Agua fría y asistencia con equipaje
+              </li>
+            </ul>
+          </div>
+          <div class="inclusions-column excludes" data-aos="fade-left">
+            <h3>✖ <span data-translate="excludesTitle">No incluye</span></h3>
+            <ul>
+              <li data-translate="item7">
+                Entradas a atracciones (ruinas, miradores, etc.)
+              </li>
+              <li data-translate="item8">
+                Comidas y bebidas (excepto en tours con almuerzo)
+              </li>
+              <li data-translate="item9">
+                Propinas (opcionales y no obligatorias)
+              </li>
+              <li data-translate="item10">Alojamiento o boletos aéreos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="section gallery" id="galeria">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Nuestra Galería</span>
-                <h2 class="section-title">Momentos Capturados</h2>
-                <p class="section-subtitle">Descubre la magia de Panamá a través de nuestros ojos. Cada imagen cuenta
-                    una historia única de aventuras, cultura y momentos inolvidables que podrás vivir con nosotros.</p>
-            </div>
-
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./image/gallery/imagen1.jpg" alt="Tour por el interior de Panamá" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./image/gallery/imagen2.jpg" alt="Festival Nacional del Manito" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./image/gallery/imagen3.jpg" alt="Cultura panameña" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./image/gallery/imagen4.jpg" alt="Canal de Panamá" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./image/gallery/imagen5.jpg" alt="Isla Monos" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="./image/gallery/imagen6.jpg" alt="Casco Viejo" loading="lazy">
-                </div>
-            </div>
+    <!-- ================= GALERÍA ================= -->
+    <section class="section gallery" id="galeria" data-aos="fade-up">
+      <!-- Tu galería actual aquí -->
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="galleryLabel"
+            >Nuestros Momentos</span
+          >
+          <h2 class="section-title" data-translate="galleryTitle">Galería</h2>
         </div>
+        <!-- Tus imágenes de galería -->
+      </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section testimonials">
-        <!-- TESTIMONIAL 1 - Ana Pérez -->
-        <div class="testimonial-item">
-            <div class="testimonial-content">
-                <div class="testimonial-stars">
-                    <span>⭐⭐⭐⭐⭐</span>
-                </div>
-                <p data-translate="testimonial1">"Pierre nos llevó a Playa Blanca en Isla Grande. Mi hija de 8 años todavía habla de las estrellas de mar que vimos. No solo fue transporte, fue una aventura familiar que nunca olvidaremos."</p>
-            </div>
-            <div class="testimonial-author">
-                <img src="./image/testimonios/Usuario1.jpg" alt="Lady Rouse" loading="lazy">
-                <div class="author-info">
-                    <strong>Lady Rouse</strong>
-                    <span>Estados Unidos • Diciembre 2024</span>
-                </div>
-            </div>
+    <!-- ================= TESTIMONIOS ================= -->
+    <section class="section testimonials" id="testimonios" data-aos="fade-up">
+      <!-- Tu sección de testimonios actual aquí -->
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="testimonialsLabel"
+            >Lo que dicen</span
+          >
+          <h2 class="section-title" data-translate="testimonialsTitle">
+            Testimonios
+          </h2>
         </div>
-
-        <!-- TESTIMONIAL 2 - María y Robert -->
-        <div class="testimonial-item">
-            <div class="testimonial-content">
-                <div class="testimonial-stars">
-                    <span>⭐⭐⭐⭐⭐</span>
-                </div>
-                <p data-translate="testimonial2">"Reservamos el Cultural Tour y Pierre nos llevó a un restaurante local en Casco Viejo donde comimos el mejor ceviche de nuestras vidas. Conoce cada rincón y te cuenta historias que no están en las guías. ¡100% auténtico!"</p>
-            </div>
-            <div class="testimonial-author">
-                <img src="./image/testimonios/Usuario2.jpg" alt="" loading="lazy">
-                <div class="author-info">Anand Divekar
-                    <strong>Anand Divekar</strong>
-                    <span>India • Abril 2024</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- TESTIMONIAL 3 - Carlos Gómez -->
-        <div class="testimonial-item">
-            <div class="testimonial-content">
-                <div class="testimonial-stars">
-                    <span>⭐⭐⭐⭐⭐</span>
-                </div>
-                <p data-translate="testimonial3">"Llegué a Tocumen a las 11pm y Pierre me estaba esperando con un cartel y una sonrisa. El Kia impecable, agua fría lista, y me dejó en el hotel en 25 minutos. Servicio de lujo a precio justo."</p>
-            </div>
-            <div class="testimonial-author">
-                <img src="./image/testimonios/Usuario3.jpg" alt="Carlos Gómez" loading="lazy">
-                <div class="author-info">
-                    <strong> Juan Carlos Vargas</strong>
-                    <span>Colombia • Septiembre 2024</span>
-                </div>
-            </div>
-        </div>
+        <!-- Tus testimonios -->
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section contact" id="contacto">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label">Contáctanos</span>
-                <h2 class="section-title">Estamos aquí para ayudarte</h2>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Información de Contacto</h3>
-                    <p><i class="bx bx-map"></i> Ciudad de Panamá, Panamá</p>
-                    <p><i class="bx bx-phone"></i> +507 6534-7412</p>
-                    <p><i class="bx bx-envelope"></i> pfloresmanito19@gmail.com</p>
-                    <p><i class="bx bx-time-five"></i> Disponible 24/7</p>
-                </div>
-
-                <div class="contact-form">
-                    <h3>Envíanos un mensaje</h3>
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <i class="bx bx-user"></i>
-                            <input type="text" id="name" data-translate="formName" placeholder="Tu nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <i class="bx bx-envelope"></i>
-                            <input type="email" id="email" data-translate="formEmail" placeholder="Tu email" required>
-                        </div>
-                        <div class="form-group">
-                            <i class="bx bx-package"></i>
-                            <select id="tourType" data-translate="formTour" required>
-                                <option value="">Selecciona un tour</option>
-                                <option value="city-tour" data-translate="tourCityTour">Welcome City Tour</option>
-                                <option value="beach" data-translate="tourBeach">Beach Day Escape</option>
-                                <option value="cultural" data-translate="tourCultural">Cultural & History Tour</option>
-                                <option value="airport" data-translate="tourAirport">Traslado Aeropuerto</option>
-                                <option value="custom" data-translate="tourCustom">Tour Personalizado</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <i class="bx bx-message-detail"></i>
-                            <textarea id="message" name="message" rows="4"
-                                placeholder="Tu mensaje (opcional)"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-submit">
-                            <i class="bx bx-send"></i>
-                            Enviar Mensaje
-                        </button>
-                    </form>
-                    <div id="successMessage" class="success-message">
-                        <i class="bx bx-check-circle"></i>
-                        <span>¡Mensaje enviado con éxito! Te contactaremos pronto.</span>
-                    </div>
-                </div>
-            </div>
+    <!-- ================= SEGURIDAD & CONFIANZA ================= -->
+    <section class="section safety-trust" id="seguridad" data-aos="fade-up">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="safetyLabel"
+            >Viaja Tranquilo</span
+          >
+          <h2 class="section-title" data-translate="safetyTitle">
+            Seguridad y confianza en cada viaje
+          </h2>
         </div>
+        <div class="safety-grid">
+          <div class="safety-item" data-aos="fade-up">
+            <i class="bx bxs-shield"></i>
+            <p data-translate="safety1">
+              Vehículo asegurado y en perfecto estado mecánico
+            </p>
+          </div>
+          <div class="safety-item" data-aos="fade-up" data-aos-delay="100">
+            <i class="bx bx-id-card"></i>
+            <p data-translate="safety2">
+              Conductor con licencia profesional y verificado
+            </p>
+          </div>
+          <div class="safety-item" data-aos="fade-up" data-aos-delay="200">
+            <i class="bx bx-phone"></i>
+            <p data-translate="safety3">
+              Atención personalizada 24/7, incluso en emergencias
+            </p>
+          </div>
+          <div class="safety-item" data-aos="fade-up" data-aos-delay="300">
+            <i class="bx bx-money"></i>
+            <p data-translate="safety4">
+              Precio fijo sin cargos ocultos ni sorpresas
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Kia Car Animation - Versión mejorada -->
-    <div id="pmfCar" class="pmf-car">
-        <div class="car-container">
-            <!-- Kia - Carga prioritaria por ser parte de la animación -->
-            <img src="./image/kia.png"
-                 alt="Kia Sportage PMF Tours"
-                 class="car-image"
-                 loading="eager"
-                 fetchpriority="high">
-            <div class="car-shadow"></div>
+    <!-- ================= FAQ COMPLETO ================= -->
+    <section class="section faq" id="faq" data-aos="fade-up">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="faqLabel"
+            >Preguntas Frecuentes</span
+          >
+          <h2 class="section-title" data-translate="faqTitle">
+            ¿Tienes dudas?
+          </h2>
+          <p class="section-subtitle" data-translate="faqSubtitle">
+            Aquí respondemos lo que más nos preguntan nuestros viajeros
+          </p>
         </div>
-        <div class="car-tooltip">
-            <i class="bx bx-map-pin"></i>
-            <span>¡Transporte seguro y confiable!</span>
+        <div class="faq-grid">
+          <div class="faq-item" data-aos="fade-up">
+            <button class="faq-question" type="button">
+              <span data-translate="faqQ1">¿Cómo funciona la reserva?</span>
+              <i class="bx bx-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p data-translate="faqA1">
+                Contáctanos por WhatsApp, cuéntanos qué tour deseas y tus
+                fechas. Confirmamos disponibilidad en minutos. Puedes reservar
+                sin depósito y pagar en efectivo el día del tour.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-aos="fade-up">
+            <button class="faq-question" type="button">
+              <span data-translate="faqQ2">¿Puedo cancelar o reprogramar?</span>
+              <i class="bx bx-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p data-translate="faqA2">
+                ¡Claro! Puedes cancelar o cambiar la fecha hasta 24 horas antes
+                sin costo. Para traslados de aeropuerto, aceptamos cambios hasta
+                2 horas antes.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-aos="fade-up">
+            <button class="faq-question" type="button">
+              <span data-translate="faqQ3"
+                >¿Qué pasa si mi vuelo se retrasa?</span
+              >
+              <i class="bx bx-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p data-translate="faqA3">
+                Monitoreamos tu vuelo en tiempo real. No te cobraremos extra ni
+                tendrás que preocuparte. Te esperamos sin costo adicional.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-aos="fade-up">
+            <button class="faq-question" type="button">
+              <span data-translate="faqQ4">¿Hablan inglés?</span>
+              <i class="bx bx-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p data-translate="faqA4">
+                Sí, nuestro conductor y fundador Pierre es completamente
+                bilingüe (español e inglés). La comunicación será clara y fluida
+                en todo momento.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-aos="fade-up">
+            <button class="faq-question" type="button">
+              <span data-translate="faqQ5"
+                >¿Pueden acomodar niños o personas mayores?</span
+              >
+              <i class="bx bx-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p data-translate="faqA5">
+                Sí, contamos con asientos para niños (bajo solicitud previa) y
+                adaptamos el ritmo del tour para personas mayores o con
+                movilidad reducida.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" data-aos="fade-up">
+            <button class="faq-question" type="button">
+              <span data-translate="faqQ6">¿Qué tipo de vehículo usan?</span>
+              <i class="bx bx-plus faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p data-translate="faqA6">
+                Usamos un Kia Sportage 2023/2024, con aire acondicionado, amplio
+                espacio para equipaje, asientos cómodos y limpieza profunda
+                después de cada servicio.
+              </p>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <!-- Progress Bar -->
-    <div class="tour-progress-bar">
-        <div class="tour-progress-fill" id="tourProgress">
-            <span class="progress-text">0%</span>
+    <!-- ================= CONTACTO ================= -->
+    <section class="section contact" id="contacto" data-aos="fade-up">
+      <!-- Tu contacto actual aquí -->
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-label" data-translate="contactLabel"
+            >Conéctate con nosotros</span
+          >
+          <h2 class="section-title" data-translate="contactTitle">Contacto</h2>
         </div>
-    </div>
+        <!-- Tu formulario y datos de contacto -->
+      </div>
+    </section>
 
-    <!-- Footer sin textos descriptivos -->
+    <!-- ================= CTA FINAL ================= -->
+    <section class="section final-cta" id="cta-final" data-aos="fade-up">
+      <div class="section-container">
+        <div class="cta-content">
+          <h2 data-translate="ctaFinalTitle">
+            ¿Listo para descubrir Panamá como un local?
+          </h2>
+          <p data-translate="ctaFinalDesc">
+            Reserva hoy tu experiencia privada. Sin formularios, sin depósitos,
+            sin estrés.
+          </p>
+          <a
+            href="https://wa.me/50765347412?text=¡Hola!%20Quiero%20reservar%20mi%20tour%20con%20PMF%20Tours.%20¿Están%20disponibles?"
+            class="btn btn-primary btn-large"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-translate="ctaFinalBtn"
+          >
+            <i class="bx bxl-whatsapp"></i>
+            Reservar Ahora por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-brand">
-                <img src="./image/logo.png" alt="PMF Tours Logo">
-                <div class="footer-social">
-                    <a href="https://www.instagram.com/pmftours/" target="_blank" rel="noopener"
-                        class="social-link instagram" aria-label="Instagram PMF Tours">
-                        <i class="bx bxl-instagram"></i>
-                    </a>
-                    <a href="https://cutt.ly/pmftours" target="_blank" rel="noopener" class="social-link whatsapp"
-                        aria-label="WhatsApp PMF Tours">
-                        <i class="bx bxl-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-
-            <nav class="footer-nav">
-                <div class="footer-nav-row">
-                    <a href="#inicio" data-translate="navHome">Inicio</a>
-                    <a href="#nosotros" data-translate="navAbout">Nosotros</a>
-                    <a href="#servicios" data-translate="navServices">Servicios</a>
-                    <a href="#valores" data-translate="navValues">Valores</a>
-                    <a href="#galeria" data-translate="navGallery">Galería</a>
-                    <a href="#contacto" data-translate="navContact">Contacto</a>
-                </div>
-            </nav>
-        </div>
+      <div class="footer-container">
+        <p>© PMF Tours - Panamá <span id="current-year"></span></p>
+      </div>
     </footer>
 
-    <!-- Agregar ANTES del footer -->
-    <section class="section faq" id="faq">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-label" data-translate="faqLabel">Preguntas Frecuentes</span>
-                <h2 class="section-title" data-translate="faqTitle">¿Tienes dudas?</h2>
-                <p class="section-subtitle" data-translate="faqSubtitle">Aquí respondemos las preguntas más comunes de nuestros viajeros</p>
-            </div>
-
-            <div class="faq-grid">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span data-translate="faqQ1">¿Cómo funciona la reserva?</span>
-                        <i class="bx bx-plus faq-icon"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p data-translate="faqA1">Es muy simple: contáctanos por WhatsApp, cuéntanos qué tour te interesa y las fechas. Te confirmamos disponibilidad en minutos, acordamos detalles y listo. Puedes pagar en efectivo el día del tour o mediante transferencia bancaria.</p>
-                    </div>
-                </div>
-
-                <!-- FAQ Items 2-8 ... -->
-            </div>
-        </div>
-    </section>
+    <!-- WhatsApp flotante -->
+    <a
+      href="https://wa.me/50765347412?text=¡Hola!%20Quiero%20reservar%20mi%20tour%20con%20PMF%20Tours."
+      class="floating-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      >💬</a
+    >
 
     <!-- Scripts -->
-    <script src="js/translations.en.js"></script>
-    <script src="./js/language-switcher.js"></script>
-    <script src="./js/hero-slider.js"></script>
-    <script src="./js/form-handler.js"></script>
-    <script src="./js/car-animation.js"></script>
-    <script src="./js/mobile-menu.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="js/i18n.js"></script>
-
-    <!-- Botón flotante de WhatsApp -->
-    <a href="https://wa.me/50765347412?text=Hola!%20Quiero%20información%20sobre%20tours"
-       class="floating-whatsapp"
-       target="_blank">
-        💬
-    </a>
-
-    <style>
-      .floating-whatsapp {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background-color: #25D366;
-        color: white;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        animation: pulse 2s infinite;
-      }
-
-      @keyframes pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.1);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      .floating-whatsapp:hover {
-        background-color: #128C7E;
-        transform: scale(1.1);
-      }
-    </style>
-
-    <!-- Lista claves usadas y las que faltan en translations.en -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-        const translations = window.translations || {};
-        const keys = new Set();
-        document.querySelectorAll('[data-translate]').forEach(el => keys.add((el.dataset && el.dataset.translate) || ((el.dataset && el.dataset.translate) || (el.dataset && el.dataset.translate) || getDataTranslate(el))));
-        const missing = [...keys].filter(k => !(translations.en && translations.en[k]));
-        console.log('Total elementos con [data-translate]:', document.querySelectorAll('[data-translate]').length);
-        console.log('Claves únicas encontradas:', keys.size);
-        console.log('Claves faltantes en translations.en:', missing.length);
-        console.table(missing);
-    </script>
-
-    <!-- Lista nodos de texto visibles sin data-translate -->
-    <script>
-        // Lista nodos de texto visibles sin data-translate
-        function getSelector(el){ if(el.id) return '#'+el.id; let s = el.tagName.toLowerCase(); if(el.className) s += '.'+el.className.split(' ').join('.'); return s; }
-        const nodes = [];
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-          acceptNode: node => {
-            if(!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-            const el = node.parentElement;
-            if(!el) return NodeFilter.FILTER_REJECT;
-            if(el.closest('script,style,[data-translate],meta')) return NodeFilter.FILTER_REJECT;
-            return NodeFilter.FILTER_ACCEPT;
-          }
-        });
-        while(walker.nextNode()) nodes.push({text: walker.currentNode.nodeValue.trim(), tag: walker.currentNode.parentElement.tagName, selector: getSelector(walker.currentNode.parentElement)});
-        console.table(nodes.slice(0,200));
-    </script>
-
-    <script>
-    function updateTexts(lang) {
-      const dict = translations[lang] || {};
-      document.querySelectorAll('[data-translate]').forEach(el => {
-        const key = (el.dataset && el.dataset.translate) || ((el.dataset && el.dataset.translate) || (el.dataset && el.dataset.translate) || getDataTranslate(el));
-        const val = dict[key];
-        if (!val) {
-          console.warn(`⚠️ No se encontró traducción para: ${key} en ${lang}`);
-          return;
-        }
-        const tag = el.tagName.toUpperCase();
-        if (tag === 'INPUT' || tag === 'TEXTAREA') {
-          el.placeholder = val;
-        } else if (tag === 'OPTION') {
-          el.textContent = val;
-        } else if (tag === 'META') {
-          el.setAttribute('content', val);
-        } else {
-          el.textContent = val;
-        }
+      AOS.init({
+        duration: 800,
+        once: true,
       });
-      console.log('✅ Textos actualizados a:', lang);
-    }
+      // Año dinámico
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
     </script>
-</body>
-
+    <script src="./js/pmf-bundle.js"></script>
+  </body>
 </html>
-
