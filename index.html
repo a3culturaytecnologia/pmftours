@@ -625,8 +625,14 @@
         </div>
     </footer>
 
-    <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/50765347412" class="floating-whatsapp" target="_blank" rel="noopener noreferrer">💬</a>
+    <!-- WHATSAPP FLOTANTE CON MENSAJE PERSONALIZADO -->
+    <a href="https://wa.me/50765347412?text=¡Hola!%20Quiero%20reservar%20mi%20tour%20con%20PMF%20Tours.%20¿Me%20pueden%20dar%20más%20información?"
+       class="floating-whatsapp"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Contactar por WhatsApp">
+        <i class="bx bxl-whatsapp"></i>
+    </a>
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -635,8 +641,44 @@
         document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>
 
+    <!-- SCRIPTS DE TRADUCCIÓN -->
     <script src="./js/translations.es.js"></script>
     <script src="./js/translations.en.js"></script>
+
+    <!-- SCRIPT TRADUCTOR FUNCIONAL -->
+    <script>
+        // Sistema de traducción
+        window.updateTexts = function(lang) {
+            const dict = window.translations && window.translations[lang] ? window.translations[lang] : {};
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                const val = dict[key];
+                if (val) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = val;
+                    } else {
+                        el.textContent = val;
+                    }
+                }
+            });
+            localStorage.setItem('selectedLanguage', lang);
+            document.getElementById('currentLang').textContent = lang.toUpperCase();
+        };
+
+        // Selector de idioma
+        document.querySelectorAll('.lang-option').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = btn.getAttribute('data-lang');
+                window.updateTexts(lang);
+            });
+        });
+
+        // Cargar idioma guardado o español por defecto
+        const savedLang = localStorage.getItem('selectedLanguage') || 'es';
+        window.updateTexts(savedLang);
+    </script>
+
     <script src="./js/pmf-bundle.js"></script>
 
     <!-- FAQ TOGGLE -->
