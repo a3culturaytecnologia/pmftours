@@ -2,85 +2,184 @@
   "servicios": [
     {
       "id": "city-tour",
-      "nombre": "Welcome City Tour",
-      "descripcion": "Pickup aeropuerto + City tour express (2h)",
+      "nombre": {
+        "es": "Welcome City Tour",
+        "en": "Welcome City Tour"
+      },
+      "descripcion": {
+        "es": "Pickup aeropuerto + City tour express (2h)",
+        "en": "Airport pickup + Express city tour (2h)"
+      },
       "precioBase": 65,
       "personas": 2,
       "extra": 15,
       "imagen": "./image/tours/Cidad de Panamá.png",
-      "badge": "⭐ Más popular",
+      "badge": {
+        "es": "⭐ Más popular",
+        "en": "⭐ Most popular"
+      },
       "badgeClass": "popular",
-      "incluye": [
-        "Pickup en aeropuerto Tocumen",
-        "Tour por Ciudad de Panamá",
-        "Paradas fotográficas",
-        "Drop-off en hotel"
-      ],
-      "whatsappUrl": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AMe%20interesa%20el%20*Welcome%20City%20Tour*%0A%0A📅%20Fecha:%20[escribe%20tu%20fecha]%0A👥%20Personas:%20[cuántos%20son]%0A✈️%20Hora%20llegada%20vuelo:%20[si%20aplica]%0A%0A¿Está%20disponible?"
+      "incluye": {
+        "es": [
+          "Pickup en aeropuerto Tocumen",
+          "Tour por Ciudad de Panamá",
+          "Paradas fotográficas",
+          "Drop-off en hotel"
+        ],
+        "en": [
+          "Tocumen airport pickup",
+          "Panama City tour",
+          "Photo stops",
+          "Hotel drop-off"
+        ]
+      },
+      "whatsappUrl": {
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AMe%20interesa%20el%20*Welcome%20City%20Tour*%0A%0A📅%20Fecha:%20[escribe%20tu%20fecha]%0A👥%20Personas:%20[cuántos%20son]%0A✈️%20Hora%20llegada%20vuelo:%20[si%20aplica]%0A%0A¿Está%20disponible?",
+        "en": "https://wa.me/50765347412?text=Hello%20Pierre!%20👋%0A%0AI'm%20interested%20in%20the%20*Welcome%20City%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A✈️%20Flight%20arrival:%20[if%20applicable]%0A%0AIs%20it%20available?"
+      }
     },
     {
       "id": "beach",
-      "nombre": "Beach Day Escape",
-      "descripcion": "Playa a elección + transporte privado (8h)",
+      "nombre": {
+        "es": "Beach Day Escape",
+        "en": "Beach Day Escape"
+      },
+      "descripcion": {
+        "es": "Playa a elección + transporte privado (8h)",
+        "en": "Beach of your choice + private transport (8h)"
+      },
       "precioBase": 120,
       "personas": 2,
       "extra": 20,
       "imagen": "./image/tours/Playa.png",
-      "badge": "🏖️ Todo el año",
+      "badge": {
+        "es": "🏖️ Todo el año",
+        "en": "🏖️ Year-round"
+      },
       "badgeClass": "beach",
-      "incluye": [
-        "Playa a tu elección",
-        "Tiempo flexible en playa",
-        "Recomendaciones gastronómicas",
-        "Asistencia con equipaje"
-      ],
-      "whatsappUrl": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏖️%0A%0AQuiero%20reservar%20*Beach%20Day%20Escape*%0A%0A📅%20Fecha:%20[escribe%20tu%20fecha]%0A👥%20Personas:%20[cuántos%20son]%0A🌊%20Playa%20preferida:%20[o%20pide%20recomendación]%0A%0A¿Disponible?"
+      "incluye": {
+        "es": [
+          "Playa a tu elección",
+          "Tiempo flexible en playa",
+          "Recomendaciones gastronómicas",
+          "Asistencia con equipaje"
+        ],
+        "en": [
+          "Beach of your choice",
+          "Flexible beach time",
+          "Food recommendations",
+          "Luggage assistance"
+        ]
+      },
+      "whatsappUrl": {
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏖️%0A%0AQuiero%20reservar%20*Beach%20Day%20Escape*%0A%0A📅%20Fecha:%20[escribe%20tu%20fecha]%0A👥%20Personas:%20[cuántos%20son]%0A🌊%20Playa%20preferida:%20[o%20pide%20recomendación]%0A%0A¿Disponible?",
+        "en": "https://wa.me/50765347412?text=Hello%20Pierre!%20🏖️%0A%0AI%20want%20to%20book%20*Beach%20Day%20Escape*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A🌊%20Preferred%20beach:%20[or%20ask%20for%20recommendation]%0A%0AAvailable?"
+      }
     },
     {
       "id": "cultural",
-      "nombre": "Cultural & History Tour",
-      "descripcion": "Panamá Viejo + Casco + almuerzo local",
+      "nombre": {
+        "es": "Cultural & History Tour",
+        "en": "Cultural & History Tour"
+      },
+      "descripcion": {
+        "es": "Panamá Viejo + Casco + almuerzo local",
+        "en": "Panama Viejo + Casco + local lunch"
+      },
       "precioBase": 95,
       "personas": 2,
       "extra": 10,
       "imagen": "./image/tours/Casco.jpg",
-      "badge": "🏛️ Incluye almuerzo",
+      "badge": {
+        "es": "🏛️ Incluye almuerzo",
+        "en": "🏛️ Lunch included"
+      },
       "badgeClass": "cultural",
-      "incluye": [
-        "Panamá Viejo (ruinas)",
-        "Casco Antiguo UNESCO",
-        "Almuerzo típico incluido",
-        "Historias y anécdotas locales"
-      ],
-      "whatsappUrl": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏛️%0A%0AMe%20interesa%20el%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🍽️%20Preferencias%20comida:%20[opcional]%0A%0A¿Disponibilidad?"
+      "incluye": {
+        "es": [
+          "Panamá Viejo (ruinas)",
+          "Casco Antiguo UNESCO",
+          "Almuerzo típico incluido",
+          "Historias y anécdotas locales"
+        ],
+        "en": [
+          "Panama Viejo (ruins)",
+          "UNESCO Casco Antiguo",
+          "Typical lunch included",
+          "Local stories and anecdotes"
+        ]
+      },
+      "whatsappUrl": {
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏛️%0A%0AMe%20interesa%20el%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🍽️%20Preferencias%20comida:%20[opcional]%0A%0A¿Disponibilidad?",
+        "en": "https://wa.me/50765347412?text=Hello%20Pierre!%20🏛️%0A%0AI'm%20interested%20in%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A🍽️%20Food%20preferences:%20[optional]%0A%0AAvailability?"
+      }
     },
     {
       "id": "airport",
-      "nombre": "Traslado Aeropuerto → Hotel",
-      "descripcion": "Transporte privado en Kia Sportage",
+      "nombre": {
+        "es": "Traslado Aeropuerto → Hotel",
+        "en": "Airport → Hotel Transfer"
+      },
+      "descripcion": {
+        "es": "Transporte privado en Kia Sportage",
+        "en": "Private transport in Kia Sportage"
+      },
       "precio": 40,
       "imagen": "./image/Kia-Casco.png",
-      "badge": "✈️ Servicio esencial",
+      "badge": {
+        "es": "✈️ Servicio esencial",
+        "en": "✈️ Essential service"
+      },
       "badgeClass": "essential",
-      "incluye": [
-        "Monitoreo de vuelo",
-        "Meet & Greet con cartel",
-        "Asistencia con equipaje",
-        "Precio fijo sin sorpresas"
-      ],
-      "whatsappUrl": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0ANecesito%20*traslado%20desde%20Tocumen*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A🕐%20Hora%20llegada:%20[hora%20del%20vuelo]%0A✈️%20Número%20vuelo:%20[ej:%20AA1234]%0A🏨%20Hotel%20destino:%20[nombre]%0A👥%20Personas:%20[cuántos]%0A🧳%20Equipaje:%20[cantidad%20maletas]%0A%0A¿Disponible?"
+      "incluye": {
+        "es": [
+          "Monitoreo de vuelo",
+          "Meet & Greet con cartel",
+          "Asistencia con equipaje",
+          "Precio fijo sin sorpresas"
+        ],
+        "en": [
+          "Flight monitoring",
+          "Meet & Greet with sign",
+          "Luggage assistance",
+          "Fixed price, no surprises"
+        ]
+      },
+      "whatsappUrl": {
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0ANecesito%20*traslado%20desde%20Tocumen*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A🕐%20Hora%20llegada:%20[hora%20del%20vuelo]%0A✈️%20Número%20vuelo:%20[ej:%20AA1234]%0A🏨%20Hotel%20destino:%20[nombre]%0A👥%20Personas:%20[cuántos]%0A🧳%20Equipaje:%20[cantidad%20maletas]%0A%0A¿Disponible?",
+        "en": "https://wa.me/50765347412?text=Hello%20Pierre!%20✈️%0A%0AI%20need%20*transfer%20from%20Tocumen*%0A%0A📅%20Date:%20[your%20date]%0A🕐%20Arrival%20time:%20[flight%20time]%0A✈️%20Flight%20number:%20[e.g.%20AA1234]%0A🏨%20Destination%20hotel:%20[name]%0A👥%20People:%20[how%20many]%0A🧳%20Luggage:%20[number%20of%20bags]%0A%0AAvailable?"
+      }
     }
   ],
+  "textos_interfaz": {
+    "es": {
+      "precio_base": "Precio base",
+      "personas": "personas",
+      "persona_adicional": "por persona adicional",
+      "reservar_ahora": "Reservar Ahora",
+      "incluye": "Incluye:"
+    },
+    "en": {
+      "precio_base": "Base price",
+      "personas": "people",
+      "persona_adicional": "per additional person",
+      "reservar_ahora": "Book Now",
+      "incluye": "Includes:"
+    }
+  },
   "configuracion": {
     "moneda": "USD",
     "whatsappBase": "+50765347412",
     "emailContacto": "pfloresmanito19@gmail.com",
     "instagram": "https://www.instagram.com/pmftours/",
     "horarioAtencion": "24/7",
-    "politicaCancelacion": "24 horas antes sin costo"
+    "politicaCancelacion": {
+      "es": "24 horas antes sin costo",
+      "en": "24 hours before at no cost"
+    }
   },
   "notas": {
-    "INSTRUCCIONES_PIERRE": "Para editar precios, solo cambia los números en 'precioBase', 'precio' o 'extra'. Para agregar un nuevo tour, copia uno de los bloques existentes y modifica los valores. Los cambios se verán en la web automáticamente al guardar este archivo.",
-    "EJEMPLO_EDICION": "Si quieres cambiar el City Tour a $70, busca 'precioBase': 65 y cámbialo a 'precioBase': 70"
+    "INSTRUCCIONES_PIERRE": "Para editar precios, cambia 'precioBase' o 'precio'. Para editar textos, modifica tanto 'es' como 'en'. Ejemplo: 'nombre': { 'es': 'Texto español', 'en': 'English text' }",
+    "COMO_AGREGAR_TOUR": "Copia un bloque completo de servicio y modifica todos los campos. Mantén la estructura 'es'/'en' en todos los textos."
   }
 }

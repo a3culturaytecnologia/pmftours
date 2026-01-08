@@ -463,52 +463,130 @@
 
     <!-- SCRIPT PARA CARGAR SERVICIOS DESDE JSON -->
     <script>
+        // ============================================
+        // SISTEMA DE TRADUCCIÓN MEJORADO PARA PMF TOURS
+        // Reemplaza el script de loadServices() en index.html
+        // ============================================
+
+        // Variable global para almacenar los servicios
+        let serviciosData = null;
+
+        // Función para cargar servicios con soporte de traducción
         async function loadServices() {
             try {
-                const response = await fetch('./data/precios.json');
-                const data = await response.json();
-                const container = document.getElementById('servicesContainer');
+                // Cargar el JSON solo una vez
+                if (!serviciosData) {
+                    const response = await fetch('./data/precios.json');
+                    serviciosData = await response.json();
+                }
 
+                // Obtener idioma actual
+                const currentLang = localStorage.getItem('selectedLanguage') || 'es';
+
+                // Obtener textos de interfaz
+                const textos = serviciosData.textos_interfaz[currentLang];
+
+                const container = document.getElementById('servicesContainer');
                 if (!container) return;
 
-                container.innerHTML = data.servicios.map(service => `
-                    <div class="service-card">
-                        <div class="service-image">
-                            <img src="${service.imagen}" alt="${service.nombre}" loading="lazy">
-                            ${service.badge ? `<div class="badge ${service.badgeClass}">${service.badge}</div>` : ''}
+                // Generar HTML con el idioma correcto
+                container.innerHTML = serviciosData.servicios.map(service => {
+                    // Obtener valores según idioma
+                    const nombre = typeof service.nombre === 'object' ? service.nombre[currentLang] : service.nombre;
+                    const descripcion = typeof service.descripcion === 'object' ? service.descripcion[currentLang] : service.descripcion;
+                    const badge = service.badge ? (typeof service.badge === 'object' ? service.badge[currentLang] : service.badge) : '';
+                    const incluye = typeof service.incluye === 'object' && Array.isArray(service.incluye[currentLang])
+                        ? service.incluye[currentLang]
+                        : service.incluye;
+                    const whatsappUrl = typeof service.whatsappUrl === 'object' ? service.whatsappUrl[currentLang] : service.whatsappUrl;
+
+                    return `
+                        <div class="service-card">
+                            <div class="service-image">
+                                <img src="${service.imagen}" alt="${nombre}" loading="lazy">
+                                ${badge ? `<div class="badge ${service.badgeClass}">${badge}</div>` : ''}
+                            </div>
+                            <div class="service-content">
+                                <h3>${nombre}</h3>
+                                <p>${descripcion}</p>
+                                <ul class="features">
+                                    ${Array.isArray(incluye) ? incluye.map(item => `<li>✓ ${item}</li>`).join('') : ''}
+                                </ul>
+                                ${service.precioBase ? `
+                                    <div class="price-container">
+                                        <div class="price">$${service.precioBase}</div>
+                                        ${service.personas ? `
+                                            <div class="price-details">
+                                                <span>${textos.precio_base} ${service.personas} ${textos.personas}</span>
+                                                ${service.extra ? `<small>+$${service.extra} ${textos.persona_adicional}</small>` : ''}
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                ` : `<div class="price">$${service.precio}</div>`}
+                                <a href="${whatsappUrl}"
+                                   class="btn btn-service"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': '${nombre}'});">
+                                    ${textos.reservar_ahora}
+                                </a>
+                            </div>
                         </div>
-                        <div class="service-content">
-                            <h3>${service.nombre}</h3>
-                            <p>${service.descripcion}</p>
-                            <ul class="features">
-                                ${service.incluye.map(item => `<li>✓ ${item}</li>`).join('')}
-                            </ul>
-                            ${service.precioBase ? `
-                                <div class="price-container">
-                                    <div class="price">$${service.precioBase}</div>
-                                    ${service.personas ? `
-                                        <div class="price-details">
-                                            <span>Para ${service.personas} personas</span>
-                                            ${service.extra ? `<small>+$${service.extra} por persona adicional</small>` : ''}
-                                        </div>
-                                    ` : ''}
-                                </div>
-                            ` : `<div class="price">$${service.precio}</div>`}
-                            <a href="${service.whatsappUrl}"
-                               class="btn btn-service"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': '${service.nombre}'});">
-                                Reservar Ahora
-                            </a>
-                        </div>
-                    </div>
-                `).join('');
+                    `;
+                }).join('');
             } catch (error) {
                 console.error('Error cargando servicios:', error);
+                const container = document.getElementById('servicesContainer');
+                if (container) {
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 40px; color: #666;">
+                            <p>Error loading services. Please refresh the page.</p>
+                        </div>
+                    `;
+                }
             }
         }
 
+        // Función mejorada de actualización de textos
+        window.updateTexts = function(lang) {
+            // Actualizar textos estáticos con data-translate
+            const dict = window.translations && window.translations[lang] ? window.translations[lang] : {};
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                const val = dict[key];
+                if (val) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = val;
+                    } else {
+                        el.textContent = val;
+                    }
+                }
+            });
+
+            // Actualizar servicios dinámicos
+            loadServices();
+
+            // Guardar idioma seleccionado
+            localStorage.setItem('selectedLanguage', lang);
+            document.getElementById('currentLang').textContent = lang.toUpperCase();
+        };
+
+        // Selector de idioma
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.lang-option').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const lang = btn.getAttribute('data-lang');
+                    window.updateTexts(lang);
+                });
+            });
+
+            // Cargar idioma guardado o español por defecto
+            const savedLang = localStorage.getItem('selectedLanguage') || 'es';
+            window.updateTexts(savedLang);
+        });
+
+        // Cargar servicios al inicio
         loadServices();
     </script>
 
