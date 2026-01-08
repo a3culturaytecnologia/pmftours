@@ -1,0 +1,86 @@
+{
+  "servicios": [
+    {
+      "id": "city-tour",
+      "nombre": "Welcome City Tour",
+      "descripcion": "Pickup aeropuerto + City tour express (2h)",
+      "precioBase": 65,
+      "personas": 2,
+      "extra": 15,
+      "imagen": "./image/tours/Cidad de Panamá.png",
+      "badge": "⭐ Más popular",
+      "badgeClass": "popular",
+      "incluye": [
+        "Pickup en aeropuerto Tocumen",
+        "Tour por Ciudad de Panamá",
+        "Paradas fotográficas",
+        "Drop-off en hotel"
+      ],
+      "whatsappUrl": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AMe%20interesa%20el%20*Welcome%20City%20Tour*%0A%0A📅%20Fecha:%20[escribe%20tu%20fecha]%0A👥%20Personas:%20[cuántos%20son]%0A✈️%20Hora%20llegada%20vuelo:%20[si%20aplica]%0A%0A¿Está%20disponible?"
+    },
+    {
+      "id": "beach",
+      "nombre": "Beach Day Escape",
+      "descripcion": "Playa a elección + transporte privado (8h)",
+      "precioBase": 120,
+      "personas": 2,
+      "extra": 20,
+      "imagen": "./image/tours/Playa.png",
+      "badge": "🏖️ Todo el año",
+      "badgeClass": "beach",
+      "incluye": [
+        "Playa a tu elección",
+        "Tiempo flexible en playa",
+        "Recomendaciones gastronómicas",
+        "Asistencia con equipaje"
+      ],
+      "whatsappUrl": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏖️%0A%0AQuiero%20reservar%20*Beach%20Day%20Escape*%0A%0A📅%20Fecha:%20[escribe%20tu%20fecha]%0A👥%20Personas:%20[cuántos%20son]%0A🌊%20Playa%20preferida:%20[o%20pide%20recomendación]%0A%0A¿Disponible?"
+    },
+    {
+      "id": "cultural",
+      "nombre": "Cultural & History Tour",
+      "descripcion": "Panamá Viejo + Casco + almuerzo local",
+      "precioBase": 95,
+      "personas": 2,
+      "extra": 10,
+      "imagen": "./image/tours/Casco.jpg",
+      "badge": "🏛️ Incluye almuerzo",
+      "badgeClass": "cultural",
+      "incluye": [
+        "Panamá Viejo (ruinas)",
+        "Casco Antiguo UNESCO",
+        "Almuerzo típico incluido",
+        "Historias y anécdotas locales"
+      ],
+      "whatsappUrl": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏛️%0A%0AMe%20interesa%20el%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🍽️%20Preferencias%20comida:%20[opcional]%0A%0A¿Disponibilidad?"
+    },
+    {
+      "id": "airport",
+      "nombre": "Traslado Aeropuerto → Hotel",
+      "descripcion": "Transporte privado en Kia Sportage",
+      "precio": 40,
+      "imagen": "./image/Kia-Casco.png",
+      "badge": "✈️ Servicio esencial",
+      "badgeClass": "essential",
+      "incluye": [
+        "Monitoreo de vuelo",
+        "Meet & Greet con cartel",
+        "Asistencia con equipaje",
+        "Precio fijo sin sorpresas"
+      ],
+      "whatsappUrl": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0ANecesito%20*traslado%20desde%20Tocumen*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A🕐%20Hora%20llegada:%20[hora%20del%20vuelo]%0A✈️%20Número%20vuelo:%20[ej:%20AA1234]%0A🏨%20Hotel%20destino:%20[nombre]%0A👥%20Personas:%20[cuántos]%0A🧳%20Equipaje:%20[cantidad%20maletas]%0A%0A¿Disponible?"
+    }
+  ],
+  "configuracion": {
+    "moneda": "USD",
+    "whatsappBase": "+50765347412",
+    "emailContacto": "pfloresmanito19@gmail.com",
+    "instagram": "https://www.instagram.com/pmftours/",
+    "horarioAtencion": "24/7",
+    "politicaCancelacion": "24 horas antes sin costo"
+  },
+  "notas": {
+    "INSTRUCCIONES_PIERRE": "Para editar precios, solo cambia los números en 'precioBase', 'precio' o 'extra'. Para agregar un nuevo tour, copia uno de los bloques existentes y modifica los valores. Los cambios se verán en la web automáticamente al guardar este archivo.",
+    "EJEMPLO_EDICION": "Si quieres cambiar el City Tour a $70, busca 'precioBase': 65 y cámbialo a 'precioBase': 70"
+  }
+}
