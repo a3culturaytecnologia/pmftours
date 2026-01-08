@@ -185,16 +185,59 @@
         </div>
     </section>
 
-    <!-- ================= NOSOTROS ================= -->
+    <!-- ================= NOSOTROS (VERSIÓN MEJORADA CON FOTO) ================= -->
     <section class="section about" id="nosotros" data-aos="fade-up">
         <div class="section-container">
             <div class="section-header">
                 <span class="section-label" data-translate="aboutLabel">Conócenos</span>
                 <h2 class="section-title" data-translate="aboutTitle">Sobre PMF Tours</h2>
             </div>
-            <div class="about-content">
-                <p data-translate="aboutDesc">Somos una empresa local dedicada al transporte privado y tours personalizados en Panamá. Nuestro objetivo es que vivas el país de forma auténtica, segura y sin estrés.</p>
-                <p data-translate="aboutDesc2">Fundado por Pierre, un panameño apasionado por su tierra, PMF Tours nace del deseo de ofrecer experiencias reales, lejos del turismo masivo.</p>
+
+            <div class="about-content-grid">
+                <!-- Columna de Texto -->
+                <div class="about-text">
+                    <p class="about-paragraph" data-translate="aboutDesc">Somos una empresa local dedicada al transporte privado y tours personalizados en Panamá. Nuestro objetivo es que vivas el país de forma auténtica, segura y sin estrés.</p>
+                    <p class="about-paragraph" data-translate="aboutDesc2">Fundado por Pierre, un panameño apasionado por su tierra, PMF Tours nace del deseo de ofrecer experiencias reales, lejos del turismo masivo.</p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="bx bx-shield-alt-2"></i>
+                            <span data-translate="aboutHighlight1">Seguridad garantizada</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="bx bx-time-five"></i>
+                            <span data-translate="aboutHighlight2">Puntualidad 24/7</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="bx bx-world"></i>
+                            <span data-translate="aboutHighlight3">Guía bilingüe</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20conocer%20más%20sobre%20PMF%20Tours.%0A%0A¿Me%20puedes%20contar%20sobre%20tus%20servicios?"
+                       class="btn btn-primary"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'About - Contact Pierre'});">
+                        <i class="bx bxl-whatsapp"></i>
+                        <span data-translate="aboutCTA">Contactar a Pierre</span>
+                    </a>
+                </div>
+
+                <!-- Columna de Imagen -->
+                <div class="about-image">
+                    <div class="pierre-card">
+                        <img src="./image/pierre-canal.jpg" alt="Pierre Flores - Fundador de PMF Tours" loading="lazy">
+                        <div class="pierre-badge">
+                            <span class="badge-flag">🇵🇦</span>
+                            <span class="badge-text" data-translate="aboutBadge">Panameño de corazón</span>
+                        </div>
+                        <div class="pierre-info">
+                            <h3>Pierre Flores</h3>
+                            <p data-translate="aboutPierreTitle">Fundador & Guía Local</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -389,7 +432,7 @@
         <div class="section-container">
             <div class="cta-content">
                 <h2 data-translate="ctaFinalTitle">¿Listo para descubrir Panamá como un local?</h2>
-                <p data-translate="ctaFinalDesc">Reserva hoy tu experiencia privada. Sin formularios, sin depósitos, sin estrés.</p>
+                <p data-translate="ctaFinalDesc">Reserva ahora y vive Panamá de forma auténtica con un guía local que conoce cada rincón del país.</p>
                 <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0A¡Listo%20para%20reservar!%0A%0A📅%20Fecha:%20[escribe%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Tour:%20[cual%20te%20interesa]%0A%0A¿Me%20confirmas%20disponibilidad?"
                    class="btn btn-primary btn-large"
                    target="_blank"
@@ -402,15 +445,24 @@
         </div>
     </section>
 
-    <!-- ================= KIA ANIMADO ================= -->
+    <!-- ================= PMF CAR ANIMATION ================= -->
     <div id="pmfCar" class="pmf-car">
         <div class="car-container">
-            <img src="./image/kia.png" alt="PMF Tours Kia" class="car-image" loading="lazy">
+            <img src="./image/kia.png" alt="PMF Tours Kia Sportage" class="car-image">
             <div class="car-shadow"></div>
+            <div class="speed-lines"></div>
         </div>
         <div class="car-tooltip">
             <i class="bx bx-map-pin"></i>
             <span>¡Transporte seguro y confiable!</span>
+        </div>
+        <div class="progress-badge">0%</div>
+    </div>
+
+    <!-- ================= TOUR PROGRESS BAR ================= -->
+    <div class="tour-progress-bar">
+        <div class="tour-progress-fill" id="tourProgress">
+            <span class="progress-text">0%</span>
         </div>
     </div>
 
