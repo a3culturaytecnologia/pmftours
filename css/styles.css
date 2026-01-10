@@ -13,7 +13,7 @@
   --blanco: #ffffff;
   --negro: #333333;
   --gris: #666666;
-  --header
+  --header-height: 80px;
   --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.1);
@@ -48,7 +48,7 @@ body {
   font-family: "Open Sans", sans-serif;
   color: var(--negro);
   line-height: 1.6;
-  overflow-x: hidden
+  overflow-x: hidden;
   padding-top: var(--header-height);
   background: var(--blanco);
 }
@@ -788,10 +788,8 @@ a, button, .btn, .nav-links a, .faq-question, .btn-whatsapp-nav, .btn-service, .
     width: 100%;
 }
 
-/* FIX 7: Corrección global para cualquier elemento que tenga subrayado no deseado */
-* {
-    text-decoration: none !important;
-}
+/* FIX 7: ELIMINADO - Era demasiado radical */
+/* Ahora solo elementos específicos tendrán text-decoration: none */
 
 /* FIX 8: Asegurar que el footer no tenga líneas extrañas */
 .footer-nav a {
@@ -893,3 +891,4 @@ a, button, .btn, .nav-links a, .faq-question, .btn-whatsapp-nav, .btn-service, .
 .section:nth-child(even):not(.how-it-works) {
   background: var(--gris-claro);
 }
+

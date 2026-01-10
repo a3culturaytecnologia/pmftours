@@ -582,23 +582,8 @@
 
         // Función mejorada de actualización de textos
         window.updateTexts = function(lang) {
-            // Actualizar textos estáticos con data-translate
-            const dict = window.translations && window.translations[lang] ? window.translations[lang] : {};
-            document.querySelectorAll('[data-translate]').forEach(el => {
-                const key = el.getAttribute('data-translate');
-                const val = dict[key];
-                if (val) {
-                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                        el.placeholder = val;
-                    } else {
-                        el.textContent = val;
-                    }
-                }
-            });
-
-            // Actualizar servicios dinámicos
+            // Actualiza textos + servicios
             loadServices();
-
             // Guardar idioma seleccionado
             localStorage.setItem('selectedLanguage', lang);
             document.getElementById('currentLang').textContent = lang.toUpperCase();
