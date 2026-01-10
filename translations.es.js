@@ -50,4 +50,8 @@ window.translations.es = {
   faqSubtitle: "Aquí respondemos las preguntas más comunes de nuestros viajeros",
   faqQ1: "¿Cómo funciona la reserva?",
   faqA1: "Es muy simple: contáctanos por WhatsApp, cuéntanos qué tour te interesa y las fechas. Te confirmamos disponibilidad en minutos, acordamos detalles y listo. Puedes pagar en efectivo el día del tour o mediante transferencia bancaria.",
+
+  // CTA FINAL
+  ctaFinalTitle: "¿Listo para descubrir Panamá como un local?",
+  ctaFinalDesc: "Reserva ahora y vive Panamá de forma auténtica con un guía local que conoce cada rincón del país.",
 };
