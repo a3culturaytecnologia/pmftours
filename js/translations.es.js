@@ -50,6 +50,14 @@ window.translations.es = {
   faqSubtitle: "Aquí respondemos las preguntas más comunes de nuestros viajeros",
   faqQ1: "¿Cómo funciona la reserva?",
   faqA1: "Es muy simple: contáctanos por WhatsApp, cuéntanos qué tour te interesa y las fechas. Te confirmamos disponibilidad en minutos, acordamos detalles y listo. Puedes pagar en efectivo el día del tour o mediante transferencia bancaria.",
+  faqQ2: "¿Puedo cancelar o reprogramar?",
+  faqA2: "Sí, entendemos que los planes cambian. Avísanos con al menos 24 horas de anticipación y reprogramamos sin costo adicional.",
+  faqQ3: "¿Qué pasa si mi vuelo se retrasa?",
+  faqA3: "Monitoreamos tu vuelo en tiempo real. Si se retrasa, ajustamos la hora de recogida sin cargos extra.",
+  faqQ5: "¿Atienden a niños o adultos mayores?",
+  faqA5: "Por supuesto. Nuestros vehículos son cómodos y seguros, y adaptamos el servicio según las necesidades de cada viajero.",
+  faqQ6: "¿Qué tipo de vehículo utilizan?",
+  faqA6: "Contamos con un Kia moderno, amplio y con aire acondicionado, ideal para viajes cómodos y seguros.",
 
   // CTA FINAL
   ctaFinalTitle: "¿Listo para descubrir Panamá como un local?",
