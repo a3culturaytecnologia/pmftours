@@ -56,7 +56,8 @@ window.translations.en = {
   // SERVICES SECTION
   // ============================================
   servicesLabel: "Our Packages",
-  servicesTitle: "Experiences designed for you",
+  servicesTitle: "Experiences Designed for You",
+  servicesSubtitle: "Discover the best of Panama with the comfort and safety you deserve.",
   customTitle: "Looking for a unique experience?",
   customDesc: "At PMF Tours we specialize in creating memorable experiences tailored to your interests. Whether it's culture, gastronomy, nature or adventure, we'll design the perfect tour for you. Let us surprise you with the best of Panama.",
   customBtn: "Design Your Tour",
@@ -86,18 +87,14 @@ window.translations.en = {
   faqLabel: "Frequently Asked Questions",
   faqTitle: "Have Questions?",
   faqSubtitle: "Here we answer what our travelers ask us most",
-  faqQ1: "How does booking work?",
-  faqA1: "It's very simple: contact us on WhatsApp, tell us which tour you want and your dates. We confirm availability in minutes. You can pay cash on the day of the tour or by bank transfer.",
-  faqQ2: "Can I cancel or reschedule?",
-  faqA2: "Of course! You can cancel or change the date up to 24 hours before at no cost. For airport transfers, we accept changes up to 2 hours before. If your flight is delayed, we'll wait for you at no extra charge.",
-  faqQ3: "What if my flight is delayed?",
-  faqA3: "We monitor your flight in real time. We won't charge you extra and you won't have to worry. We'll wait for you at no additional cost.",
-  faqQ4: "Do you speak English?",
-  faqA4: "Yes, our driver and founder Pierre is completely bilingual (Spanish and English). Communication will be clear and smooth at all times.",
-  faqQ5: "Can you accommodate children or elderly people?",
-  faqA5: "Yes, we have child seats (upon prior request) and we adapt the tour pace for elderly people or those with reduced mobility.",
-  faqQ6: "What type of vehicle do you use?",
-  faqA6: "We use a Kia Sportage 2023/2024, with air conditioning, ample luggage space, comfortable seats and deep cleaning after each service. Child seats available upon request.",
+  faqQ1: "How do I make a reservation?",
+  faqA1: "Write to us on WhatsApp, tell us which tour you want and your dates. We confirm in minutes. You pay cash on the day of the tour.",
+  faqQ2: "Can I cancel?",
+  faqA2: "Yes. Cancel up to 24 hours before at no cost. Airport transfers: up to 2 hours before. If your flight is delayed, we wait for you for free.",
+  faqQ3: "Do you speak English?",
+  faqA3: "Yes, Pierre is completely bilingual (Spanish/English). Clear and fluent communication guaranteed.",
+  faqQ4: "What vehicle do you use?",
+  faqA4: "Kia Sportage 2023/2024 with A/C, luggage space, comfortable seats and cleaning after each service. Child seats available.",
 
   // ============================================
   // FINAL CTA
