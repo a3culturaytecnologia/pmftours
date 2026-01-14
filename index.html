@@ -6,7 +6,8 @@
     <meta name="description" content="PMF Tours - Transporte privado y tours auténticos en Panamá. Traslados de aeropuerto, city tours, playas y experiencias culturales con conductor local bilingüe.">
     <meta name="keywords" content="tours panamá, transporte privado panamá, traslado aeropuerto tocumen, city tour panama, tours casco antiguo, playas panama">
     <meta name="author" content="PMF Tours">
-    <meta name="theme-color" content="#a70007">
+    <meta name="color-scheme" content="light">
+    <meta name="msapplication-TileColor" content="#a70007">
     <title>PMF Tours - Tu puerta a Panamá | Transporte y Tours Privados</title>
 
     <!-- Open Graph para Redes Sociales -->
@@ -38,7 +39,7 @@
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+        globalThis.dataLayer = globalThis.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-XXXXXXXXXX'); // Pierre: Reemplaza con tu ID de Google Analytics
@@ -234,7 +235,7 @@
                         </div>
                         <div class="pierre-info">
                             <h3>Pierre Flores</h3>
-                            <p data-translate="aboutPierreTitle">Fundador & Guía Local</p>
+                            <p data-translate="aboutPierreTitle">Fundador &amp; Guía Local</p>
                         </div>
                     </div>
                 </div>
@@ -257,13 +258,13 @@
             <div class="custom-tour-cta">
     <h3 data-translate="customTitle">¿Buscas una experiencia única?</h3>
     <p data-translate="customDesc">En PMF Tours nos especializamos en crear experiencias memorables adaptadas a tus intereses.</p>
-                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20🎯%0A%0AQuiero%20un%20*tour%20personalizado*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A💡%20Intereses:%20[qué%20te%20gustaría%20ver/hacer]%0A%0A¿Me%20ayudas%20a%20diseñarlo?"
+    <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20🎯%0A%0AQuiero%20un%20*tour%20personalizado*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A💡%20Intereses:%20[qué%20te%20gustaría%20ver/hacer]%0A%0A¿Me%20ayudas%20a%20diseñarlo?"
                    class="btn btn-primary"
                    target="_blank"
                    rel="noopener noreferrer"
                    onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'Custom Tour'});">
                     <i class="bx bx-edit"></i>
-                    Diseña Tu Tour
+                    <span data-translate="customBtn">Diseña Tu Tour</span>
                 </a>
             </div>
         </div>
@@ -360,7 +361,7 @@
     <section class="section faq-section">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">Preguntas Frecuentes</h2>
+                <h2 class="section-title" data-translate="faqTitle">Preguntas Frecuentes</h2>
             </div>
 
             <div class="faq-grid">
@@ -423,7 +424,7 @@
                    rel="noopener noreferrer"
                    onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'CTA Final'});">
                     <i class="bx bxl-whatsapp"></i>
-                    Reservar Ahora por WhatsApp
+                    <span data-translate="ctaFinalBtn">Reservar Ahora por WhatsApp</span>
                 </a>
             </div>
         </div>
@@ -485,7 +486,8 @@
        target="_blank"
        rel="noopener noreferrer"
        onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'Floating Button'});"
-       title="Contactar por WhatsApp">
+       title="Contactar por WhatsApp"
+       aria-label="Contactar por WhatsApp">
         <i class="bx bxl-whatsapp"></i>
     </a>
 
@@ -507,6 +509,68 @@
         let serviciosData = null;
 
         // Función para cargar servicios con soporte de traducción
+        function buildServiceCard(service, currentLang, textos) {
+            const nombre = typeof service.nombre === 'object' ? service.nombre[currentLang] : service.nombre;
+            const descripcion = typeof service.descripcion === 'object' ? service.descripcion[currentLang] : service.descripcion;
+
+            let badge = '';
+            if (service.badge) {
+                badge = typeof service.badge === 'object' ? service.badge[currentLang] : service.badge;
+            }
+
+            const incluye = typeof service.incluye === 'object' && Array.isArray(service.incluye[currentLang])
+                ? service.incluye[currentLang]
+                : service.incluye;
+            const whatsappUrl = typeof service.whatsappUrl === 'object' ? service.whatsappUrl[currentLang] : service.whatsappUrl;
+
+            const badgeHtml = badge ? `<div class="badge ${service.badgeClass}">${badge}</div>` : '';
+            const featuresHtml = Array.isArray(incluye) ? incluye.map(item => `<li>✓ ${item}</li>`).join('') : '';
+            const priceHtml = buildPriceHtml(service, textos);
+
+            return `
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="${service.imagen}" alt="${nombre}" loading="lazy">
+                        ${badgeHtml}
+                    </div>
+                    <div class="service-content">
+                        <h3>${nombre}</h3>
+                        <p>${descripcion}</p>
+                        <ul class="features">
+                            ${featuresHtml}
+                        </ul>
+                        ${priceHtml}
+                        <a href="${whatsappUrl}"
+                           class="btn btn-service"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': '${nombre}'});">
+                            ${textos.reservar_ahora}
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function buildPriceHtml(service, textos) {
+            if (service.precioBase) {
+                let priceDetails = '';
+                if (service.personas) {
+                    priceDetails = `<span>${textos.precio_base} ${service.personas} ${textos.personas}</span>`;
+                    if (service.extra) {
+                        priceDetails += `<small>+$${service.extra} ${textos.persona_adicional}</small>`;
+                    }
+                }
+                return `
+                    <div class="price-container">
+                        <div class="price">$${service.precioBase}</div>
+                        ${priceDetails ? `<div class="price-details">${priceDetails}</div>` : ''}
+                    </div>
+                `;
+            }
+            return `<div class="price">$${service.precio}</div>`;
+        }
+
         async function loadServices() {
             try {
                 // Cargar el JSON solo una vez
@@ -525,50 +589,7 @@
                 if (!container) return;
 
                 // Generar HTML con el idioma correcto
-                container.innerHTML = serviciosData.servicios.map(service => {
-                    // Obtener valores según idioma
-                    const nombre = typeof service.nombre === 'object' ? service.nombre[currentLang] : service.nombre;
-                    const descripcion = typeof service.descripcion === 'object' ? service.descripcion[currentLang] : service.descripcion;
-                    const badge = service.badge ? (typeof service.badge === 'object' ? service.badge[currentLang] : service.badge) : '';
-                    const incluye = typeof service.incluye === 'object' && Array.isArray(service.incluye[currentLang])
-                        ? service.incluye[currentLang]
-                        : service.incluye;
-                    const whatsappUrl = typeof service.whatsappUrl === 'object' ? service.whatsappUrl[currentLang] : service.whatsappUrl;
-
-                    return `
-                        <div class="service-card">
-                            <div class="service-image">
-                                <img src="${service.imagen}" alt="${nombre}" loading="lazy">
-                                ${badge ? `<div class="badge ${service.badgeClass}">${badge}</div>` : ''}
-                            </div>
-                            <div class="service-content">
-                                <h3>${nombre}</h3>
-                                <p>${descripcion}</p>
-                                <ul class="features">
-                                    ${Array.isArray(incluye) ? incluye.map(item => `<li>✓ ${item}</li>`).join('') : ''}
-                                </ul>
-                                ${service.precioBase ? `
-                                    <div class="price-container">
-                                        <div class="price">$${service.precioBase}</div>
-                                        ${service.personas ? `
-                                            <div class="price-details">
-                                                <span>${textos.precio_base} ${service.personas} ${textos.personas}</span>
-                                                ${service.extra ? `<small>+$${service.extra} ${textos.persona_adicional}</small>` : ''}
-                                            </div>
-                                        ` : ''}
-                                    </div>
-                                ` : `<div class="price">$${service.precio}</div>`}
-                                <a href="${whatsappUrl}"
-                                   class="btn btn-service"
-                                   target="_blank"
-                                   rel="noopener noreferrer"
-                                   onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': '${nombre}'});">
-                                    ${textos.reservar_ahora}
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
+                container.innerHTML = serviciosData.servicios.map(service => buildServiceCard(service, currentLang, textos)).join('');
             } catch (error) {
                 console.error('Error cargando servicios:', error);
                 const container = document.getElementById('servicesContainer');
@@ -583,7 +604,7 @@
         }
 
         // Función mejorada de actualización de textos
-        window.updateTexts = function(lang) {
+        globalThis.updateTexts = function(lang) {
             // Actualiza textos + servicios
             loadServices();
             // Guardar idioma seleccionado
@@ -596,18 +617,18 @@
             document.querySelectorAll('.lang-option').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const lang = btn.getAttribute('data-lang');
-                    window.updateTexts(lang);
+                    const lang = btn.dataset.lang;
+                    globalThis.updateTexts(lang);
                 });
             });
 
             // Cargar idioma guardado o español por defecto
             const savedLang = localStorage.getItem('selectedLanguage') || 'es';
-            window.updateTexts(savedLang);
+            globalThis.updateTexts(savedLang);
         });
 
         // Cargar servicios al inicio
-        loadServices();
+        await loadServices();
     </script>
 
     <!-- SCRIPTS DE TRADUCCIÓN -->
@@ -616,10 +637,10 @@
 
     <!-- SCRIPT TRADUCTOR FUNCIONAL -->
     <script>
-        window.updateTexts = function(lang) {
-            const dict = window.translations && window.translations[lang] ? window.translations[lang] : {};
+        globalThis.updateTexts = function(lang) {
+            const dict = globalThis.translations && globalThis.translations[lang] ? globalThis.translations[lang] : {};
             document.querySelectorAll('[data-translate]').forEach(el => {
-                const key = el.getAttribute('data-translate');
+                const key = el.dataset.translate;
                 const val = dict[key];
                 if (val) {
                     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
@@ -637,14 +658,14 @@
         document.querySelectorAll('.lang-option').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-                const lang = btn.getAttribute('data-lang');
-                window.updateTexts(lang);
+                const lang = btn.dataset.lang;
+                globalThis.updateTexts(lang);
             });
         });
 
         // Cargar idioma guardado o español por defecto
         const savedLang = localStorage.getItem('selectedLanguage') || 'es';
-        window.updateTexts(savedLang);
+        globalThis.updateTexts(savedLang);
     </script>
 
     <script src="./js/pmf-bundle.js"></script>

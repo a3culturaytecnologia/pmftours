@@ -1,6 +1,6 @@
-window.translations = window.translations || {};
+globalThis.translations = globalThis.translations || {};
 
-window.translations.es = {
+globalThis.translations.es = {
   // HEADER & NAV
   navHome: "Inicio",
   navAbout: "Nosotros",
