@@ -3,23 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PMF Tours - Transporte privado y tours auténticos en Panamá. Traslados de aeropuerto, city tours, playas y experiencias culturales con conductor local bilingüe.">
-    <meta name="keywords" content="tours panamá, transporte privado panamá, traslado aeropuerto tocumen, city tour panama, tours casco antiguo, playas panama">
-    <meta name="author" content="PMF Tours">
-    <meta name="color-scheme" content="light">
-    <meta name="msapplication-TileColor" content="#a70007">
+    <meta name="description" content="PMF Tours - Transporte privado y tours auténticos en Panamá.">
     <title>PMF Tours - Tu puerta a Panamá | Transporte y Tours Privados</title>
-
-    <!-- Open Graph para Redes Sociales -->
-    <meta property="og:title" content="PMF Tours - Tours Privados en Panamá">
-    <meta property="og:description" content="Transporte seguro y tours auténticos con conductor local bilingüe. Desde $40.">
-    <meta property="og:image" content="./image/Hero.png">
-    <meta property="og:url" content="https://a3culturaytecnologia.github.io/pmftours/">
-    <meta property="og:type" content="website">
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="./image/favicon/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="./image/favicon/favicon.ico">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,44 +21,12 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/kia-animation.css">
 
-    <!-- AOS - Animate On Scroll -->
+    <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        globalThis.dataLayer = globalThis.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX'); // Pierre: Reemplaza con tu ID de Google Analytics
-    </script>
-
-    <!-- Schema.org para SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "TouristAgency",
-        "name": "PMF Tours",
-        "image": "https://a3culturaytecnologia.github.io/pmftours/image/logo.png",
-        "description": "Tours privados y transporte seguro en Panamá",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Ciudad de Panamá",
-            "addressCountry": "PA"
-        },
-        "telephone": "+507-6534-7412",
-        "email": "pfloresmanito19@gmail.com",
-        "priceRange": "$40-$120",
-        "openingHours": "Mo-Su 00:00-23:59",
-        "sameAs": [
-            "https://www.instagram.com/pmftours/"
-        ]
-    }
-    </script>
 </head>
 
 <body>
-    <!-- ================= HEADER ================= -->
+    <!-- HEADER -->
     <header class="header" id="header">
         <div class="nav-container">
             <div class="logo-container">
@@ -99,8 +55,7 @@
                 <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20información%20sobre%20los%20tours%20de%20PMF%20Tours.%0A%0A¿Me%20puedes%20ayudar?"
                    class="btn-whatsapp-nav"
                    target="_blank"
-                   rel="noopener noreferrer"
-                   onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'Header Button'});">
+                   rel="noopener noreferrer">
                     <i class="bx bxl-whatsapp"></i>
                     WhatsApp
                 </a>
@@ -112,7 +67,7 @@
         </div>
     </header>
 
-    <!-- ================= HERO ================= -->
+    <!-- HERO -->
     <section class="hero" id="inicio">
         <div class="hero-slider">
             <div class="hero-slide active">
@@ -130,11 +85,7 @@
             <h1 class="hero-title" data-translate="heroTitle">Tu puerta a Panamá</h1>
             <p class="hero-subtitle" data-translate="heroSubtitle">Transporte y tours privados con seguridad, puntualidad y experiencias auténticas.</p>
             <div class="hero-buttons">
-                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20reservar%20un%20tour.%0A%0A📅%20Fecha:%20[escribe%20tu%20fecha]%0A👥%20Personas:%20[cuántos%20son]%0A%0A¿Qué%20tours%20tienes%20disponibles?"
-                   class="btn btn-primary"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'Hero - Reservar Tour'});">
+                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20reservar%20un%20tour.%0A%0A📅%20Fecha:%20[escribe%20tu%20fecha]%0A👥%20Personas:%20[cuántos%20son]%0A%0A¿Qué%20tours%20tienes%20disponibles?" class="btn btn-primary" target="_blank">
                     <i class="bx bxl-whatsapp"></i>
                     <span data-translate="heroBtn1">Reservar Tour</span>
                 </a>
@@ -146,7 +97,7 @@
         </div>
     </section>
 
-    <!-- ================= CÓMO FUNCIONA ================= -->
+    <!-- CÓMO FUNCIONA -->
     <section class="section how-it-works" id="como-funciona" data-aos="fade-up">
         <div class="section-container">
             <div class="section-header">
@@ -186,7 +137,7 @@
         </div>
     </section>
 
-    <!-- ================= NOSOTROS (VERSIÓN MEJORADA CON FOTO) ================= -->
+    <!-- NOSOTROS -->
     <section class="section about" id="nosotros" data-aos="fade-up">
         <div class="section-container">
             <div class="section-header">
@@ -195,10 +146,9 @@
             </div>
 
             <div class="about-content-grid">
-                <!-- Columna de Texto -->
                 <div class="about-text">
-                    <p class="about-paragraph" data-translate="aboutDesc">Somos una empresa local dedicada al transporte privado y tours personalizados en Panamá. Nuestro objetivo es que vivas el país de forma auténtica, segura y sin estrés.</p>
-                    <p class="about-paragraph" data-translate="aboutDesc2">Fundado por Pierre, un panameño apasionado por su tierra, PMF Tours nace del deseo de ofrecer experiencias reales, lejos del turismo masivo.</p>
+                    <p class="about-paragraph" data-translate="aboutDesc">Somos una empresa local dedicada al transporte privado y tours personalizados en Panamá.</p>
+                    <p class="about-paragraph" data-translate="aboutDesc2">Fundado por Pierre, un panameño apasionado por su tierra.</p>
 
                     <div class="about-highlights">
                         <div class="highlight-item">
@@ -215,27 +165,22 @@
                         </div>
                     </div>
 
-                    <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20conocer%20más%20sobre%20PMF%20Tours.%0A%0A¿Me%20puedes%20contar%20sobre%20tus%20servicios?"
-                       class="btn btn-primary"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'About - Contact Pierre'});">
+                    <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20conocer%20más%20sobre%20PMF%20Tours.%0A%0A¿Me%20puedes%20contar%20sobre%20tus%20servicios?" class="btn btn-primary" target="_blank">
                         <i class="bx bxl-whatsapp"></i>
                         <span data-translate="aboutCTA">Contactar a Pierre</span>
                     </a>
                 </div>
 
-                <!-- Columna de Imagen -->
                 <div class="about-image">
                     <div class="pierre-card">
-                        <img src="./image/pierre-flores.png" alt="Pierre Flores - Fundador de PMF Tours" loading="lazy">
+                        <img src="./image/pierre-flores.png" alt="Pierre Flores" loading="lazy">
                         <div class="pierre-badge">
                             <span class="badge-flag">🇵🇦</span>
                             <span class="badge-text" data-translate="aboutBadge">Panameño de corazón</span>
                         </div>
                         <div class="pierre-info">
                             <h3>Pierre Flores</h3>
-                            <p data-translate="aboutPierreTitle">Fundador &amp; Guía Local</p>
+                            <p data-translate="aboutPierreTitle">Fundador & Guía Local</p>
                         </div>
                     </div>
                 </div>
@@ -243,54 +188,51 @@
         </div>
     </section>
 
-    <!-- ================= SERVICIOS (CON PRECIOS DINÁMICOS) ================= -->
+    <!-- SERVICIOS -->
     <section class="section services" id="servicios" data-aos="fade-up">
         <div class="section-container">
             <div class="section-header">
                 <span class="section-label" data-translate="servicesLabel">Nuestros Paquetes</span>
                 <h2 class="section-title" data-translate="servicesTitle">Experiencias diseñadas para ti</h2>
-<p class="section-subtitle" data-translate="servicesSubtitle">Descubre lo mejor de Panamá con la comodidad y seguridad que mereces.</p>            </div>
-
-            <div class="services-grid" id="servicesContainer">
-                <!-- Los servicios se cargarán automáticamente desde precios.json -->
+                <p class="section-subtitle" data-translate="servicesSubtitle">Descubre lo mejor de Panamá.</p>
             </div>
 
-    <div class="custom-tour-cta">
-        <h3 data-translate="customTitle">¿Quieres un tour a tu medida?</h3>
-        <p data-translate="customDesc">Cuéntanos tus intereses y te armamos la experiencia perfecta.</p>
-        <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20🎯%0A%0AQuiero%20un%20*tour%20personalizado*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A💡%20Intereses:%20[qué%20te%20gustaría%20ver/hacer]%0A%0A¿Me%20ayudas%20a%20diseñarlo?"
-           class="btn btn-primary"
-           target="_blank"
-           rel="noopener noreferrer"
-           onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'Custom Tour'});">
-            <i class="bx bx-edit"></i>
-            <span data-translate="customBtn">Diseña Tu Tour</span>
-        </a>
-    </div>
+            <div class="services-grid" id="servicesContainer">
+                <!-- Services loaded by JS -->
+            </div>
+
+            <div class="custom-tour-cta">
+                <h3 data-translate="customTitle">¿Buscas una experiencia única?</h3>
+                <p data-translate="customDesc">Cuéntanos tus intereses y te armamos la experiencia perfecta.</p>
+                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20🎯%0A%0AQuiero%20un%20*tour%20personalizado*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A💡%20Intereses:%20[qué%20te%20gustaría%20ver/hacer]%0A%0A¿Me%20ayudas%20a%20diseñarlo?" class="btn btn-primary" target="_blank">
+                    <i class="bx bx-edit"></i>
+                    <span data-translate="customBtn">Diseña Tu Tour</span>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- ================= GALERÍA ================= -->
+    <!-- GALERÍA -->
     <section class="section gallery" id="galeria" data-aos="fade-up">
-<div class="section-container">
-    <div class="section-header">
-        <span class="section-label" data-translate="galleryLabel">Galería</span>
-        <h2 class="section-title" data-translate="galleryTitle">Galería</h2>
-        <p class="section-subtitle" data-translate="gallerySubtitle">Descubre la magia de Panamá a través de nuestros ojos.</p>
-    </div>
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label" data-translate="galleryLabel">Galería</span>
+                <h2 class="section-title" data-translate="galleryTitle">Galería</h2>
+                <p class="section-subtitle" data-translate="gallerySubtitle">Descubre la magia de Panamá.</p>
+            </div>
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="./image/gallery/imagen1.jpg" alt="Tour por el interior" loading="lazy">
+                    <img src="./image/gallery/imagen1.jpg" alt="Tour interior" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/gallery/imagen2.jpg" alt="Festival Nacional" loading="lazy">
+                    <img src="./image/gallery/imagen2.jpg" alt="Festival" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/gallery/imagen3.jpg" alt="Cultura panameña" loading="lazy">
+                    <img src="./image/gallery/imagen3.jpg" alt="Cultura" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/gallery/imagen4.jpg" alt="Canal de Panamá" loading="lazy">
+                    <img src="./image/gallery/imagen4.jpg" alt="Canal" loading="lazy">
                 </div>
                 <div class="gallery-item">
                     <img src="./image/gallery/imagen5.jpg" alt="Isla Monos" loading="lazy">
@@ -302,65 +244,61 @@
         </div>
     </section>
 
-    <!-- ================= TESTIMONIOS ================= -->
-    <!-- Testimonios Optimizados -->
+    <!-- TESTIMONIOS -->
     <section class="section testimonials" id="testimonios" data-aos="fade-up">
-<div class="section-container">
-    <div class="section-header">
-        <span class="section-label" data-translate="testimonialsLabel">Lo que dicen</span>
-        <h2 class="section-title" data-translate="testimonialsTitle">Testimonios</h2>
-    </div>
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-label" data-translate="testimonialsLabel">Lo que dicen</span>
+                <h2 class="section-title" data-translate="testimonialsTitle">Testimonios</h2>
+            </div>
 
             <div class="testimonials-grid-compact">
-                <!-- TESTIMONIAL 1 -->
-<div class="testimonial-item">
-    <div class="testimonial-stars"><span>⭐⭐⭐⭐⭐</span></div>
-    <div class="testimonial-content">
-        <p data-translate="testimonial1">"Pierre nos llevó a Playa Blanca. Mi hija todavía habla de las estrellas de mar. ¡Aventura familiar inolvidable!"</p>
-    </div>
-    <div class="testimonial-author">
-        <img src="./image/testimonios/Usuario1.jpg" alt="Lady Rouse" loading="lazy">
-        <div class="author-info">
-            <strong>Lady Rouse</strong>
-            <span>🇺🇸 USA • Dic 2024</span>
-        </div>
-    </div>
-</div>
+                <div class="testimonial-item">
+                    <div class="testimonial-stars"><span>⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-content">
+                        <p data-translate="testimonial1">"Pierre nos llevó a Playa Blanca. ¡Aventura familiar inolvidable!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="./image/testimonios/Usuario1.jpg" alt="Lady Rouse" loading="lazy">
+                        <div class="author-info">
+                            <strong>Lady Rouse</strong>
+                            <span>🇺🇸 USA • Dic 2024</span>
+                        </div>
+                    </div>
+                </div>
 
-<!-- TESTIMONIAL 2 -->
-<div class="testimonial-item">
-    <div class="testimonial-stars"><span>⭐⭐⭐⭐⭐</span></div>
-    <div class="testimonial-content">
-        <p data-translate="testimonial2">"Conoce cada rincón y cuenta historias que no están en las guías. El mejor ceviche de nuestras vidas. ¡100% auténtico!"</p>
-    </div>
-    <div class="testimonial-author">
-        <img src="./image/testimonios/Usuario2.jpg" alt="Anand Divekar" loading="lazy">
-        <div class="author-info">
-            <strong>Anand Divekar</strong>
-            <span>🇮🇳 India • Abr 2024</span>
-        </div>
-    </div>
-</div>
+                <div class="testimonial-item">
+                    <div class="testimonial-stars"><span>⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-content">
+                        <p data-translate="testimonial2">"El mejor ceviche de nuestras vidas. ¡100% auténtico!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="./image/testimonios/Usuario2.jpg" alt="Anand" loading="lazy">
+                        <div class="author-info">
+                            <strong>Anand Divekar</strong>
+                            <span>🇮🇳 India • Abr 2024</span>
+                        </div>
+                    </div>
+                </div>
 
-<!-- TESTIMONIAL 3 -->
-<div class="testimonial-item">
-    <div class="testimonial-stars"><span>⭐⭐⭐⭐⭐</span></div>
-    <div class="testimonial-content">
-        <p data-translate="testimonial3">"Llegué a las 11pm y Pierre estaba esperando. Kia impecable, agua fría, 25 minutos al hotel. Servicio de lujo a precio justo."</p>
-    </div>
-    <div class="testimonial-author">
-        <img src="./image/testimonios/Usuario3.jpg" alt="Juan Carlos" loading="lazy">
-        <div class="author-info">
-            <strong>Juan Carlos Vargas</strong>
-            <span>🇨🇴 Colombia • Sep 2024</span>
-        </div>
-    </div>
-</div>
+                <div class="testimonial-item">
+                    <div class="testimonial-stars"><span>⭐⭐⭐⭐⭐</span></div>
+                    <div class="testimonial-content">
+                        <p data-translate="testimonial3">"Servicio de lujo a precio justo."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="./image/testimonios/Usuario3.jpg" alt="Juan Carlos" loading="lazy">
+                        <div class="author-info">
+                            <strong>Juan Carlos Vargas</strong>
+                            <span>🇨🇴 Colombia • Sep 2024</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= FAQ ================= -->
+    <!-- FAQ -->
     <section class="section faq-section">
         <div class="section-container">
             <div class="section-header">
@@ -368,64 +306,56 @@
             </div>
 
             <div class="faq-grid">
-                <!-- PREGUNTA 1 -->
-                <div class="faq-item" data-aos="fade-up">
+                <div class="faq-item">
                     <button class="faq-question" type="button">
                         <span data-translate="faqQ1">¿Cómo hago la reserva?</span>
                         <i class="bx bx-plus faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p data-translate="faqA1">Escríbenos por WhatsApp, dinos qué tour quieres y tus fechas. Confirmamos en minutos. Pagas en efectivo el día del tour.</p>
+                        <p data-translate="faqA1">Escríbenos por WhatsApp, dinos qué tour quieres y tus fechas.</p>
                     </div>
                 </div>
 
-                <!-- PREGUNTA 2 -->
-                <div class="faq-item" data-aos="fade-up">
+                <div class="faq-item">
                     <button class="faq-question" type="button">
                         <span data-translate="faqQ2">¿Puedo cancelar?</span>
                         <i class="bx bx-plus faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p data-translate="faqA2">Sí. Cancela hasta 24h antes sin costo. Traslados aeropuerto: hasta 2h antes. Si tu vuelo se retrasa, te esperamos gratis.</p>
+                        <p data-translate="faqA2">Sí. Cancela hasta 24h antes sin costo.</p>
                     </div>
                 </div>
 
-                <!-- PREGUNTA 3 -->
-                <div class="faq-item" data-aos="fade-up">
+                <div class="faq-item">
                     <button class="faq-question" type="button">
                         <span data-translate="faqQ3">¿Hablan inglés?</span>
                         <i class="bx bx-plus faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p data-translate="faqA3">Sí, Pierre es completamente bilingüe (español/inglés). Comunicación clara y fluida garantizada.</p>
+                        <p data-translate="faqA3">Sí, Pierre es completamente bilingüe.</p>
                     </div>
                 </div>
 
-                <!-- PREGUNTA 4 -->
-                <div class="faq-item" data-aos="fade-up">
+                <div class="faq-item">
                     <button class="faq-question" type="button">
                         <span data-translate="faqQ4">¿Qué vehículo usan?</span>
                         <i class="bx bx-plus faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        <p data-translate="faqA4">Kia Sportage 2023/2024 con A/C, espacio para equipaje, asientos cómodos y limpieza después de cada servicio. Asientos para niños disponibles.</p>
+                        <p data-translate="faqA4">Kia Sportage 2023/2024 con A/C.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ================= CTA FINAL ================= -->
-    <section class="section final-cta" id="cta-final" data-aos="fade-up">
+    <!-- CTA FINAL -->
+    <section class="section final-cta" data-aos="fade-up">
         <div class="section-container">
             <div class="cta-content">
                 <h2 data-translate="ctaFinalTitle">¿Listo para descubrir Panamá como un local?</h2>
-                <p data-translate="ctaFinalDesc">Reserva ahora y vive Panamá de forma auténtica con un guía local que conoce cada rincón del país.</p>
-                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0A¡Listo%20para%20reservar!%0A%0A📅%20Fecha:%20[escribe%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Tour:%20[cual%20te%20interesa]%0A%0A¿Me%20confirmas%20disponibilidad?"
-                   class="btn btn-primary btn-large"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'CTA Final'});">
+                <p data-translate="ctaFinalDesc">Reserva ahora y vive Panamá de forma auténtica.</p>
+                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0A¡Listo%20para%20reservar!%0A%0A📅%20Fecha:%20[escribe%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Tour:%20[cual%20te%20interesa]%0A%0A¿Me%20confirmas%20disponibilidad?" class="btn btn-primary btn-large" target="_blank">
                     <i class="bx bxl-whatsapp"></i>
                     <span data-translate="ctaFinalBtn">Reservar Ahora por WhatsApp</span>
                 </a>
@@ -433,37 +363,16 @@
         </div>
     </section>
 
-    <!-- ================= PMF CAR ANIMATION ================= -->
-    <div id="pmfCar" class="pmf-car">
-        <div class="car-container">
-            <img src="./image/kia.png" alt="PMF Tours Kia Sportage" class="car-image">
-            <div class="car-shadow"></div>
-            <div class="speed-lines"></div>
-        </div>
-        <div class="car-tooltip">
-            <i class="bx bx-map-pin"></i>
-            <span data-translate="carTooltip">¡Transporte seguro y confiable!</span>
-        </div>
-        <div class="progress-badge">0%</div>
-    </div>
-
-    <!-- ================= TOUR PROGRESS BAR ================= -->
-    <div class="tour-progress-bar">
-        <div class="tour-progress-fill" id="tourProgress">
-            <span class="progress-text">0%</span>
-        </div>
-    </div>
-
-    <!-- ================= FOOTER ================= -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <img src="./image/logo.png" alt="PMF Tours Logo">
                 <div class="footer-social">
-                    <a href="https://www.instagram.com/pmftours/" target="_blank" rel="noopener" class="social-link instagram" aria-label="Instagram">
+                    <a href="https://www.instagram.com/pmftours/" target="_blank" class="social-link">
                         <i class="bx bxl-instagram"></i>
                     </a>
-                    <a href="https://wa.me/50765347412" target="_blank" rel="noopener" class="social-link whatsapp" aria-label="WhatsApp">
+                    <a href="https://wa.me/50765347412" target="_blank" class="social-link">
                         <i class="bx bxl-whatsapp"></i>
                     </a>
                 </div>
@@ -483,14 +392,29 @@
         </div>
     </footer>
 
+    <!-- PMF CAR ANIMATION -->
+    <div id="pmfCar" class="pmf-car">
+        <div class="car-container">
+            <img src="./image/kia.png" alt="PMF Tours Kia Sportage" class="car-image">
+            <div class="car-shadow"></div>
+            <div class="speed-lines"></div>
+        </div>
+        <div class="car-tooltip">
+            <i class="bx bx-map-pin"></i>
+            <span data-translate="carTooltip">¡Transporte seguro y confiable!</span>
+        </div>
+        <div class="progress-badge">0%</div>
+    </div>
+
+    <!-- TOUR PROGRESS BAR -->
+    <div class="tour-progress-bar">
+        <div class="tour-progress-fill" id="tourProgress">
+            <span class="progress-text">0%</span>
+        </div>
+    </div>
+
     <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/50765347412?text=¡Hola!%20Quiero%20información%20sobre%20PMF%20Tours.%20¿Me%20pueden%20ayudar?"
-       class="floating-whatsapp"
-       target="_blank"
-       rel="noopener noreferrer"
-       onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': 'Floating Button'});"
-       title="Contactar por WhatsApp"
-       aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/50765347412" class="floating-whatsapp" target="_blank" title="Contactar por WhatsApp">
         <i class="bx bxl-whatsapp"></i>
     </a>
 
@@ -499,19 +423,15 @@
     <script>
         AOS.init({ duration: 800, once: true });
         document.getElementById("current-year").textContent = new Date().getFullYear();
-     </script>
+    </script>
 
-    <!-- SCRIPT PARA CARGAR SERVICIOS DESDE JSON -->
+    <!-- PMF BUNDLE - MAIN SCRIPT -->
+    <script src="./js/pmf-bundle.js"></script>
+
+    <!-- SERVICES LOADER CON TRADUCCIÓN -->
     <script type="module">
-        // ============================================
-        // SISTEMA DE TRADUCCIÓN MEJORADO PARA PMF TOURS
-        // Reemplaza el script de loadServices() en index.html
-        // ============================================
-
-        // Variable global para almacenar los servicios
         let serviciosData = null;
 
-        // Función para cargar servicios con soporte de traducción
         function buildServiceCard(service, currentLang, textos) {
             const nombre = typeof service.nombre === 'object' ? service.nombre[currentLang] : service.nombre;
             const descripcion = typeof service.descripcion === 'object' ? service.descripcion[currentLang] : service.descripcion;
@@ -524,6 +444,7 @@
             const incluye = typeof service.incluye === 'object' && Array.isArray(service.incluye[currentLang])
                 ? service.incluye[currentLang]
                 : service.incluye;
+
             const whatsappUrl = typeof service.whatsappUrl === 'object' ? service.whatsappUrl[currentLang] : service.whatsappUrl;
 
             const badgeHtml = badge ? `<div class="badge ${service.badgeClass}">${badge}</div>` : '';
@@ -539,15 +460,9 @@
                     <div class="service-content">
                         <h3>${nombre}</h3>
                         <p>${descripcion}</p>
-                        <ul class="features">
-                            ${featuresHtml}
-                        </ul>
+                        <ul class="features">${featuresHtml}</ul>
                         ${priceHtml}
-                        <a href="${whatsappUrl}"
-                           class="btn btn-service"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           onclick="gtag('event', 'click', {'event_category': 'WhatsApp', 'event_label': '${nombre}'});">
+                        <a href="${whatsappUrl}" class="btn btn-service" target="_blank">
                             ${textos.reservar_ahora}
                         </a>
                     </div>
@@ -576,169 +491,30 @@
 
         async function loadServices() {
             try {
-                // Cargar el JSON solo una vez
                 if (!serviciosData) {
                     const response = await fetch('./data/precios.json');
                     serviciosData = await response.json();
                 }
 
-                // Obtener idioma actual
-                const currentLang = localStorage.getItem('selectedLanguage') || 'es';
-
-                // Obtener textos de interfaz
+                const currentLang = localStorage.getItem('preferredLanguage') || 'es';
                 const textos = serviciosData.textos_interfaz[currentLang];
-
                 const container = document.getElementById('servicesContainer');
+
                 if (!container) return;
 
-                // Generar HTML con el idioma correcto
-                container.innerHTML = serviciosData.servicios.map(service => buildServiceCard(service, currentLang, textos)).join('');
+                container.innerHTML = serviciosData.servicios.map(service =>
+                    buildServiceCard(service, currentLang, textos)
+                ).join('');
             } catch (error) {
-                console.error('Error cargando servicios:', error);
-                const container = document.getElementById('servicesContainer');
-                if (container) {
-                    container.innerHTML = `
-                        <div style="text-align: center; padding: 40px; color: #666;">
-                            <p>Error loading services. Please refresh the page.</p>
-                        </div>
-                    `;
-                }
+                console.error('Error loading services:', error);
             }
         }
 
-        // Función mejorada de actualización de textos
-        globalThis.updateTexts = function(lang) {
-            // Actualiza textos + servicios
-            loadServices();
-            // Guardar idioma seleccionado
-            localStorage.setItem('selectedLanguage', lang);
-            document.getElementById('currentLang').textContent = lang.toUpperCase();
-        };
+        // Recargar servicios cuando cambie el idioma
+        document.addEventListener('languageChanged', loadServices);
 
-        // Selector de idioma
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.lang-option').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const lang = btn.dataset.lang;
-                    globalThis.updateTexts(lang);
-                });
-            });
-
-            // Cargar idioma guardado o español por defecto
-            const savedLang = localStorage.getItem('selectedLanguage') || 'es';
-            globalThis.updateTexts(savedLang);
-        });
-
-        // Cargar servicios al inicio
+        // Cargar al inicio
         loadServices();
-    </script>
-
-    <!-- SCRIPTS DE TRADUCCIÓN -->
-    <script src="./js/translations.es.js"></script>
-    <script src="./js/translations.en.js"></script>
-
-    <!-- SCRIPTS DE PMF -->
-    <script src="./js/pmf-bundle.js"></script>
-
-    <!-- FAQ TOGGLE -->
-    <script>
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const item = button.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-    </script>
-
-    <!-- LANGUAGE SWITCHER -->
-    <script>
-        const langBtn = document.getElementById('langBtn');
-        const langDropdown = document.getElementById('langDropdown');
-
-        if (langBtn && langDropdown) {
-            langBtn.addEventListener('click', () => {
-                langDropdown.style.display = langDropdown.style.display === 'block' ? 'none' : 'block';
-            });
-
-            document.addEventListener('click', (e) => {
-                if (!langBtn.contains(e.target)) {
-                    langDropdown.style.display = 'none';
-                }
-            });
-        }
-    </script>
-
-    <!-- MOBILE MENU TOGGLE -->
-    <script>
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        if (mobileMenuToggle && navLinks) {
-            mobileMenuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                mobileMenuToggle.classList.toggle('active');
-            });
-
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileMenuToggle.classList.remove('active');
-                });
-            });
-        }
-    </script>
-
-    <!-- HERO SLIDER -->
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.hero-slide');
-        const totalSlides = slides.length;
-
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + totalSlides) % totalSlides;
-            slides[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        // Auto-advance slides every 5 seconds
-        if (slides.length > 1) {
-            setInterval(nextSlide, 5000);
-        }
-    </script>
-
-    <!-- CAR ANIMATION TRIGGER -->
-    <script>
-        window.addEventListener('load', () => {
-            const pmfCar = document.getElementById('pmfCar');
-            if (pmfCar) {
-                setTimeout(() => {
-                    pmfCar.classList.add('driving');
-                }, 500);
-            }
-        });
-    </script>
-
-    <!-- HEADER SCROLL EFFECT -->
-    <script>
-        const header = document.getElementById('header');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            lastScroll = currentScroll;
-        });
     </script>
 </body>
 </html>
