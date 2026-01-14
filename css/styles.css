@@ -1257,3 +1257,23 @@ img {
   background: var(--gris-claro);
 }
 
+/* ============================================
+   🔥 FIX FINAL - FRANJA GRIS
+   ============================================ */
+
+/* FORZAR hero y how-it-works a fondo blanco */
+
+.hero,
+.section.how-it-works {
+  background: #ffffff !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 80px !important;
+}
+
+/* Eliminar gris de how-it-works sin importar su posición */
+.how-it-works {
+  background: #ffffff !important;
+}
+

@@ -54,8 +54,9 @@ globalThis.translations.en = {
   gallerySubtitle: "Discover the magic of Panama through our eyes.",
 
   // TESTIMONIALS
-  testimonialsLabel: "What They Say",
-  testimonialsTitle: "Testimonials",
+  testimonial1: "\"Pierre took us to Playa Blanca. My daughter still talks about the starfish. Unforgettable family adventure!\"",
+  testimonial2: "\"He knows every corner and tells stories that aren't in the guides. The best ceviche of our lives. 100% authentic!\"",
+  testimonial3: "\"I arrived at 11pm and Pierre was waiting. Impeccable Kia, cold water, 25 minutes to hotel. Luxury service at fair price.\"",
 
   // FAQ
   faqTitle: "Frequently Asked Questions",
@@ -71,5 +72,8 @@ globalThis.translations.en = {
   // FINAL CTA
   ctaFinalTitle: "Ready to discover Panama like a local?",
   ctaFinalDesc: "Book now and experience Panama authentically with a local guide who knows every corner of the country.",
-  ctaFinalBtn: "Book Now via WhatsApp"
+  ctaFinalBtn: "Book Now via WhatsApp",
+
+  // CAR ANIMATION
+  carTooltip: "Safe and reliable transport!"
 };
