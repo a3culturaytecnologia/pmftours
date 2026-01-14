@@ -65,6 +65,8 @@ window.translations.en = {
   // ============================================
   // TESTIMONIALS
   // ============================================
+  testimonialsLabel: "What They Say",
+  testimonialsTitle: "Testimonials",
   testimonial1: "\"Pierre took us to Playa Blanca at Isla Grande. My 8-year-old daughter still talks about the starfish we saw. It wasn't just transport, it was a family adventure we'll never forget.\"",
   testimonial2: "\"We booked the Cultural Tour and Pierre took us to a local restaurant in Casco Viejo where we had the best ceviche of our lives. He knows every corner and tells you stories that aren't in the guides. 100% authentic!\"",
   testimonial3: "\"I arrived at Tocumen at 11pm and Pierre was waiting with a sign and a smile. The Kia was spotless, cold water ready, and he got me to the hotel in 25 minutes. Luxury service at a fair price.\"",
@@ -100,5 +102,12 @@ window.translations.en = {
   // FINAL CTA
   // ============================================
   ctaFinalTitle: "Ready to discover Panama like a local?",
-  ctaFinalDesc: "Book now and experience Panama authentically with a local guide who knows every corner of the country."
+  ctaFinalDesc: "Book now and experience Panama authentically with a local guide who knows every corner of the country.",
+
+  // ============================================
+  // GALLERY SECTION
+  // ============================================
+  galleryLabel: "Our Gallery",
+  galleryTitle: "Captured Moments",
+  gallerySubtitle: "Discover the magic of Panama through our eyes."
 };
