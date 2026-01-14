@@ -45,15 +45,17 @@ globalThis.translations.en = {
 
   // CUSTOM TOUR
   customTitle: "Looking for a unique experience?",
-  customDesc: "At PMF Tours we specialize in creating memorable experiences tailored to your interests.",
+  customDesc: "Tell us your interests and we'll create the perfect experience for you.",
   customBtn: "Design Your Tour",
 
   // GALLERY
   galleryLabel: "Our Gallery",
-  galleryTitle: "Captured Moments",
+  galleryTitle: "Gallery",
   gallerySubtitle: "Discover the magic of Panama through our eyes.",
 
   // TESTIMONIALS
+  testimonialsLabel: "What They Say",
+  testimonialsTitle: "Testimonials",
   testimonial1: "\"Pierre took us to Playa Blanca. My daughter still talks about the starfish. Unforgettable family adventure!\"",
   testimonial2: "\"He knows every corner and tells stories that aren't in the guides. The best ceviche of our lives. 100% authentic!\"",
   testimonial3: "\"I arrived at 11pm and Pierre was waiting. Impeccable Kia, cold water, 25 minutes to hotel. Luxury service at fair price.\"",
