@@ -940,39 +940,30 @@ a, button, .btn, .nav-links a, .faq-question, .btn-whatsapp-nav, .btn-service, .
 }
 
 /* ============================================
-   🔥 FIX URGENTE: ELIMINAR FRANJA GRIS
+   FIX HERO + HOW-IT-WORKS
    ============================================ */
 
-/* Eliminar CUALQUIER espacio o fondo gris entre hero y how-it-works */
+/* Hero siempre blanco y sin margen inferior */
 .hero {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
   background: #ffffff !important;
 }
 
-.hero + .section,
+/* How-it-works siempre blanco, sin importar posición */
 .section.how-it-works {
+  background: #ffffff !important;
   margin-top: 0 !important;
   padding-top: 80px !important;
-  background: #ffffff !important;
+}
+
+/* Ajuste global: solo secciones pares distintas de how-it-works reciben gris */
+.section:nth-child(even):not(.how-it-works) {
+  background: var(--gris-claro);
 }
 
 /* Forzar fondo blanco en body */
 body {
   background-color: #ffffff !important;
-}
-
-/* Eliminar fondo gris de secciones pares si están después del hero */
-.hero ~ .section:nth-child(even) {
-  background: var(--gris-claro);
-}
-
-.hero ~ .section:first-of-type {
-  background: #ffffff !important;
-}
-
-/* Blindaje extra para evitar fondo gris en how-it-works */
-.section.how-it-works {
-  background: #ffffff !important;
 }
 
