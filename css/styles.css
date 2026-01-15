@@ -893,8 +893,8 @@ img {
 }
 
 .social-link {
-  width: 100px;      /* Cambio: 80px → 100px (más grande) */
-  height: 100px;     /* Cambio: 80px → 100px */
+  width: 64px;      /* Cambio: 80px → 100px (más grande) */
+  height: 64px;     /* Cambio: 80px → 100px */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -904,7 +904,7 @@ img {
 }
 
 .social-link i {
-  font-size: 50px;   /* Cambio: 40px → 50px (más grande) */
+  font-size: 40px;   /* Cambio: 40px → 50px (más grande) */
   color: #ffffff;
 }
 
