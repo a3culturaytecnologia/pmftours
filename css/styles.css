@@ -276,7 +276,7 @@ img {
   }
 
   .hero-content {
-    padding: 20px 20px 50px;  /* ✅ CORRECTO - SIN padding-top */
+    padding: 40px 20px 50px;  /* ← Mantiene 40px en móvil también */
   }
 
   .hero-title {
@@ -301,7 +301,7 @@ img {
   text-align: center;
   color: #fff;
   max-width: 760px;
-  padding: 0 20px 60px;  /* ← VUELVE A 0 */
+  padding: 40px 20px 60px;  /* ← Agregó 40px arriba */
 }
 
 .hero-title {
@@ -1122,7 +1122,7 @@ img {
   }
 
   .hero-content {
-    padding: 20px 20px 50px;  /* ✅ CORRECTO - SIN padding-top */
+    padding: 40px 20px 50px;  /* ← Mantiene 40px en móvil también */
   }
 
   .hero-title {
