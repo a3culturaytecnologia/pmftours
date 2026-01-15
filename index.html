@@ -9,7 +9,7 @@
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="./image/favicon/favicon.svg">
 
-    <!-- Google Fonts -->
+    <!-- Preconnect para fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -21,8 +21,44 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/kia-animation.css">
 
-    <!-- AOS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <!-- AOS - SOLO EN DESKTOP para mejor performance -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" media="(min-width: 769px)">
+
+    <style>
+        /* Critical CSS - Inline para faster loading */
+        body { margin: 0; padding: 0; }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        /* WhatsApp flotante - Aparece inmediatamente */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            z-index: 999999;
+            text-decoration: none;
+            opacity: 1;
+            visibility: visible;
+        }
+        .floating-whatsapp i {
+            font-size: 32px;
+            color: #ffffff;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,7 +66,7 @@
     <header class="header" id="header">
         <div class="nav-container">
             <div class="logo-container">
-                <img src="./image/logo.png" alt="PMF Tours Logo" class="logo-image" loading="eager">
+                <img src="./image/logo.png" alt="PMF Tours Logo" class="logo-image" width="140" height="auto" loading="eager">
                 <span class="logo-text">PMF TOURS</span>
             </div>
 
@@ -71,13 +107,13 @@
     <section class="hero" id="inicio">
         <div class="hero-slider">
             <div class="hero-slide active">
-                <img src="./image/Hero.png" alt="Panamá Ciudad" loading="eager">
+                <img src="./image/Hero.png" alt="Panamá Ciudad" width="1920" height="1080" loading="eager">
             </div>
             <div class="hero-slide">
-                <img src="./image/gallery/casco-viejo.png" alt="Casco Antiguo" loading="lazy">
+                <img src="./image/gallery/casco-viejo.png" alt="Casco Antiguo" width="1920" height="1080" loading="lazy">
             </div>
             <div class="hero-slide">
-                <img src="./image/tours/Playa.png" alt="Playa en Panamá" loading="lazy">
+                <img src="./image/tours/Playa.png" alt="Playa en Panamá" width="1920" height="1080" loading="lazy">
             </div>
         </div>
         <div class="hero-overlay"></div>
@@ -85,7 +121,7 @@
             <h1 class="hero-title" data-translate="heroTitle">Tu puerta a Panamá</h1>
             <p class="hero-subtitle" data-translate="heroSubtitle">Transporte y tours privados con seguridad, puntualidad y experiencias auténticas.</p>
             <div class="hero-buttons">
-                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20reservar%20un%20tour.%0A%0A📅%20Fecha:%20[escribe%20tu%20fecha]%0A👥%20Personas:%20[cuántos%20son]%0A%0A¿Qué%20tours%20tienes%20disponibles?" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/50765347412" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     <i class="bx bxl-whatsapp"></i>
                     <span data-translate="heroBtn1">Reservar Tour</span>
                 </a>
@@ -98,35 +134,35 @@
     </section>
 
     <!-- CÓMO FUNCIONA -->
-    <section class="section how-it-works" id="como-funciona" data-aos="fade-up">
+    <section class="section how-it-works" id="como-funciona">
         <div class="section-container">
             <div class="section-header">
                 <span class="section-label" data-translate="howItWorksLabel">Proceso Simple</span>
                 <h2 class="section-title" data-translate="howItWorksTitle">¿Cómo funciona PMF Tours?</h2>
             </div>
             <div class="steps-grid">
-                <div class="step-card" data-aos="fade-right">
+                <div class="step-card">
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3 data-translate="step1Title">Escríbenos por WhatsApp</h3>
                         <p data-translate="step1Desc">Cuéntanos tus planes, fechas y lo que buscas. Estamos 24/7.</p>
                     </div>
                 </div>
-                <div class="step-card" data-aos="fade-up">
+                <div class="step-card">
                     <div class="step-number">2</div>
                     <div class="step-content">
                         <h3 data-translate="step2Title">Confirmamos y personalizamos</h3>
                         <p data-translate="step2Desc">Te enviamos detalles, ruta, horarios y precio fijo en minutos.</p>
                     </div>
                 </div>
-                <div class="step-card" data-aos="fade-left">
+                <div class="step-card">
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3 data-translate="step3Title">Te recogemos a tiempo</h3>
                         <p data-translate="step3Desc">Puntual, con cartel y sonrisa. Incluso si tu vuelo se retrasa.</p>
                     </div>
                 </div>
-                <div class="step-card" data-aos="fade-up">
+                <div class="step-card">
                     <div class="step-number">4</div>
                     <div class="step-content">
                         <h3 data-translate="step4Title">Disfruta sin preocupaciones</h3>
@@ -138,7 +174,7 @@
     </section>
 
     <!-- NOSOTROS -->
-    <section class="section about" id="nosotros" data-aos="fade-up">
+    <section class="section about" id="nosotros">
         <div class="section-container">
             <div class="section-header">
                 <span class="section-label" data-translate="aboutLabel">Conócenos</span>
@@ -165,7 +201,7 @@
                         </div>
                     </div>
 
-                    <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20conocer%20más%20sobre%20PMF%20Tours.%0A%0A¿Me%20puedes%20contar%20sobre%20tus%20servicios?" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/50765347412" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         <i class="bx bxl-whatsapp"></i>
                         <span data-translate="aboutCTA">Contactar a Pierre</span>
                     </a>
@@ -173,7 +209,7 @@
 
                 <div class="about-image">
                     <div class="pierre-card">
-                        <img src="./image/pierre-flores.png" alt="Pierre Flores" loading="lazy">
+                        <img src="./image/pierre-flores.png" alt="Pierre Flores" width="460" height="500" loading="lazy">
                         <div class="pierre-badge">
                             <span class="badge-flag">🇵🇦</span>
                             <span class="badge-text" data-translate="aboutBadge">Panameño de corazón</span>
@@ -189,7 +225,7 @@
     </section>
 
     <!-- SERVICIOS -->
-    <section class="section services" id="servicios" data-aos="fade-up">
+    <section class="section services" id="servicios">
         <div class="section-container">
             <div class="section-header">
                 <span class="section-label" data-translate="servicesLabel">Nuestros Paquetes</span>
@@ -204,7 +240,7 @@
             <div class="custom-tour-cta">
                 <h3 data-translate="customTitle">¿Buscas una experiencia única?</h3>
                 <p data-translate="customDesc">Cuéntanos tus intereses y te armamos la experiencia perfecta.</p>
-                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20🎯%0A%0AQuiero%20un%20*tour%20personalizado*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A💡%20Intereses:%20[qué%20te%20gustaría%20ver/hacer]%0A%0A¿Me%20ayudas%20a%20diseñarlo?" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/50765347412" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     <i class="bx bx-edit"></i>
                     <span data-translate="customBtn">Diseña Tu Tour</span>
                 </a>
@@ -213,7 +249,7 @@
     </section>
 
     <!-- GALERÍA -->
-    <section class="section gallery" id="galeria" data-aos="fade-up">
+    <section class="section gallery" id="galeria">
         <div class="section-container">
             <div class="section-header">
                 <span class="section-label" data-translate="galleryLabel">Galería</span>
@@ -223,29 +259,29 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="./image/gallery/imagen1.jpg" alt="Tour interior" loading="lazy">
+                    <img src="./image/gallery/imagen1.jpg" alt="Tour interior" width="240" height="220" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/gallery/imagen2.jpg" alt="Festival" loading="lazy">
+                    <img src="./image/gallery/imagen2.jpg" alt="Festival" width="240" height="220" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/gallery/imagen3.jpg" alt="Cultura" loading="lazy">
+                    <img src="./image/gallery/imagen3.jpg" alt="Cultura" width="240" height="220" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/gallery/imagen4.jpg" alt="Canal" loading="lazy">
+                    <img src="./image/gallery/imagen4.jpg" alt="Canal" width="240" height="220" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/gallery/imagen5.jpg" alt="Isla Monos" loading="lazy">
+                    <img src="./image/gallery/imagen5.jpg" alt="Isla Monos" width="240" height="220" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/gallery/imagen6.jpg" alt="Casco Viejo" loading="lazy">
+                    <img src="./image/gallery/imagen6.jpg" alt="Casco Viejo" width="240" height="220" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- TESTIMONIOS -->
-    <section class="section testimonials" id="testimonios" data-aos="fade-up">
+    <section class="section testimonials" id="testimonios">
         <div class="section-container">
             <div class="section-header">
                 <span class="section-label" data-translate="testimonialsLabel">Lo que dicen</span>
@@ -259,7 +295,7 @@
                         <p data-translate="testimonial1">"Pierre nos llevó a Playa Blanca. ¡Aventura familiar inolvidable!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="./image/testimonios/Usuario1.jpg" alt="Lady Rouse" loading="lazy">
+                        <img src="./image/testimonios/Usuario1.jpg" alt="Lady Rouse" width="40" height="40" loading="lazy">
                         <div class="author-info">
                             <strong>Lady Rouse</strong>
                             <span>🇺🇸 USA • Dic 2024</span>
@@ -273,7 +309,7 @@
                         <p data-translate="testimonial2">"El mejor ceviche de nuestras vidas. ¡100% auténtico!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="./image/testimonios/Usuario2.jpg" alt="Anand" loading="lazy">
+                        <img src="./image/testimonios/Usuario2.jpg" alt="Anand" width="40" height="40" loading="lazy">
                         <div class="author-info">
                             <strong>Anand Divekar</strong>
                             <span>🇮🇳 India • Abr 2024</span>
@@ -287,7 +323,7 @@
                         <p data-translate="testimonial3">"Servicio de lujo a precio justo."</p>
                     </div>
                     <div class="testimonial-author">
-                        <img src="./image/testimonios/Usuario3.jpg" alt="Juan Carlos" loading="lazy">
+                        <img src="./image/testimonios/Usuario3.jpg" alt="Juan Carlos" width="40" height="40" loading="lazy">
                         <div class="author-info">
                             <strong>Juan Carlos Vargas</strong>
                             <span>🇨🇴 Colombia • Sep 2024</span>
@@ -350,12 +386,12 @@
     </section>
 
     <!-- CTA FINAL -->
-    <section class="section final-cta" data-aos="fade-up">
+    <section class="section final-cta">
         <div class="section-container">
             <div class="cta-content">
                 <h2 data-translate="ctaFinalTitle">¿Listo para descubrir Panamá como un local?</h2>
                 <p data-translate="ctaFinalDesc">Reserva ahora y vive Panamá de forma auténtica.</p>
-                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0A¡Listo%20para%20reservar!%0A%0A📅%20Fecha:%20[escribe%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Tour:%20[cual%20te%20interesa]%0A%0A¿Me%20confirmas%20disponibilidad?" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/50765347412" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
                     <i class="bx bxl-whatsapp"></i>
                     <span data-translate="ctaFinalBtn">Reservar Ahora por WhatsApp</span>
                 </a>
@@ -367,7 +403,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="./image/logo.png" alt="PMF Tours Logo">
+                <img src="./image/logo.png" alt="PMF Tours Logo" width="140" height="auto">
                 <div class="footer-social">
                     <a href="https://www.instagram.com/pmftours/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de PMF Tours" class="social-link">
                         <i class="bx bxl-instagram"></i>
@@ -392,10 +428,10 @@
         </div>
     </footer>
 
-    <!-- PMF CAR ANIMATION -->
-    <div id="pmfCar" class="pmf-car">
+    <!-- PMF CAR ANIMATION - Solo en desktop -->
+    <div id="pmfCar" class="pmf-car" style="display: none;">
         <div class="car-container">
-            <img src="./image/kia.png" alt="PMF Tours Kia Sportage" class="car-image">
+            <img src="./image/kia.png" alt="PMF Tours Kia Sportage" class="car-image" width="120" height="auto">
             <div class="car-shadow"></div>
             <div class="speed-lines"></div>
         </div>
@@ -405,30 +441,49 @@
         </div>
     </div>
 
-    <!-- TOUR PROGRESS BAR -->
-    <div class="tour-progress-bar">
+    <!-- TOUR PROGRESS BAR - Solo en desktop -->
+    <div class="tour-progress-bar" style="display: none;">
         <div class="tour-progress-fill" id="tourProgress">
             <span class="progress-text">0%</span>
         </div>
     </div>
 
-    <!-- WHATSAPP FLOTANTE -->
-    <a href="https://wa.me/50765347412" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" title="Contactar por WhatsApp">
+    <!-- WHATSAPP FLOTANTE - VISIBLE INMEDIATAMENTE -->
+    <a href="https://wa.me/50765347412"
+       class="floating-whatsapp"
+       target="_blank"
+       rel="noopener noreferrer"
+       title="Contactar por WhatsApp"
+       aria-label="Contactar por WhatsApp">
         <i class="bx bxl-whatsapp"></i>
     </a>
 
     <!-- SCRIPTS -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- AOS - Solo en desktop -->
     <script>
-        AOS.init({ duration: 800, once: true });
+        if (window.innerWidth > 768) {
+            const aosScript = document.createElement('script');
+            aosScript.src = 'https://unpkg.com/aos@2.3.4/dist/aos.js';
+            aosScript.onload = function() {
+                AOS.init({ duration: 800, once: true });
+            };
+            document.body.appendChild(aosScript);
+        }
+
+        // Mostrar animaciones de carro solo en desktop
+        if (window.innerWidth > 768) {
+            document.getElementById('pmfCar').style.display = 'block';
+            document.querySelector('.tour-progress-bar').style.display = 'block';
+        }
+
         document.getElementById("current-year").textContent = new Date().getFullYear();
     </script>
 
-    <!-- PMF BUNDLE - MAIN SCRIPT -->
-    <script src="./js/pmf-bundle.js"></script>
+    <!-- PMF BUNDLE - MAIN SCRIPT - Defer para mejor performance -->
+    <script src="./js/pmf-bundle.js" defer></script>
 
-    <!-- SERVICES LOADER CON TRADUCCIÓN -->
-    <script type="module">
+    <!-- SERVICES LOADER CON TRADUCCIÓN - Defer -->
+    <script type="module" defer>
         let serviciosData = null;
 
         function buildServiceCard(service, currentLang, textos) {
@@ -453,7 +508,7 @@
             return `
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="${service.imagen}" alt="${nombre}" loading="lazy">
+                        <img src="${service.imagen}" alt="${nombre}" loading="lazy" width="260" height="220">
                         ${badgeHtml}
                     </div>
                     <div class="service-content">
@@ -509,71 +564,8 @@
             }
         }
 
-        // Recargar servicios cuando cambie el idioma
         document.addEventListener('languageChanged', loadServices);
-
-        // Cargar al inicio
-        loadServices();
+        document.addEventListener('DOMContentLoaded', loadServices);
     </script>
-
-    <!-- ANIMACIÓN DEL COCHE AL SCROLLEAR -->
-    <script>
-      // Mostrar coche solo tras scrollear 500px
-      let carVisible = false;
-      window.addEventListener('scroll', () => {
-        if (!carVisible && window.scrollY > 500) {
-          const car = document.querySelector('.pmf-car');
-          if (car) {
-            car.style.opacity = '1';
-            carVisible = true;
-          }
-        }
-      });
-    </script>
-
-    <!-- PMF CAR + SCROLL PROGRESS SYNC -->
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const pmfCar = document.getElementById('pmfCar');
-  const progressFill = document.getElementById('tourProgress');
-  const progressText = progressFill ? progressFill.querySelector('.progress-text') : null;
-  let carVisible = false;
-
-  // Mensajes dinámicos para la barra
-  const messages = [
-    "¡Listo para ir!",
-    "Panamá te espera",
-    "¿Listo para aventurarte?",
-    "Descubre lo auténtico"
-  ];
-
-  window.addEventListener('scroll', () => {
-    // 1. Calcular progreso de scroll
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = Math.min(100, Math.round((scrollTop / docHeight) * 100));
-
-    // 2. Mostrar coche al scrollear > 10%
-    if (!carVisible && scrollPercent > 10) {
-      if (pmfCar) {
-        pmfCar.style.opacity = '1';
-        pmfCar.style.transform = 'translateX(0)';
-        carVisible = true;
-      }
-    }
-
-    // 3. Actualizar barra de progreso
-    if (progressFill) {
-      progressFill.style.width = `${scrollPercent}%`;
-      if (progressText) {
-        // Mensaje dinámico según el % de scroll
-        const messageIndex = Math.min(3, Math.floor(scrollPercent / 25));
-        progressText.textContent = messages[messageIndex];
-        progressText.style.display = 'block';
-      }
-    }
-  });
-});
-</script>
 </body>
 </html>
