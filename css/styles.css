@@ -1079,11 +1079,11 @@ img {
 @media (max-width: 480px) {
   .hero {
     height: auto;  /* ✅ Altura automática */
-    min-height: 75vh;  /* Mínimo visual */
+    min-height: 80vh;  /* Mínimo visual */
   }
 
   .hero-content {
-    padding: 60px 20px 50px;  /* ✅ Menos padding */
+    padding: 50px 20px 50px;  /* ✅ Menos padding */
   }
 
   .btn {
