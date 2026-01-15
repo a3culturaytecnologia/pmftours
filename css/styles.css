@@ -619,18 +619,43 @@ img {
   font-size: 0.86rem;
 }
 
+/* ============================================
+   PRECIOS - DISEÑO CONSISTENTE
+   ============================================ */
 .price-container {
   background: var(--gris-claro);
-  padding: 12px;
-  border-radius: 8px;
-  margin: 12px 0;
+  padding: 14px 12px;
+  border-radius: 10px;
+  margin: 14px 0;
   text-align: center;
 }
 
 .price {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--pmf-rojo);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.price-details {
+  font-size: 0.82rem;
+  color: var(--gris);
+  line-height: 1.4;
+  margin-top: 6px;
+}
+
+.price-details span {
+  display: block;
+  font-weight: 600;
+  color: var(--negro);
+}
+
+.price-details small {
+  display: block;
+  margin-top: 3px;
+  opacity: 0.85;
+  font-size: 0.78rem;
 }
 
 /* CUSTOM TOUR CTA - MÁS ESPACIADO */

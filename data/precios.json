@@ -10,12 +10,12 @@
         "es": "Descubre la esencia de Panamá: Canal, Casco Antiguo, Calzada de Amador y más. Historia, cultura y fotos increíbles.",
         "en": "Discover the essence of Panama: Canal, Old Quarter, Amador Causeway and more. History, culture and amazing photos."
       },
-      "imagen": "./image/tours/city-tour.png",
+      "imagen": "./image/tours/Ciudad.png",
       "badge": {
         "es": "⭐ Más Popular",
         "en": "⭐ Most Popular"
       },
-      "badgeClass": "popular",
+      "badgeClass": "cultural",
       "incluye": {
         "es": [
           "Canal de Panamá (Miraflores)",
@@ -84,10 +84,10 @@
         "es": "Sumérgete en la historia: Panamá Viejo, Casco Antiguo, mercados locales y gastronomía auténtica panameña.",
         "en": "Immerse yourself in history: Old Panama, Casco Antiguo, local markets and authentic Panamanian cuisine."
       },
-      "imagen": "./image/tours/cultural-tour.png",
+      "imagen": "./image/tours/Casco-Antiguo.jpg",
       "badge": {
-        "es": "🏛️ Auténtico",
-        "en": "🏛️ Authentic"
+        "es": "🛕 Auténtico",
+        "en": "🛕 Authentic"
       },
       "badgeClass": "cultural",
       "incluye": {
@@ -106,8 +106,8 @@
       },
       "precio": 70,
       "whatsappUrl": {
-        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏛️%0A%0AQuiero%20el%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A%0A¿Qué%20incluye%20exactamente?",
-        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🏛️%0A%0AI%20want%20the%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A%0AWhat%20exactly%20does%20it%20include?"
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🛕%0A%0AQuiero%20el%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A%0A¿Qué%20incluye%20exactamente?",
+        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🛕%0A%0AI%20want%20the%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A%0AWhat%20exactly%20does%20it%20include?"
       }
     },
     {
@@ -120,7 +120,12 @@
         "es": "Servicio puerta a puerta desde/hacia Tocumen. Te esperamos con letrero, WiFi gratis y agua fría. Puntualidad garantizada.",
         "en": "Door-to-door service from/to Tocumen. We wait for you with sign, free WiFi and cold water. Guaranteed punctuality."
       },
-      "imagen": "./image/tours/airport-transfer.png",
+      "imagen": "./image/tours/Kia-Casco.png",
+      "badge": {
+        "es": "🚗 Traslado VIP",
+        "en": "🚗 VIP Transfer"
+      },
+      "badgeClass": "beach",
       "incluye": {
         "es": [
           "Recogida puntual (24/7)",
@@ -154,6 +159,22 @@
       "precio_base": "Base price",
       "personas": "people",
       "persona_adicional": "per additional person"
+    }
+  },
+  "whatsapp_mensajes": {
+    "es": {
+      "hero_reservar": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20reservar%20un%20tour.%0A%0A📅%20Fecha:%20[escribe%20tu%20fecha]%0A👥%20Personas:%20[cuántos%20son]%0A%0A¿Qué%20tours%20tienes%20disponibles?",
+      "footer_contacto": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20información%20sobre%20los%20tours%20de%20PMF%20Tours.%0A%0A¿Me%20puedes%20ayudar?",
+      "about_contactar": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20conocer%20más%20sobre%20PMF%20Tours.%0A%0A¿Me%20puedes%20contar%20sobre%20tus%20servicios?",
+      "custom_tour": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🎯%0A%0AQuiero%20un%20*tour%20personalizado*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A💡%20Intereses:%20[qué%20te%20gustaría%20ver/hacer]%0A%0A¿Me%20ayudas%20a%20diseñarlo?",
+      "cta_final": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0A¡Listo%20para%20reservar!%0A%0A📅%20Fecha:%20[escribe%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Tour:%20[cual%20te%20interesa]%0A%0A¿Me%20confirmas%20disponibilidad?"
+    },
+    "en": {
+      "hero_reservar": "https://wa.me/50765347412?text=Hi%20Pierre!%20👋%0A%0AI%20want%20to%20book%20a%20tour.%0A%0A📅%20Date:%20[write%20your%20date]%0A👥%20People:%20[how%20many]%0A%0AWhat%20tours%20do%20you%20have%20available?",
+      "footer_contacto": "https://wa.me/50765347412?text=Hi%20Pierre!%20👋%0A%0AI%20want%20information%20about%20PMF%20Tours.%0A%0ACan%20you%20help%20me?",
+      "about_contactar": "https://wa.me/50765347412?text=Hi%20Pierre!%20👋%0A%0AI%20want%20to%20know%20more%20about%20PMF%20Tours.%0A%0ACan%20you%20tell%20me%20about%20your%20services?",
+      "custom_tour": "https://wa.me/50765347412?text=Hi%20Pierre!%20🎯%0A%0AI%20want%20a%20*custom%20tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A💡%20Interests:%20[what%20would%20you%20like%20to%20see/do]%0A%0ACan%20you%20help%20me%20design%20it?",
+      "cta_final": "https://wa.me/50765347412?text=Hi%20Pierre!%20✈️%0A%0AReady%20to%20book!%0A%0A📅%20Date:%20[write%20date]%0A👥%20People:%20[how%20many]%0A🎯%20Tour:%20[which%20one%20interests%20you]%0A%0ACan%20you%20confirm%20availability?"
     }
   }
 }

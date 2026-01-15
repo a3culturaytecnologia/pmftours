@@ -1,6 +1,6 @@
 // ============================================
-// PMF TOURS - JAVASCRIPT BUNDLE FINAL
-// Versión 2.1 - Optimizado sin warnings
+// PMF TOURS - JAVASCRIPT BUNDLE v2.2
+// FIX: Language switcher completamente funcional
 // ============================================
 
 // ============================================
@@ -10,124 +10,166 @@
 (function initTranslations() {
     'use strict';
 
-    // Definir traducciones globales usando globalThis
+    // Definir traducciones globales
     globalThis.translations = {
         en: {
             // Navigation
             navHome: "Home",
             navAbout: "About Us",
             navServices: "Services",
-            navValues: "Values",
             navGallery: "Gallery",
-            navContact: "Contact",
+            navTestimonials: "Testimonials",
 
             // Hero
             heroTitle: "Your Gateway to Panama",
             heroSubtitle: "Private Transport & Tours with safety, punctuality and authentic experiences",
-            btnReserve: "Book Tour",
-            btnPackages: "View Packages",
+            heroBtn1: "Book Tour",
+            heroBtn2: "View Packages",
+
+            // How It Works
+            howItWorksLabel: "Simple Process",
+            howItWorksTitle: "How Does PMF Tours Work?",
+            step1Title: "Message Us on WhatsApp",
+            step1Desc: "Tell us your plans, dates and what you're looking for. We're available 24/7.",
+            step2Title: "We Confirm and Customize",
+            step2Desc: "We'll send you details, route, schedule and fixed price in minutes.",
+            step3Title: "We Pick You Up On Time",
+            step3Desc: "Punctual, with sign and smile. Even if your flight is delayed.",
+            step4Title: "Enjoy Without Worries",
+            step4Desc: "Comfortable transport, local guide and total flexibility during your tour.",
 
             // About
             aboutLabel: "Our Story",
-            aboutTitle: "Much more than transportation",
-            aboutDesc1: "We were born from a simple idea: to welcome travelers as you would welcome a friend. We're from here, we know every beach, every historic corner, and every secret of Panama.",
-            aboutDesc2: "Our job is not just to take you from point A to B, but to open the door to a warm, cheerful and authentic country.",
-            aboutDesc3: "Our commitment: safe transport, punctuality and experiences you'll remember fondly. Because every trip starts with a welcome, and yours begins with us.",
+            aboutTitle: "About PMF Tours",
+            aboutDesc: "We are a local company dedicated to private transport and personalized tours in Panama. Our goal is for you to experience the country authentically, safely and stress-free.",
+            aboutDesc2: "Founded by Pierre, a Panamanian passionate about his land, PMF Tours was born from the desire to offer real experiences, away from mass tourism.",
+            aboutHighlight1: "Guaranteed Safety",
+            aboutHighlight2: "24/7 Punctuality",
+            aboutHighlight3: "Bilingual Guide",
+            aboutCTA: "Contact Pierre",
+            aboutBadge: "Panamanian at heart",
+            aboutPierreTitle: "Founder & Local Guide",
 
             // Services
             servicesLabel: "Our Packages",
             servicesTitle: "Experiences designed for you",
+            servicesSubtitle: "Discover the best of Panama with the comfort and safety you deserve.",
 
             // Custom Tour
             customTitle: "Looking for a unique experience?",
-            customDesc: "At PMF Tours we specialize in creating memorable experiences tailored to your interests. Whether it's culture, gastronomy, nature or adventure, we'll design the perfect tour for you.",
+            customDesc: "Tell us your interests and we'll create the perfect experience for you.",
             customBtn: "Design Your Tour",
 
-            // Form
-            formName: "Name",
-            formEmail: "Email",
-            formTour: "Select Tour",
-            tourCityTour: "Welcome City Tour",
-            tourBeach: "Beach Day Escape",
-            tourCultural: "Cultural & History Tour",
-            tourAirport: "Airport Transfer",
-            tourCustom: "Custom Tour",
-            formMessage: "Message",
-            formSubmit: "Send Message",
+            // Gallery
+            galleryLabel: "Our Gallery",
+            galleryTitle: "Gallery",
+            gallerySubtitle: "Discover the magic of Panama through our eyes.",
 
             // Testimonials
-            testimonial1: "Pierre took us to Playa Blanca in Isla Grande. My 8-year-old daughter still talks about the starfish we saw. It wasn't just transportation, it was a family adventure we'll never forget.",
-            testimonial2: "We booked the Cultural Tour and Pierre took us to a local restaurant in Casco Viejo where we had the best seafood of our lives. He knows every corner and tells you stories that aren't in the guides. 100% authentic!",
-            testimonial3: "I arrived at Tocumen at 11pm and Pierre was waiting for me with a sign and a smile. The Kia was impeccable, cold water ready, and he dropped me off at the hotel in 25 minutes. Luxury service at a fair price.",
+            testimonialsLabel: "What They Say",
+            testimonialsTitle: "Testimonials",
+            testimonial1: "\"Pierre took us to Playa Blanca. My daughter still talks about the starfish. Unforgettable family adventure!\"",
+            testimonial2: "\"He knows every corner and tells stories that aren't in the guides. The best ceviche of our lives. 100% authentic!\"",
+            testimonial3: "\"I arrived at 11pm and Pierre was waiting. Impeccable Kia, cold water, 25 minutes to hotel. Luxury service at fair price.\"",
 
             // FAQ
-            faqLabel: "Frequently Asked Questions",
-            faqTitle: "Have questions?",
-            faqSubtitle: "Here we answer the most common questions from our travelers",
-            faqQ1: "How does booking work?",
-            faqA1: "It's simple: contact us on WhatsApp, tell us the tour and dates, we confirm availability and you can pay in cash on the day or via bank transfer."
+            faqTitle: "Frequently Asked Questions",
+            faqQ1: "How do I book?",
+            faqA1: "Message us on WhatsApp, tell us which tour you want and your dates. We confirm in minutes. Pay cash on tour day.",
+            faqQ2: "Can I cancel?",
+            faqA2: "Yes. Cancel up to 24h before at no cost. Airport transfers: up to 2h before. If your flight is delayed, we wait for free.",
+            faqQ3: "Do you speak English?",
+            faqA3: "Yes, Pierre is completely bilingual (Spanish/English). Clear and smooth communication guaranteed.",
+            faqQ4: "What vehicle do you use?",
+            faqA4: "Kia Sportage 2023/2024 with A/C, luggage space, comfortable seats and cleaning after each service. Child seats available.",
+
+            // Final CTA
+            ctaFinalTitle: "Ready to discover Panama like a local?",
+            ctaFinalDesc: "Book now and experience Panama authentically with a local guide who knows every corner of the country.",
+            ctaFinalBtn: "Book Now via WhatsApp",
+
+            // Car Animation
+            carTooltip: "Safe and reliable transport!"
         },
         es: {
             // Navegación
             navHome: "Inicio",
             navAbout: "Nosotros",
             navServices: "Servicios",
-            navValues: "Valores",
             navGallery: "Galería",
-            navContact: "Contacto",
+            navTestimonials: "Testimonios",
 
             // Hero
             heroTitle: "Tu puerta a Panamá",
             heroSubtitle: "Transporte & Tours Privados con seguridad, puntualidad y experiencias auténticas",
-            btnReserve: "Reservar Tour",
-            btnPackages: "Ver Paquetes",
+            heroBtn1: "Reservar Tour",
+            heroBtn2: "Ver Paquetes",
+
+            // Cómo Funciona
+            howItWorksLabel: "Proceso Simple",
+            howItWorksTitle: "¿Cómo funciona PMF Tours?",
+            step1Title: "Escríbenos por WhatsApp",
+            step1Desc: "Cuéntanos tus planes, fechas y lo que buscas. Estamos 24/7.",
+            step2Title: "Confirmamos y personalizamos",
+            step2Desc: "Te enviamos detalles, ruta, horarios y precio fijo en minutos.",
+            step3Title: "Te recogemos a tiempo",
+            step3Desc: "Puntual, con cartel y sonrisa. Incluso si tu vuelo se retrasa.",
+            step4Title: "Disfruta sin preocupaciones",
+            step4Desc: "Transporte cómodo, guía local y flexibilidad total durante tu tour.",
 
             // About
             aboutLabel: "Nuestra Historia",
-            aboutTitle: "Mucho más que transporte",
-            aboutDesc1: "Nacimos de una idea sencilla: recibir al viajero como se recibe a un amigo. Somos de aquí, conocemos cada playa, cada esquina histórica y cada secreto de Panamá.",
-            aboutDesc2: "Nuestro trabajo no es solo llevarte del punto A al B, sino abrirte la puerta a un país cálido, alegre y auténtico.",
-            aboutDesc3: "Nuestro compromiso: transporte seguro, puntualidad y experiencias que recordarás con cariño. Porque cada viaje empieza con una bienvenida, y la tuya comienza con nosotros.",
+            aboutTitle: "Sobre PMF Tours",
+            aboutDesc: "Somos una empresa local dedicada al transporte privado y tours personalizados en Panamá. Nuestro objetivo es que vivas el país de forma auténtica, segura y sin estrés.",
+            aboutDesc2: "Fundado por Pierre, un panameño apasionado por su tierra, PMF Tours nace del deseo de ofrecer experiencias reales, lejos del turismo masivo.",
+            aboutHighlight1: "Seguridad garantizada",
+            aboutHighlight2: "Puntualidad 24/7",
+            aboutHighlight3: "Guía bilingüe",
+            aboutCTA: "Contactar a Pierre",
+            aboutBadge: "Panameño de corazón",
+            aboutPierreTitle: "Fundador & Guía Local",
 
             // Services
             servicesLabel: "Nuestros Paquetes",
             servicesTitle: "Experiencias diseñadas para ti",
+            servicesSubtitle: "Descubre lo mejor de Panamá con la comodidad y seguridad que mereces.",
 
             // Custom Tour
             customTitle: "¿Buscas una experiencia única?",
-            customDesc: "En PMF Tours nos especializamos en crear experiencias memorables adaptadas a tus intereses. Ya sea cultura, gastronomía, naturaleza o aventura, diseñaremos el tour perfecto para ti.",
+            customDesc: "Cuéntanos tus intereses y te armamos la experiencia perfecta.",
             customBtn: "Diseña Tu Tour",
 
-            // Formulario
-            formName: "Nombre",
-            formEmail: "Correo electrónico",
-            formTour: "Seleccionar Tour",
-            tourCityTour: "Welcome City Tour",
-            tourBeach: "Beach Day Escape",
-            tourCultural: "Cultural & History Tour",
-            tourAirport: "Traslado Aeropuerto",
-            tourCustom: "Tour Personalizado",
-            formMessage: "Mensaje",
-            formSubmit: "Enviar Mensaje",
+            // Gallery
+            galleryLabel: "Nuestra Galería",
+            galleryTitle: "Galería",
+            gallerySubtitle: "Descubre la magia de Panamá a través de nuestros ojos.",
 
             // Testimonials
-            testimonial1: "Pierre nos llevó a Playa Blanca en Isla Grande. Mi hija de 8 años todavía habla de las estrellas de mar que vimos. No solo fue transporte, fue una aventura familiar que nunca olvidaremos.",
-            testimonial2: "Reservamos el Cultural Tour y Pierre nos llevó a un restaurante local en Casco Viejo donde comimos el mejor ceviche de nuestras vidas. Conoce cada rincón y te cuenta historias que no están en las guías. ¡100% auténtico!",
-            testimonial3: "Llegué a Tocumen a las 11pm y Pierre me estaba esperando con un cartel y una sonrisa. El Kia impecable, agua fría lista, y me dejó en el hotel en 25 minutos. Servicio de lujo a precio justo.",
+            testimonialsLabel: "Lo que dicen",
+            testimonialsTitle: "Testimonios",
+            testimonial1: "\"Pierre nos llevó a Playa Blanca. Mi hija todavía habla de las estrellas de mar. ¡Aventura familiar inolvidable!\"",
+            testimonial2: "\"Conoce cada rincón y cuenta historias que no están en las guías. El mejor ceviche de nuestras vidas. ¡100% auténtico!\"",
+            testimonial3: "\"Llegué a las 11pm y Pierre estaba esperando. Kia impecable, agua fría, 25 minutos al hotel. Servicio de lujo a precio justo.\"",
 
             // FAQ
-            faqLabel: "Preguntas Frecuentes",
-            faqTitle: "¿Tienes preguntas?",
-            faqSubtitle: "Aquí respondemos las dudas más comunes de nuestros viajeros",
-            faqQ1: "¿Cómo funciona la reserva?",
-            faqA1: "Es simple: contáctanos por WhatsApp, dinos el tour y las fechas, confirmamos disponibilidad y puedes pagar en efectivo el día o por transferencia bancaria."
-        }
-    };
+            faqTitle: "Preguntas Frecuentes",
+            faqQ1: "¿Cómo hago la reserva?",
+            faqA1: "Escríbenos por WhatsApp, dinos qué tour quieres y tus fechas. Confirmamos en minutos. Pagas en efectivo el día del tour.",
+            faqQ2: "¿Puedo cancelar?",
+            faqA2: "Sí. Cancela hasta 24h antes sin costo. Traslados aeropuerto: hasta 2h antes. Si tu vuelo se retrasa, te esperamos gratis.",
+            faqQ3: "¿Hablan inglés?",
+            faqA3: "Sí, Pierre es completamente bilingüe (español/inglés). Comunicación clara y fluida garantizada.",
+            faqQ4: "¿Qué vehículo usan?",
+            faqA4: "Kia Sportage 2023/2024 con A/C, espacio para equipaje, asientos cómodos y limpieza después de cada servicio. Asientos para niños disponibles.",
 
-    // Helper para obtener data-translate (usando dataset)
-    globalThis.getDataTranslate = function(el) {
-        if (!el) return null;
-        return el.dataset?.translate || null;
+            // Final CTA
+            ctaFinalTitle: "¿Listo para descubrir Panamá como un local?",
+            ctaFinalDesc: "Reserva ahora y vive Panamá de forma auténtica con un guía local que conoce cada rincón del país.",
+            ctaFinalBtn: "Reservar Ahora por WhatsApp",
+
+            // Car Animation
+            carTooltip: "¡Transporte seguro y confiable!"
+        }
     };
 
     // Función para actualizar textos
@@ -135,7 +177,7 @@
         const dict = globalThis.translations[lang] || globalThis.translations.es;
 
         document.querySelectorAll('[data-translate]').forEach(el => {
-            const key = globalThis.getDataTranslate(el);
+            const key = el.dataset.translate;
             const val = dict[key];
 
             if (!val) {
@@ -152,10 +194,10 @@
             } else if (tag === 'META') {
                 el.setAttribute('content', val);
             } else {
-                // Preservar elementos hijos (iconos, etc) usando .at()
+                // Preservar elementos hijos (iconos, etc)
                 const textNodes = Array.from(el.childNodes).filter(n => n.nodeType === Node.TEXT_NODE);
                 if (textNodes.length > 0) {
-                    textNodes.at(-1).nodeValue = ' ' + val;
+                    textNodes[textNodes.length - 1].nodeValue = ' ' + val;
                 } else {
                     el.textContent = val;
                 }
@@ -169,7 +211,7 @@
 })();
 
 // ============================================
-// 2. LANGUAGE SWITCHER
+// 2. LANGUAGE SWITCHER - FIXED
 // ============================================
 
 (function initLanguageSwitcher() {
@@ -178,52 +220,32 @@
     document.addEventListener('DOMContentLoaded', function() {
         const langBtn = document.querySelector('.lang-btn');
         const langDropdown = document.querySelector('.lang-dropdown');
-        const currentLangEls = document.querySelectorAll('.current-lang');
+        const currentLangEl = document.getElementById('currentLang');
         const langOptions = document.querySelectorAll('.lang-option');
-
-        // Crear overlay si no existe
-        let langOverlay = document.querySelector('.lang-overlay');
-        if (!langOverlay) {
-            langOverlay = document.createElement('div');
-            langOverlay.className = 'lang-overlay';
-            document.body.appendChild(langOverlay);
-        }
 
         if (!langBtn || !langDropdown) {
             console.warn('⚠️ Language switcher elements not found');
             return;
         }
 
+        // Función para mostrar/ocultar dropdown
+        function toggleDropdown(e) {
+            e.stopPropagation();
+            const isVisible = langDropdown.style.display === 'block';
+            langDropdown.style.display = isVisible ? 'none' : 'block';
+        }
+
         // Función para cerrar dropdown
         function closeDropdown() {
-            langDropdown.classList.remove('active');
-            langOverlay.classList.remove('active');
+            langDropdown.style.display = 'none';
         }
 
-        // Función para abrir dropdown
-        function openDropdown() {
-            langDropdown.classList.add('active');
-            langOverlay.classList.add('active');
-        }
-
-        // Toggle dropdown
-        langBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const isActive = langDropdown.classList.contains('active');
-
-            if (isActive) {
-                closeDropdown();
-            } else {
-                openDropdown();
-            }
-        });
-
-        // Cerrar al hacer clic en overlay
-        langOverlay.addEventListener('click', closeDropdown);
+        // Click en botón de idioma
+        langBtn.addEventListener('click', toggleDropdown);
 
         // Cerrar al hacer clic fuera
         document.addEventListener('click', function(e) {
-            if (!e.target.closest('.language-switcher')) {
+            if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
                 closeDropdown();
             }
         });
@@ -237,10 +259,14 @@
                 const lang = this.dataset.lang;
                 if (!lang) return;
 
-                // Actualizar UI
-                currentLangEls.forEach(el => el.textContent = lang.toUpperCase());
+                console.log('🌍 Changing language to:', lang);
 
-                // Actualizar textos
+                // Actualizar UI del botón
+                if (currentLangEl) {
+                    currentLangEl.textContent = lang.toUpperCase();
+                }
+
+                // Actualizar textos en la página
                 if (typeof globalThis.updateTexts === 'function') {
                     globalThis.updateTexts(lang);
                 }
@@ -252,23 +278,27 @@
                 // Cerrar dropdown
                 closeDropdown();
 
-                // Disparar evento
-                const event = new CustomEvent('languageChanged', { detail: { language: lang } });
+                // Disparar evento personalizado
+                const event = new CustomEvent('languageChanged', {
+                    detail: { language: lang }
+                });
                 document.dispatchEvent(event);
 
-                console.log('🌍 Language changed to:', lang);
+                console.log('✅ Language changed successfully to:', lang);
             });
         });
 
         // Inicializar con idioma guardado
         const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-        currentLangEls.forEach(el => el.textContent = savedLang.toUpperCase());
+        if (currentLangEl) {
+            currentLangEl.textContent = savedLang.toUpperCase();
+        }
 
         if (typeof globalThis.updateTexts === 'function') {
             globalThis.updateTexts(savedLang);
         }
 
-        console.log('✅ Language switcher initialized');
+        console.log('✅ Language switcher initialized with language:', savedLang);
     });
 })();
 
@@ -383,83 +413,7 @@
 })();
 
 // ============================================
-// 5. FORM HANDLER
-// ============================================
-
-(function initFormHandler() {
-    'use strict';
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('contactForm');
-
-        if (!form) {
-            console.info('ℹ️ Contact form not found (may be on another page)');
-            return;
-        }
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Obtener valores
-            const name = document.getElementById('name')?.value.trim();
-            const email = document.getElementById('email')?.value.trim();
-            const tourType = document.getElementById('tourType')?.value;
-            const message = document.getElementById('message')?.value.trim() || '';
-
-            // Validar
-            if (!name || !email || !tourType) {
-                showNotification('Por favor completa todos los campos requeridos', 'warning');
-                return;
-            }
-
-            // Validar email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                showNotification('Por favor ingresa un email válido', 'warning');
-                return;
-            }
-
-            // Preparar mensaje
-            const tourNames = {
-                'city-tour': 'Welcome City Tour',
-                'beach': 'Beach Day Escape',
-                'cultural': 'Cultural & History Tour',
-                'airport': 'Traslado Aeropuerto',
-                'custom': 'Tour Personalizado'
-            };
-
-            let whatsappMsg = `¡Hola! Mi nombre es *${name}*\n\n`;
-            whatsappMsg += `📧 Email: ${email}\n`;
-            whatsappMsg += `🗺️ Tour: ${tourNames[tourType]}\n`;
-            if (message) {
-                whatsappMsg += `\n💬 Mensaje:\n${message}`;
-            }
-
-            // Enviar a WhatsApp
-            const phone = '50765347412';
-            const whatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(whatsappMsg)}`;
-
-            globalThis.open(whatsappURL, '_blank');
-
-            // Mostrar éxito
-            showNotification('¡Mensaje enviado! Te contactaremos pronto', 'success');
-
-            // Limpiar formulario
-            form.reset();
-        });
-
-        console.log('✅ Form handler initialized');
-    });
-
-    function showNotification(message, type) {
-        if (typeof globalThis.showNotification === 'function') {
-            globalThis.showNotification(message, type);
-        }
-    }
-})();
-
-// ============================================
-// 6. CAR ANIMATION
+// 5. CAR ANIMATION
 // ============================================
 
 (function initCarAnimation() {
@@ -532,7 +486,7 @@
 })();
 
 // ============================================
-// 7. MAIN FUNCTIONALITY
+// 6. MAIN FUNCTIONALITY
 // ============================================
 
 (function initMain() {
@@ -545,7 +499,6 @@
         initBackToTop();
         initFAQ();
         initSmoothScroll();
-        initServiceWorker();
 
         console.log('✅ All components initialized');
     });
@@ -627,19 +580,11 @@
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
-                        const otherAnswer = otherItem.querySelector('.faq-answer');
-                        if (otherAnswer) otherAnswer.style.maxHeight = '0';
                     }
                 });
 
                 // Toggle actual
-                if (isActive) {
-                    item.classList.remove('active');
-                    answer.style.maxHeight = '0';
-                } else {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                }
+                item.classList.toggle('active');
             });
         });
 
@@ -672,97 +617,96 @@
 
         console.log('✅ Smooth scroll initialized');
     }
-
-    // Service Worker
-    function initServiceWorker() {
-        if (!('serviceWorker' in navigator)) return;
-
-        globalThis.addEventListener('load', function() {
-            navigator.serviceWorker.register('/service-worker.js')
-                .then(reg => {
-                    console.log('✅ Service Worker registered:', reg.scope);
-
-                    // Notificar que el SW se registró
-                    if (typeof globalThis.showNotification === 'function') {
-                        globalThis.showNotification('Service Worker registrado — Recursos en caché para offline', 'info');
-                    }
-
-                    // Detectar cuando se encuentra una nueva versión
-                    reg.addEventListener('updatefound', () => {
-                        const newWorker = reg.installing;
-                        if (!newWorker) return;
-
-                        newWorker.addEventListener('statechange', () => {
-                            if (newWorker.state === 'installed') {
-                                if (navigator.serviceWorker.controller) {
-                                    // Nueva versión disponible (hay un SW controlador previo)
-                                    if (typeof globalThis.showNotification === 'function') {
-                                        globalThis.showNotification('Nueva versión disponible. Actualiza la página para ver los cambios.', 'warning');
-                                    }
-                                } else {
-                                    // Primer cacheo completado
-                                    if (typeof globalThis.showNotification === 'function') {
-                                        globalThis.showNotification('Contenido cacheado para uso offline', 'info');
-                                    }
-                                }
-                            }
-                        });
-                    });
-                })
-                .catch(err => console.warn('⚠️ SW registration failed:', err));
-        });
-    }
 })();
 
 // ============================================
-// 8. NOTIFICATION SYSTEM
+// PMF TOURS - WhatsApp Links Manager
 // ============================================
 
-globalThis.showNotification = function(message, type = 'info') {
-    // Remover notificaciones anteriores
-    const existing = document.querySelector('.notification');
-    if (existing) {
-        existing.remove();
+/**
+ * Sincroniza todos los enlaces de WhatsApp con el idioma activo
+ */
+
+let pmfWhatsAppData = null;
+
+// Cargar datos de WhatsApp desde precios.json
+async function loadWhatsAppData() {
+  try {
+    if (!pmfWhatsAppData) {
+      const response = await fetch('./data/precios.json');
+      const data = await response.json();
+      pmfWhatsAppData = data.whatsapp_mensajes;
     }
+    return pmfWhatsAppData;
+  } catch (error) {
+    console.error('Error loading WhatsApp data:', error);
+    return null;
+  }
+}
 
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
+// Actualizar todos los enlaces de WhatsApp según idioma
+async function updateWhatsAppLinks() {
+  const data = await loadWhatsAppData();
+  if (!data) return;
 
-    const icons = {
-        success: '✅',
-        error: '❌',
-        warning: '⚠️',
-        info: 'ℹ️'
-    };
+  const currentLang = localStorage.getItem('preferredLanguage') || 'es';
+  const mensajes = data[currentLang];
 
-    notification.innerHTML = `
-        <div class="notification-content">
-            <span class="notification-icon">${icons[type] || icons.info}</span>
-            <span class="notification-message">${message}</span>
-        </div>
-    `;
+  // Hero - Reservar Tour
+  const heroReservar = document.querySelector('.hero-buttons .btn-primary');
+  if (heroReservar) {
+    heroReservar.href = mensajes.hero_reservar;
+  }
 
-    document.body.appendChild(notification);
+  // Nav Header - WhatsApp
+  const navWhatsApp = document.querySelector('.btn-whatsapp-nav');
+  if (navWhatsApp) {
+    navWhatsApp.href = mensajes.footer_contacto;
+  }
 
-    setTimeout(() => notification.classList.add('show'), 10);
+  // About - Contactar a Pierre
+  const aboutBtn = document.querySelector('.about-text .btn-primary');
+  if (aboutBtn) {
+    aboutBtn.href = mensajes.about_contactar;
+  }
 
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => notification.remove(), 300);
-    }, 5000);
-};
+  // Custom Tour CTA
+  const customTourBtn = document.querySelector('.custom-tour-cta .btn-primary');
+  if (customTourBtn) {
+    customTourBtn.href = mensajes.custom_tour;
+  }
 
-// Helper para pruebas rápidas desde la consola
-globalThis.testNotifications = function() {
-    const types = ['success', 'error', 'warning', 'info'];
-    types.forEach((t, i) => {
-        setTimeout(() => {
-            if (typeof globalThis.showNotification === 'function') {
-                globalThis.showNotification(`Prueba de notificación: ${t}`, t);
-            }
-        }, i * 700);
-    });
-    console.log('🔔 testNotifications ejecutado');
+  // Final CTA
+  const finalCtaBtn = document.querySelector('.final-cta .btn-primary');
+  if (finalCtaBtn) {
+    finalCtaBtn.href = mensajes.cta_final;
+  }
+
+  // Footer WhatsApp (en footer-social)
+  const footerWhatsApp = document.querySelector('.footer-social a[href*="wa.me"]');
+  if (footerWhatsApp) {
+    footerWhatsApp.href = mensajes.footer_contacto;
+  }
+
+  // Floating WhatsApp Button
+  const floatingWhatsApp = document.querySelector('.floating-whatsapp');
+  if (floatingWhatsApp) {
+    floatingWhatsApp.href = mensajes.footer_contacto;
+  }
+
+  console.log(`✅ WhatsApp links updated to: ${currentLang.toUpperCase()}`);
+}
+
+// Ejecutar al cargar la página
+document.addEventListener('DOMContentLoaded', updateWhatsAppLinks);
+
+// Ejecutar cuando cambie el idioma
+document.addEventListener('languageChanged', updateWhatsAppLinks);
+
+// Export para uso global
+window.pmfWhatsApp = {
+  update: updateWhatsAppLinks,
+  getData: loadWhatsAppData
 };
 
 // ============================================
@@ -771,13 +715,12 @@ globalThis.testNotifications = function() {
 
 console.log(`
 ╔═══════════════════════════════════════╗
-║     PMF TOURS INITIALIZED v2.1        ║
+║     PMF TOURS INITIALIZED v2.2        ║
 ╠═══════════════════════════════════════╣
 ║ ✅ Translations System                ║
-║ ✅ Language Switcher                  ║
+║ ✅ Language Switcher (FIXED)          ║
 ║ ✅ Hero Slider                        ║
 ║ ✅ Mobile Menu                        ║
-║ ✅ Form Handler                       ║
 ║ ✅ Car Animation                      ║
 ║ ✅ Scroll Effects                     ║
 ║ ✅ FAQ System                         ║
