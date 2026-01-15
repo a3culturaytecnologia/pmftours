@@ -66,7 +66,7 @@
     <header class="header" id="header">
         <div class="nav-container">
             <div class="logo-container">
-                <img src="./image/logo.png" alt="PMF Tours Logo" class="logo-image" width="140" height="auto" loading="eager">
+                <img src="./image/logo.png" alt="PMF Tours Logo" class="logo-image" width="140">
                 <span class="logo-text">PMF TOURS</span>
             </div>
 
@@ -88,7 +88,7 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20información%20sobre%20los%20tours%20de%20PMF%20Tours.%0A%0A¿Me%20puedes%20ayudar?"
+                <a href="https://wa.me/50765347412?text=%C2%A1Hola%20Pierre%21%20-%20texto"
                    class="btn-whatsapp-nav"
                    target="_blank"
                    rel="noopener noreferrer">
@@ -107,13 +107,13 @@
     <section class="hero" id="inicio">
         <div class="hero-slider">
             <div class="hero-slide active">
-                <img src="./image/Hero.png" alt="Panamá Ciudad" width="1920" height="1080" loading="eager">
+                <img src="./image/Hero.png" alt="Panamá Ciudad" width="1920" loading="eager">
             </div>
             <div class="hero-slide">
-                <img src="./image/gallery/casco-viejo.png" alt="Casco Antiguo" width="1920" height="1080" loading="lazy">
+                <img src="./image/gallery/casco-viejo.png" alt="Casco Antiguo" width="1920" loading="lazy">
             </div>
             <div class="hero-slide">
-                <img src="./image/tours/Playa.png" alt="Playa en Panamá" width="1920" height="1080" loading="lazy">
+                <img src="./image/tours/Playa.png" alt="Playa en Panamá" width="1920" loading="lazy">
             </div>
         </div>
         <div class="hero-overlay"></div>
@@ -216,7 +216,7 @@
                         </div>
                         <div class="pierre-info">
                             <h3>Pierre Flores</h3>
-                            <p data-translate="aboutPierreTitle">Fundador & Guía Local</p>
+                            <p data-translate="aboutPierreTitle">Fundador &amp; Guía Local</p>
                         </div>
                     </div>
                 </div>
@@ -403,7 +403,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
-                <img src="./image/logo.png" alt="PMF Tours Logo" width="140" height="auto">
+                <img src="./image/logo.png" alt="PMF Tours Logo" width="140">
                 <div class="footer-social">
                     <a href="https://www.instagram.com/pmftours/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de PMF Tours" class="social-link">
                         <i class="bx bxl-instagram"></i>
@@ -428,10 +428,10 @@
         </div>
     </footer>
 
-    <!-- PMF CAR ANIMATION - Solo en desktop -->
-    <div id="pmfCar" class="pmf-car" style="display: none;">
+    <!-- PMF CAR ANIMATION - Solo visible en desktop -->
+    <div id="pmfCar" class="pmf-car">
         <div class="car-container">
-            <img src="./image/kia.png" alt="PMF Tours Kia Sportage" class="car-image" width="120" height="auto">
+            <img src="./image/kia.png" alt="PMF Tours Kia Sportage" class="car-image" width="120">
             <div class="car-shadow"></div>
             <div class="speed-lines"></div>
         </div>
@@ -441,15 +441,15 @@
         </div>
     </div>
 
-    <!-- TOUR PROGRESS BAR - Solo en desktop -->
-    <div class="tour-progress-bar" style="display: none;">
+    <!-- TOUR PROGRESS BAR - Solo visible en desktop -->
+    <div class="tour-progress-bar">
         <div class="tour-progress-fill" id="tourProgress">
-            <span class="progress-text">0%</span>
+            <span class="progress-text"></span>
         </div>
     </div>
 
-    <!-- WHATSAPP FLOTANTE - VISIBLE INMEDIATAMENTE -->
-    <a href="https://wa.me/50765347412"
+    <!-- WHATSAPP FLOTANTE - VISIBLE SIEMPRE -->
+    <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20información%20sobre%20PMF%20Tours.%20¿Me%20ayudas?"
        class="floating-whatsapp"
        target="_blank"
        rel="noopener noreferrer"
@@ -459,6 +459,11 @@
     </a>
 
     <!-- SCRIPTS -->
+    <!-- Year dinámico -->
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+
     <!-- AOS - Solo en desktop -->
     <script>
         if (window.innerWidth > 768) {
@@ -469,14 +474,84 @@
             };
             document.body.appendChild(aosScript);
         }
+    </script>
 
-        // Mostrar animaciones de carro solo en desktop
-        if (window.innerWidth > 768) {
-            document.getElementById('pmfCar').style.display = 'block';
-            document.querySelector('.tour-progress-bar').style.display = 'block';
-        }
+    <!-- PMF CAR + SCROLL PROGRESS SYNC CON TRADUCCIÓN -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pmfCar = document.getElementById('pmfCar');
+            const progressFill = document.getElementById('tourProgress');
+            const progressText = progressFill ? progressFill.querySelector('.progress-text') : null;
+            const isDesktop = window.innerWidth > 768;
+            let carVisible = false;
 
-        document.getElementById("current-year").textContent = new Date().getFullYear();
+            // Mostrar elementos solo en desktop
+            if (isDesktop && pmfCar) {
+                pmfCar.style.display = 'block';
+            }
+            if (isDesktop && document.querySelector('.tour-progress-bar')) {
+                document.querySelector('.tour-progress-bar').style.display = 'block';
+            }
+
+            // Mensajes dinámicos multiidioma
+            const messages = {
+                es: [
+                    "¡Preparando tu aventura!",
+                    "Panamá te espera",
+                    "Descubriendo lo auténtico",
+                    "¡Casi llegamos!"
+                ],
+                en: [
+                    "Getting ready for adventure!",
+                    "Panama awaits you",
+                    "Discovering authenticity",
+                    "Almost there!"
+                ]
+            };
+
+            // Función para obtener idioma actual
+            function getCurrentLanguage() {
+                return localStorage.getItem('preferredLanguage') || 'es';
+            }
+
+            // Scroll handler - SOLO se ejecuta en desktop
+            if (isDesktop) {
+                window.addEventListener('scroll', () => {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = Math.min(100, Math.round((scrollTop / docHeight) * 100));
+
+                    // Mostrar coche al scrollear > 15%
+                    if (!carVisible && scrollPercent > 15 && pmfCar) {
+                        pmfCar.classList.add('visible');
+                        carVisible = true;
+                    }
+
+                    // Actualizar barra de progreso
+                    if (progressFill) {
+                        progressFill.style.width = `${scrollPercent}%`;
+                        if (progressText) {
+                            const currentLang = getCurrentLanguage();
+                            const messageIndex = Math.min(3, Math.floor(scrollPercent / 25));
+                            progressText.textContent = messages[currentLang][messageIndex];
+                            progressText.style.display = scrollPercent > 5 ? 'block' : 'none';
+                        }
+                    }
+                });
+            }
+
+            // Actualizar mensajes cuando cambie el idioma
+            document.addEventListener('languageChanged', () => {
+                if (isDesktop && progressText) {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = Math.min(100, Math.round((scrollTop / docHeight) * 100));
+                    const currentLang = getCurrentLanguage();
+                    const messageIndex = Math.min(3, Math.floor(scrollPercent / 25));
+                    progressText.textContent = messages[currentLang][messageIndex];
+                }
+            });
+        });
     </script>
 
     <!-- PMF BUNDLE - MAIN SCRIPT - Defer para mejor performance -->
