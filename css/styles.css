@@ -246,6 +246,19 @@ img {
   transition: filter 0.3s ease;
 }
 
+/* Ajuste para móvil */
+@media (max-width: 768px) {
+  .hero-slide img {
+    object-position: center 25%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slide img {
+    object-position: center 35%;
+  }
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
