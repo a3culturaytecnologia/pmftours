@@ -403,7 +403,6 @@
             <i class="bx bx-map-pin"></i>
             <span data-translate="carTooltip">¡Transporte seguro y confiable!</span>
         </div>
-        <div class="progress-badge">0%</div>
     </div>
 
     <!-- TOUR PROGRESS BAR -->
@@ -516,5 +515,65 @@
         // Cargar al inicio
         loadServices();
     </script>
+
+    <!-- ANIMACIÓN DEL COCHE AL SCROLLEAR -->
+    <script>
+      // Mostrar coche solo tras scrollear 500px
+      let carVisible = false;
+      window.addEventListener('scroll', () => {
+        if (!carVisible && window.scrollY > 500) {
+          const car = document.querySelector('.pmf-car');
+          if (car) {
+            car.style.opacity = '1';
+            carVisible = true;
+          }
+        }
+      });
+    </script>
+
+    <!-- PMF CAR + SCROLL PROGRESS SYNC -->
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const pmfCar = document.getElementById('pmfCar');
+  const progressFill = document.getElementById('tourProgress');
+  const progressText = progressFill ? progressFill.querySelector('.progress-text') : null;
+  let carVisible = false;
+
+  // Mensajes dinámicos para la barra
+  const messages = [
+    "¡Listo para ir!",
+    "Panamá te espera",
+    "¿Listo para aventurarte?",
+    "Descubre lo auténtico"
+  ];
+
+  window.addEventListener('scroll', () => {
+    // 1. Calcular progreso de scroll
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = Math.min(100, Math.round((scrollTop / docHeight) * 100));
+
+    // 2. Mostrar coche al scrollear > 10%
+    if (!carVisible && scrollPercent > 10) {
+      if (pmfCar) {
+        pmfCar.style.opacity = '1';
+        pmfCar.style.transform = 'translateX(0)';
+        carVisible = true;
+      }
+    }
+
+    // 3. Actualizar barra de progreso
+    if (progressFill) {
+      progressFill.style.width = `${scrollPercent}%`;
+      if (progressText) {
+        // Mensaje dinámico según el % de scroll
+        const messageIndex = Math.min(3, Math.floor(scrollPercent / 25));
+        progressText.textContent = messages[messageIndex];
+        progressText.style.display = 'block';
+      }
+    }
+  });
+});
+</script>
 </body>
 </html>

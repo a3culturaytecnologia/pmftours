@@ -8,8 +8,14 @@
   left: 20px;
   z-index: 999;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transform: translateX(-100px);
+  transition: opacity 0.6s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+}
+
+.pmf-car.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .car-container {
@@ -192,17 +198,11 @@
 
 @media (max-width: 768px) {
   .pmf-car {
-    bottom: 70px;
-    left: 10px;
+    display: none;
   }
 
-  .car-container {
-    width: 90px;
-  }
-
-  .car-tooltip {
-    font-size: 10px;
-    padding: 6px 10px;
+  .tour-progress-bar {
+    display: none;
   }
 
   .back-to-top {
