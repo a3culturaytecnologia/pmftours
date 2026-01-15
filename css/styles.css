@@ -250,41 +250,142 @@ img {
 
 /* Optimización mobile */
 @media (max-width: 768px) {
-  .hero-slide img {
-    object-position: center 25%;
-    filter: brightness(1.05) contrast(1.08) saturate(1.15);
-  }
-}
-
-@media (max-width: 480px) {
   .hero {
-    height: 68vh;  /* ✅ CORRECTO */
+    height: 75vh;
+    min-height: 500px;
+  }
+
+  .hero-slide img {
+    object-position: center 30%;
+    filter: brightness(0.80) contrast(1.15) saturate(1.2);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.60));
+  }
+
+  .hero-content {
+    padding: 60px 24px 80px;
+    max-width: 90%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-shadow: 3px 3px 12px rgba(0,0,0,0.8);
+    letter-spacing: -0.5px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    letter-spacing: 0.3px;
   }
 
   .hero-buttons {
     flex-direction: column;
     width: 100%;
+    gap: 14px;
   }
 
-  .btn {
+  .hero-buttons .btn {
     width: 100%;
-    justify-content: center;
+    padding: 15px 24px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    box-shadow: 0 6px 16px rgba(255, 210, 2, 0.3);
+  }
+
+  .btn-secondary {
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 70vh;
+    min-height: 450px;
+  }
+
+  .hero-content {
+    padding: 55px 20px 65px;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+    margin-bottom: 12px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 72vh;
+    min-height: 480px;
+  }
+
+  .hero-slide img {
+    object-position: center 35%;
+    filter: brightness(0.78) contrast(1.2) saturate(1.25);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(0,0,0,0.58), rgba(0,0,0,0.62));
+  }
+
+  .hero-content {
+    padding: 50px 18px 70px;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-bottom: 22px;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .hero-buttons .btn {
+    padding: 13px 20px;
+    font-size: 14px;
   }
 
   .pierre-card {
     height: 320px;
   }
+}
 
-  .hero-content {
-    padding: 40px 20px 50px;  /* ← Mantiene 40px en móvil también */
-  }
-
+@media (max-width: 360px) {
   .hero-title {
-    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    font-size: 1.6rem;
   }
 
   .hero-subtitle {
-    font-size: clamp(0.85rem, 1.5vw, 1rem);
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons .btn {
+    padding: 12px 18px;
+    font-size: 13px;
   }
 }
 
