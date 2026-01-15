@@ -1,6 +1,6 @@
 /* ============================================
-   PMF TOURS - STYLESHEET OPTIMIZADO v5.1
-   FIXES: WhatsApp button, Performance mobile
+   PMF TOURS - STYLESHEET OPTIMIZADO v5.2
+   FIXES: Franja gris, WhatsApp, Hero mobile, Performance
    ============================================ */
 
 :root {
@@ -243,150 +243,9 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: center 15%;
-  filter: brightness(1.08) contrast(1.12) saturate(1.25) hue-rotate(-5deg);
+  filter: brightness(1.15) contrast(1.12) saturate(1.25) hue-rotate(-5deg);
   transition: filter 0.3s ease;
   will-change: auto;
-}
-
-/* Optimización mobile */
-@media (max-width: 768px) {
-  .hero {
-    height: 75vh;
-    min-height: 500px;
-  }
-
-  .hero-slide img {
-    object-position: center 30%;
-    filter: brightness(0.80) contrast(1.15) saturate(1.2);
-  }
-
-  .hero-overlay {
-    background: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.60));
-  }
-
-  .hero-content {
-    padding: 60px 24px 80px;
-    max-width: 90%;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-    line-height: 1.1;
-    margin-bottom: 16px;
-    text-shadow: 3px 3px 12px rgba(0,0,0,0.8);
-    letter-spacing: -0.5px;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 28px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-    letter-spacing: 0.3px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-    gap: 14px;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-    padding: 15px 24px;
-    font-size: 15px;
-    transition: all 0.3s ease;
-  }
-
-  .btn-primary {
-    box-shadow: 0 6px 16px rgba(255, 210, 2, 0.3);
-  }
-
-  .btn-secondary {
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-  }
-}
-
-@media (max-width: 600px) {
-  .hero {
-    height: 70vh;
-    min-height: 450px;
-  }
-
-  .hero-content {
-    padding: 55px 20px 65px;
-  }
-
-  .hero-title {
-    font-size: 1.85rem;
-    margin-bottom: 12px;
-  }
-
-  .hero-subtitle {
-    font-size: 0.98rem;
-    margin-bottom: 24px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 72vh;
-    min-height: 480px;
-  }
-
-  .hero-slide img {
-    object-position: center 35%;
-    filter: brightness(0.78) contrast(1.2) saturate(1.25);
-  }
-
-  .hero-overlay {
-    background: linear-gradient(135deg, rgba(0,0,0,0.58), rgba(0,0,0,0.62));
-  }
-
-  .hero-content {
-    padding: 50px 18px 70px;
-  }
-
-  .hero-title {
-    font-size: 1.75rem;
-    line-height: 1.15;
-    margin-bottom: 14px;
-    text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-    line-height: 1.45;
-    margin-bottom: 22px;
-  }
-
-  .hero-buttons {
-    gap: 12px;
-  }
-
-  .hero-buttons .btn {
-    padding: 13px 20px;
-    font-size: 14px;
-  }
-
-  .pierre-card {
-    height: 320px;
-  }
-}
-
-@media (max-width: 360px) {
-  .hero-title {
-    font-size: 1.6rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.9rem;
-  }
-
-  .hero-buttons .btn {
-    padding: 12px 18px;
-    font-size: 13px;
-  }
 }
 
 .hero-overlay {
@@ -402,19 +261,21 @@ img {
   text-align: center;
   color: #fff;
   max-width: 760px;
-  padding: 40px 20px 60px;  /* ← Agregó 40px arriba */
+  padding: 40px 20px 60px;
 }
 
 .hero-title {
   font-size: clamp(1.9rem, 3.6vw, 2.6rem);
   margin-bottom: 14px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.55);
+  color: #ffffff;
 }
 
 .hero-subtitle {
   font-size: clamp(0.95rem, 1.8vw, 1.15rem);
   margin-bottom: 26px;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.45);
+  color: #ffffff;
 }
 
 .hero-buttons {
@@ -1086,7 +947,6 @@ img {
   text-decoration: none;
   border: none;
   padding: 0;
-  /* APARECE INMEDIATAMENTE */
   opacity: 1;
   visibility: visible;
   transform: scale(1);
@@ -1110,7 +970,6 @@ img {
   transform: scale(0.95);
 }
 
-/* Animación de entrada suave */
 @keyframes fadeInWhatsApp {
   from {
     opacity: 0;
@@ -1127,7 +986,7 @@ img {
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE - HERO MEJORADO
    ============================================ */
 @media (max-width: 992px) {
   .about-content-grid {
@@ -1141,6 +1000,58 @@ img {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    height: 75vh;
+    min-height: 500px;
+  }
+
+  .hero-slide img {
+    object-position: center 30%;
+    filter: brightness(1.2) contrast(1.05) saturate(1.1);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(0,0,0,0.45));
+  }
+
+  .hero-content {
+    padding: 60px 24px 80px;
+    max-width: 90%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-shadow:
+      2px 2px 8px rgba(0,0,0,0.8),
+      0 0 20px rgba(0,0,0,0.5);
+    font-weight: 800;
+    color: #ffffff;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 28px;
+    text-shadow:
+      1px 1px 6px rgba(0,0,0,0.7),
+      0 0 15px rgba(0,0,0,0.4);
+    color: #ffffff;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 14px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
   .nav-links {
     position: fixed;
     top: var(--header-height);
@@ -1164,11 +1075,6 @@ img {
     display: flex;
   }
 
-  .hero {
-    height: 70vh;
-    min-height: 420px;
-  }
-
   .section {
     padding: 54px 0;
   }
@@ -1190,7 +1096,6 @@ img {
     padding: 6px 0;
   }
 
-  /* WhatsApp más pequeño en mobile */
   .floating-whatsapp {
     width: 56px;
     height: 56px;
@@ -1205,32 +1110,44 @@ img {
 
 @media (max-width: 480px) {
   .hero {
-    height: 68vh;  /* ✅ CORRECTO */
+    height: 72vh;
+    min-height: 480px;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
+  .hero-content {
+    padding: 50px 20px 70px;
   }
 
-  .btn {
-    width: 100%;
-    justify-content: center;
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.15;
+    margin-bottom: 14px;
+    text-shadow:
+      2px 2px 8px rgba(0,0,0,0.85),
+      0 0 18px rgba(0,0,0,0.5);
+    color: #ffffff;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-bottom: 22px;
+    text-shadow:
+      1px 1px 6px rgba(0,0,0,0.75),
+      0 0 12px rgba(0,0,0,0.4);
+    color: #ffffff;
+  }
+
+  .hero-buttons .btn {
+    padding: 13px 20px;
+    font-size: 14px;
   }
 
   .pierre-card {
     height: 320px;
   }
 
-  .hero-content {
-    padding: 40px 20px 50px;  /* ← Mantiene 40px en móvil también */
-  }
-
-  .hero-title {
-    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
-  }
-
-  .hero-subtitle {
-    font-size: clamp(0.85rem, 1.5vw, 1rem);
+  .section {
+    padding: 50px 0;
   }
 }
