@@ -275,7 +275,7 @@ img {
   text-align: center;
   color: #fff;
   max-width: 760px;
-  padding: 80px 20px 60px;  /* Esto DEBE estar aquí */
+  padding: 80px 20px 50px;  /* Esto DEBE estar aquí */
 }
 
 .hero-title {
@@ -1108,7 +1108,7 @@ img {
   }
 
   .hero-content {
-    padding: 20px 15px 50px;
+    padding: 80px 20px 50px;  /* Esto DEBE estar aquí */
   }
 
   /* WhatsApp aún más visible en móviles pequeños */
