@@ -257,8 +257,34 @@ img {
 }
 
 @media (max-width: 480px) {
-  .hero-slide img {
-    object-position: center 35%;
+  .hero {
+    height: 68vh;  /* ✅ CORRECTO */
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pierre-card {
+    height: 320px;
+  }
+
+  .hero-content {
+    padding: 20px 20px 50px;  /* ✅ CORRECTO - SIN padding-top */
+  }
+
+  .hero-title {
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
   }
 }
 
@@ -275,7 +301,7 @@ img {
   text-align: center;
   color: #fff;
   max-width: 760px;
-  padding: 80px 20px 50px;  /* Esto DEBE estar aquí */
+  padding: 0 20px 60px;  /* ← VUELVE A 0 */
 }
 
 .hero-title {
@@ -1078,39 +1104,32 @@ img {
 
 @media (max-width: 480px) {
   .hero {
-    height: auto;  /* ✅ Altura automática */
-    min-height: 80vh;  /* Mínimo visual */
+    height: 68vh;  /* ✅ CORRECTO */
   }
 
-  .hero-content {
-    padding: 50px 20px 50px;  /* ✅ Menos padding */
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
   }
 
   .btn {
     width: 100%;
-    padding: 14px 18px;
-    font-size: 13px;
     justify-content: center;
   }
 
-  .btn-primary {
-    background: var(--pmf-amarillo);
-    color: var(--pmf-rojo);
+  .pierre-card {
+    height: 320px;
   }
 
-  .btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+  .hero-content {
+    padding: 20px 20px 50px;  /* ✅ CORRECTO - SIN padding-top */
   }
 
-  /* WhatsApp aún más visible en móviles pequeños */
-  .floating-whatsapp {
-    width: 54px;
-    height: 54px;
+  .hero-title {
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
   }
 
-  .floating-whatsapp i {
-    font-size: 26px;
+  .hero-subtitle {
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
   }
 }
