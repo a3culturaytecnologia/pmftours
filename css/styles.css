@@ -893,8 +893,8 @@ img {
 }
 
 .social-link {
-  width: 56px;
-  height: 56px;
+  width: 64px;           /* Cambio: 56px → 64px */
+  height: 64px;          /* Cambio: 56px → 64px */
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -904,7 +904,7 @@ img {
 }
 
 .social-link i {
-  font-size: 28px;
+  font-size: 32px;       /* Cambio: 28px → 32px */
   color: #ffffff;
 }
 
@@ -1016,6 +1016,18 @@ img {
   .footer-container {
     flex-direction: column;
     text-align: center;
+    gap: 24px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 12px;
+    order: 3;
+  }
+
+  .footer-nav a {
+    display: block;
+    padding: 6px 0;
   }
 }
 
@@ -1036,5 +1048,17 @@ img {
 
   .pierre-card {
     height: 320px;
+  }
+
+  .hero-content {
+    padding: 20px 20px 50px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
   }
 }
