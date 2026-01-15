@@ -275,7 +275,7 @@ img {
   text-align: center;
   color: #fff;
   max-width: 760px;
-  padding: 80px 20px 60px;  /* Aumentó padding-top de 0 a 80px */
+  padding: 80px 20px 60px;  /* Esto DEBE estar aquí */
 }
 
 .hero-title {
