@@ -1,6 +1,6 @@
 /* ============================================
-   PMF TOURS - STYLESHEET OPTIMIZADO v5.2
-   FIXES: Franja gris, WhatsApp, Hero mobile, Performance
+   PMF TOURS - STYLESHEET OPTIMIZADO v5.3
+   FIXES: Centrado hero móvil, franja gris, WhatsApp, Performance
    ============================================ */
 
 :root {
@@ -203,7 +203,7 @@ img {
 }
 
 /* ============================================
-   HERO - OPTIMIZADO PARA MOBILE
+   HERO - OPTIMIZADO PARA MÓVIL (CENTRADO VERTICAL)
    ============================================ */
 .hero {
   margin-top: calc(-1 * var(--header-height));
@@ -217,7 +217,6 @@ img {
   overflow: hidden;
   background: var(--blanco) !important;
   margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
 }
 
 .hero-slider {
@@ -261,7 +260,12 @@ img {
   text-align: center;
   color: #fff;
   max-width: 760px;
-  padding: 40px 20px 60px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .hero-title {
@@ -269,6 +273,7 @@ img {
   margin-bottom: 14px;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.55);
   color: #ffffff;
+  font-weight: 800;
 }
 
 .hero-subtitle {
@@ -986,7 +991,7 @@ img {
 }
 
 /* ============================================
-   RESPONSIVE - HERO MEJORADO
+   RESPONSIVE - HERO CENTRADO EN MÓVIL
    ============================================ */
 @media (max-width: 992px) {
   .about-content-grid {
@@ -1001,8 +1006,9 @@ img {
 
 @media (max-width: 768px) {
   .hero {
-    height: 75vh;
-    min-height: 500px;
+    height: 80vh;
+    min-height: 550px;
+    padding-top: calc(var(--header-height) + 20px);
   }
 
   .hero-slide img {
@@ -1015,14 +1021,17 @@ img {
   }
 
   .hero-content {
-    padding: 60px 24px 80px;
+    padding: 40px 24px 60px;
     max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .hero-title {
-    font-size: 2rem;
-    line-height: 1.1;
-    margin-bottom: 16px;
+    font-size: 1.85rem;
+    line-height: 1.2;
+    margin-bottom: 18px;
     text-shadow:
       2px 2px 8px rgba(0,0,0,0.8),
       0 0 20px rgba(0,0,0,0.5);
@@ -1031,9 +1040,9 @@ img {
   }
 
   .hero-subtitle {
-    font-size: 1rem;
-    line-height: 1.4;
-    margin-bottom: 28px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
     text-shadow:
       1px 1px 6px rgba(0,0,0,0.7),
       0 0 15px rgba(0,0,0,0.4);
@@ -1110,8 +1119,8 @@ img {
 
 @media (max-width: 480px) {
   .hero {
-    height: 72vh;
-    min-height: 480px;
+    height: 85vh;
+    min-height: 580px;
   }
 
   .hero-content {
@@ -1120,8 +1129,8 @@ img {
 
   .hero-title {
     font-size: 1.75rem;
-    line-height: 1.15;
-    margin-bottom: 14px;
+    line-height: 1.25;
+    margin-bottom: 16px;
     text-shadow:
       2px 2px 8px rgba(0,0,0,0.85),
       0 0 18px rgba(0,0,0,0.5);
@@ -1129,9 +1138,9 @@ img {
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     line-height: 1.45;
-    margin-bottom: 22px;
+    margin-bottom: 28px;
     text-shadow:
       1px 1px 6px rgba(0,0,0,0.75),
       0 0 12px rgba(0,0,0,0.4);
