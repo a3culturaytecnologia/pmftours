@@ -281,16 +281,26 @@ function buildServiceCard(service, currentLang, textos) {
 }
 
 function buildPriceHtml(service, textos) {
-    // Para rangos de precios (Airport Transfer, Beach Day, Interior Tours)
+    const currentLang = localStorage.getItem('preferredLanguage') || 'es';
+
+    // 1. RANGOS DE PRECIO (Beach, Airport, Interior Tours)
     if (service.precioDesde !== undefined && service.precioHasta !== undefined) {
         const precioDisplay = typeof service.precioDisplay === 'object'
-            ? service.precioDisplay[localStorage.getItem('preferredLanguage') || 'es']
-            : service.precioDisplay;
+            ? service.precioDisplay[currentLang]
+            : `desde $${service.precioDesde} USD`;
         return `<div class="price">${precioDisplay}</div>`;
     }
 
-    // Para precios base con personas adicionales
-    if (service.precioBase) {
+    // 2. PRECIO FIJO (City Tour, Cultural Tour)
+    if (service.precio !== undefined) {
+        const precioDisplay = typeof service.precioDisplay === 'object'
+            ? service.precioDisplay[currentLang]
+            : `$${service.precio} USD`;
+        return `<div class="price">${precioDisplay}</div>`;
+    }
+
+    // 3. PRECIO BASE CON PERSONAS ADICIONALES (si existe)
+    if (service.precioBase !== undefined) {
         let priceDetails = '';
         if (service.personas) {
             priceDetails = `<span>${textos.precio_base} ${service.personas} ${textos.personas}</span>`;
@@ -306,8 +316,8 @@ function buildPriceHtml(service, textos) {
         `;
     }
 
-    // Para precios fijos
-    return `<div class="price">$${service.precio}</div>`;
+    // 4. FALLBACK (nunca debería llegar aquí)
+    return `<div class="price">Consultar</div>`;
 }
 
 async function renderServices() {
@@ -408,6 +418,34 @@ async function renderServices() {
     });
 })();
 
+// === BROWSER LANGUAGE DETECTION ===
+function detectUserLanguage() {
+    const browserLang = navigator.language || navigator.userLanguage;
+    return browserLang.startsWith('es') ? 'es' : 'en';
+}
+
+function initLanguagePreference() {
+    const savedLang = localStorage.getItem('preferredLanguage');
+
+    if (!savedLang) {
+        const detectedLang = detectUserLanguage();
+        localStorage.setItem('preferredLanguage', detectedLang);
+
+        // Actualizar UI
+        const currentLangEl = document.getElementById('currentLang');
+        if (currentLangEl) {
+            currentLangEl.textContent = detectedLang.toUpperCase();
+        }
+
+        // Aplicar traducciones detectadas
+        if (typeof globalThis.updateTexts === 'function') {
+            globalThis.updateTexts(detectedLang);
+        }
+
+        console.log(`🌍 Auto-detected browser language: ${detectedLang}`);
+    }
+}
+
 // ============================================
 // 4. WHATSAPP LINKS MANAGER
 // ============================================
@@ -453,6 +491,50 @@ async function updateWhatsAppLinks() {
         }
     });
 }
+
+// === WHATSAPP DYNAMIC LINKS MANAGER ===
+async function updateWhatsAppMessages() {
+    try {
+        const response = await fetch('./data/precios.json');
+        const data = await response.json();
+        const currentLang = localStorage.getItem('preferredLanguage') || 'es';
+        const messages = data.whatsapp_mensajes[currentLang];
+
+        if (!messages) {
+            console.error('WhatsApp messages not found for language:', currentLang);
+            return;
+        }
+
+        // Mapeo de IDs a claves de mensaje
+        const linkMap = {
+            'headerWhatsApp': messages.header,
+            'heroReservar': messages.hero_reservar,
+            'aboutContactar': messages.about_contactar,
+            'customTour': messages.custom_tour,
+            'ctaFinal': messages.cta_final,
+            'footerContacto': messages.footer_contacto,
+            'reviewWhatsApp': messages.review_whatsapp  // ← AGREGADO
+        };
+
+        // Actualizar cada enlace
+        Object.entries(linkMap).forEach(([elementId, url]) => {
+            const element = document.getElementById(elementId);
+            if (element && url) {
+                element.href = url;
+            }
+        });
+
+        console.log('✅ WhatsApp messages updated for language:', currentLang);
+    } catch (error) {
+        console.error('Error loading WhatsApp messages:', error);
+    }
+}
+
+// Ejecutar al cargar la página
+document.addEventListener('DOMContentLoaded', updateWhatsAppMessages);
+
+// Actualizar cuando cambie el idioma
+document.addEventListener('languageChanged', updateWhatsAppMessages);
 
 // ============================================
 // 5. HERO SLIDER - OPTIMIZADO
@@ -835,13 +917,17 @@ async function updateWhatsAppLinks() {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar preferencia de idioma (detectar si es primera vez)
+    initLanguagePreference();
+
     // Cargar datos iniciales
     Promise.all([
         loadServiciosData(),
         loadWhatsAppData()
     ]).then(() => {
-        updateWhatsAppLinks();
-        console.log('✅ PMF Tours v2.4 fully loaded');
+        updateWhatsAppMessages();
+        renderServices();
+        console.log('✅ PMF Tours v2.4 fully loaded with auto-detected language');
     }).catch(error => {
         console.error('Error initializing PMF Tours:', error);
     });

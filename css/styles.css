@@ -564,50 +564,108 @@ img {
 
 .service-card {
   background: var(--blanco);
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  position: relative;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-color: var(--pmf-teal);
 }
 
+/* === SERVICE IMAGE CON OVERLAY === */
 .service-image {
   position: relative;
-  height: 220px;
+  height: 240px;
   overflow: hidden;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+}
+
+.service-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, rgba(167,0,7,0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.service-card:hover .service-image::after {
+  opacity: 1;
 }
 
 .service-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.85;
-  transition: all 0.4s ease;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.95) saturate(1.1);
+  position: relative;
+  z-index: 0;
 }
 
 .service-card:hover .service-image img {
-  opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.15);
+  filter: brightness(1.1) saturate(1.3);
 }
 
+/* === BADGES CON ANIMACIÓN === */
 .badge {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  padding: 6px 10px;
-  border-radius: 16px;
-  font-size: 11px;
-  font-weight: 600;
+  top: 16px;
+  right: 16px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  z-index: 2;
 }
 
-.badge.popular { background: var(--pmf-rojo); color: #fff; }
-.badge.beach { background: var(--pmf-amarillo); color: var(--pmf-rojo); }
-.badge.cultural { background: var(--pmf-teal); color: #fff; }
+.service-card:hover .badge {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
 
+.badge.popular {
+  background: linear-gradient(135deg, var(--pmf-rojo), #d30009);
+  color: #fff;
+  animation: pulse-badge 2s infinite;
+}
+
+.badge.beach {
+  background: linear-gradient(135deg, var(--pmf-amarillo), #ffd830);
+  color: var(--pmf-rojo);
+}
+
+.badge.cultural {
+  background: linear-gradient(135deg, var(--pmf-teal), #02b0b8);
+  color: #fff;
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.05) translateY(-2px);
+  }
+}
+
+/* === SERVICE CONTENT === */
 .service-content {
   padding: 18px;
 }
@@ -616,6 +674,14 @@ img {
   color: var(--pmf-rojo);
   margin-bottom: 8px;
   font-size: 1.18rem;
+  font-weight: 700;
+}
+
+.service-content p {
+  font-size: 0.9rem;
+  color: var(--gris);
+  line-height: 1.5;
+  margin-bottom: 12px;
 }
 
 .features {
@@ -627,25 +693,71 @@ img {
   margin-bottom: 8px;
   color: var(--gris);
   font-size: 0.86rem;
+  padding-left: 16px;
+  position: relative;
+}
+
+.features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--pmf-verde);
+  font-weight: 700;
 }
 
 /* ============================================
-   PRECIOS
+   PRECIOS - CON GLASSMORPHISM
    ============================================ */
 .price-container {
-  background: var(--gris-claro);
-  padding: 14px 12px;
-  border-radius: 10px;
-  margin: 14px 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(245,245,245,0.95));
+  backdrop-filter: blur(10px);
+  padding: 18px 16px;
+  border-radius: 12px;
+  margin: 16px 0;
   text-align: center;
+  border: 1px solid rgba(1,151,158,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .price-container {
+  background: linear-gradient(135deg, rgba(1,151,158,0.1), rgba(1,151,158,0.05));
+  border-color: var(--pmf-teal);
+  transform: scale(1.02);
+}
+
+.price-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--pmf-teal);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.price-label i {
+  font-size: 18px;
 }
 
 .price {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.4rem;
+  font-weight: 800;
   color: var(--pmf-rojo);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   display: block;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+  letter-spacing: -1px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover .price {
+  color: var(--pmf-teal);
+  transform: scale(1.08);
+  text-shadow: 0 0 20px rgba(1,151,158,0.3);
 }
 
 .price-details {
@@ -668,6 +780,54 @@ img {
   font-size: 0.78rem;
 }
 
+/* ============================================
+   BOTÓN DE RESERVA - CON SHINE EFFECT
+   ============================================ */
+.btn-service {
+  background: linear-gradient(135deg, var(--pmf-teal), var(--pmf-verde));
+  color: #fff;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-service::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.btn-service:hover::before {
+  left: 100%;
+}
+
+.btn-service:hover {
+  background: linear-gradient(135deg, var(--pmf-verde), #047300);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(5,134,0,0.3);
+}
+
+.btn-service:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   CUSTOM TOUR CTA
+   ============================================ */
 .custom-tour-cta {
   background: var(--gris-claro);
   padding: 48px 26px;

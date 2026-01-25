@@ -88,8 +88,11 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/50765347412?text=%C2%A1Hola%20Pierre%21%20-%20texto"
+                <a href="https://wa.me/50765347412?text=¡Hola!%20Estoy%20interesado%20en%20conocer%20más%20sobre%20los%20tours%20de%20PMF%20Tours.%20¿Me%20puedes%20ayudar?"
                    class="btn-whatsapp-nav"
+                   id="headerWhatsApp"
+                   data-lang-es="https://wa.me/50765347412?text=¡Hola!%20Estoy%20interesado%20en%20conocer%20más%20sobre%20los%20tours%20de%20PMF%20Tours.%20¿Me%20puedes%20ayudar?"
+                   data-lang-en="https://wa.me/50765347412?text=Hi!%20I'm%20interested%20in%20learning%20more%20about%20PMF%20Tours.%20Can%20you%20help%20me?"
                    target="_blank"
                    rel="noopener noreferrer">
                     <i class="bx bxl-whatsapp"></i>
@@ -121,7 +124,7 @@
             <h1 class="hero-title" data-translate="heroTitle">Tu puerta a Panamá</h1>
             <p class="hero-subtitle" data-translate="heroSubtitle">Transporte y tours privados con seguridad, puntualidad y experiencias auténticas.</p>
             <div class="hero-buttons">
-                <a href="https://wa.me/50765347412" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/50765347412" id="heroReservar" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     <i class="bx bxl-whatsapp"></i>
                     <span data-translate="heroBtn1">Reservar Tour</span>
                 </a>
@@ -215,7 +218,7 @@
                         </div>
                     </div>
 
-                    <a href="https://wa.me/50765347412" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/50765347412" id="aboutContactar" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                         <i class="bx bxl-whatsapp"></i>
                         <span data-translate="aboutCTA">Contactar a Pierre</span>
                     </a>
@@ -254,7 +257,7 @@
             <div class="custom-tour-cta">
                 <h3 data-translate="customTitle">¿Buscas una experiencia única?</h3>
                 <p data-translate="customDesc">Cuéntanos tus intereses y te armamos la experiencia perfecta.</p>
-                <a href="https://wa.me/50765347412" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/50765347412" id="customTour" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     <i class="bx bx-edit"></i>
                     <span data-translate="customBtn">Diseña Tu Tour</span>
                 </a>
@@ -361,7 +364,8 @@
             <div class="testimonial-cta">
                 <h3 data-translate="reviewCTATitle">¿Viajaste con nosotros?</h3>
                 <p data-translate="reviewCTADesc">Comparte tu experiencia y ayuda a otros viajeros</p>
-                <a href="https://wa.me/50765347412?text=¡Hola%20Pierre!%20⭐%0A%0AQuiero%20dejar%20mi%20reseña%20sobre%20mi%20experiencia%20con%20PMF%20Tours.%0A%0A⭐%20Calificación:%20[1-5%20estrellas]%0A💭%20Comentario:%20[tu%20experiencia]%0A📅%20Fecha%20del%20tour:%20[fecha]%0A🎯%20Tour%20realizado:%20[cual]"
+                <a href="https://wa.me/50765347412"
+                   id="reviewWhatsApp"
                    class="btn btn-primary"
                    target="_blank"
                    rel="noopener noreferrer">
@@ -429,7 +433,7 @@
             <div class="cta-content">
                 <h2 data-translate="ctaFinalTitle">¿Listo para descubrir Panamá como un local?</h2>
                 <p data-translate="ctaFinalDesc">Reserva ahora y vive Panamá de forma auténtica.</p>
-                <a href="https://wa.me/50765347412" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/50765347412" id="ctaFinal" class="btn btn-primary btn-large" target="_blank" rel="noopener noreferrer">
                     <i class="bx bxl-whatsapp"></i>
                     <span data-translate="ctaFinalBtn">Reservar Ahora por WhatsApp</span>
                 </a>
@@ -446,7 +450,7 @@
                     <a href="https://www.instagram.com/pmftours/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de PMF Tours" class="social-link">
                         <i class="bx bxl-instagram"></i>
                     </a>
-                    <a href="https://wa.me/50765347412" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de PMF Tours" class="social-link">
+                    <a href="https://wa.me/50765347412" id="footerContacto" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de PMF Tours" class="social-link">
                         <i class="bx bxl-whatsapp"></i>
                     </a>
                 </div>
@@ -599,6 +603,29 @@
     <script type="module" defer>
         let serviciosData = null;
 
+        // ✅ FUNCIÓN PARA CONSTRUIR PRECIO
+        function buildPriceHtml(service, currentLang) {
+            // 1. RANGOS DE PRECIO (Beach, Airport, Interior)
+            if (service.precioDesde !== undefined && service.precioHasta !== undefined) {
+                const precioDisplay = typeof service.precioDisplay === 'object'
+                    ? service.precioDisplay[currentLang]
+                    : service.precioDisplay;
+                return `<div class="price">${precioDisplay}</div>`;
+            }
+
+            // 2. PRECIO FIJO (City Tour, Cultural)
+            if (service.precio !== undefined) {
+                const precioDisplay = typeof service.precioDisplay === 'object'
+                    ? service.precioDisplay[currentLang]
+                    : `$${service.precio} USD`;
+                return `<div class="price">${precioDisplay}</div>`;
+            }
+
+            // 3. FALLBACK
+            return `<div class="price">Consultar</div>`;
+        }
+
+        // ✅ FUNCIÓN PARA CONSTRUIR CARD
         function buildServiceCard(service, currentLang, textos) {
             const nombre = typeof service.nombre === 'object' ? service.nombre[currentLang] : service.nombre;
             const descripcion = typeof service.descripcion === 'object' ? service.descripcion[currentLang] : service.descripcion;
@@ -615,13 +642,13 @@
             const whatsappUrl = typeof service.whatsappUrl === 'object' ? service.whatsappUrl[currentLang] : service.whatsappUrl;
 
             const badgeHtml = badge ? `<div class="badge ${service.badgeClass}">${badge}</div>` : '';
-            const featuresHtml = Array.isArray(incluye) ? incluye.map(item => `<li>✓ ${item}</li>`).join('') : '';
-            const priceHtml = buildPriceHtml(service, textos);
+            const featuresHtml = Array.isArray(incluye) ? incluye.map(item => `<li>${item}</li>`).join('') : '';
+            const priceHtml = buildPriceHtml(service, currentLang);  // ✅ AGREGAR
 
             return `
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="${service.imagen}" alt="${nombre}" loading="lazy" width="260" height="220">
+                        <img src="${service.imagen}" alt="${nombre}" loading="lazy" width="260" height="240">
                         ${badgeHtml}
                     </div>
                     <div class="service-content">
@@ -629,31 +656,12 @@
                         <p>${descripcion}</p>
                         <ul class="features">${featuresHtml}</ul>
                         ${priceHtml}
-                        <a href="${whatsappUrl}" class="btn btn-service" target="_blank">
+                        <a href="${whatsappUrl}" class="btn btn-service" target="_blank" rel="noopener noreferrer">
                             ${textos.reservar_ahora}
                         </a>
                     </div>
                 </div>
             `;
-        }
-
-        function buildPriceHtml(service, textos) {
-            if (service.precioBase) {
-                let priceDetails = '';
-                if (service.personas) {
-                    priceDetails = `<span>${textos.precio_base} ${service.personas} ${textos.personas}</span>`;
-                    if (service.extra) {
-                        priceDetails += `<small>+$${service.extra} ${textos.persona_adicional}</small>`;
-                    }
-                }
-                return `
-                    <div class="price-container">
-                        <div class="price">$${service.precioBase}</div>
-                        ${priceDetails ? `<div class="price-details">${priceDetails}</div>` : ''}
-                    </div>
-                `;
-            }
-            return `<div class="price">$${service.precio}</div>`;
         }
 
         async function loadServices() {

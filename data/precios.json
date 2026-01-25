@@ -118,8 +118,9 @@
         "en": "Airport → Hotel Transfer"
       },
       "descripcion": {
-       "es": "Servicio puerta a puerta desde/hacia Tocumen. Coronado, San Carlos-Gorgona, El Valle de Antón. Te esperamos con letrero. ⚠️ Precio varía según destino.",
-"en": "Door-to-door service from/to Tocumen. Coronado, San Carlos-Gorgona, Anton Valley. We wait with a sign. ⚠️ Price varies by destination."
+        "es": "Servicio puerta a puerta desde/hacia Tocumen, Coronado, San Carlos-Gorgona y El Valle de Antón. Te esperamos con letrero y agua fría. ⚠️ Precio varía según destino.",
+        "en": "Door-to-door service from/to Tocumen, Coronado, San Carlos-Gorgona and El Valle de Antón. We wait with sign and cold water. ⚠️ Price varies by destination."
+      },
       "imagen": "./image/tours/Kia-Casco.png",
       "badge": {
         "es": "🚗 Traslado VIP",
