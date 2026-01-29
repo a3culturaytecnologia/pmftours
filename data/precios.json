@@ -144,8 +144,8 @@
       "precioDesde": 40,
       "precioHasta": 120,
       "precioDisplay": {
-        "es": "$40 - $120 ⚠️",
-        "en": "$40 - $120 ⚠️"
+        "es": "$40 - $120 ",
+        "en": "$40 - $120 "
       },
       "whatsappUrl": {
         "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0ANecesito%20*traslado%20aeropuerto*%0A%0A📅%20Fecha:%20[día%20y%20hora]%0A✈️%20Vuelo:%20[número%20de%20vuelo]%0A🏨%20Destino:%20[Ciudad%20Panamá%20/%20Coronado%20/%20San%20Carlos%20/%20El%20Valle]%0A👥%20Personas:%20[cuántos]%0A%0A¿Cuál%20es%20el%20precio%20exacto?",
