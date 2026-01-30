@@ -7,8 +7,8 @@
         "en": "Welcome City Tour"
       },
       "descripcion": {
-        "es": "Descubre la esencia de Panamá: Canal, Casco Antiguo, Calzada de Amador y tours de comidas típicas. Historia, cultura y fotos increíbles.",
-        "en": "Discover the essence of Panama: Canal, Old Quarter, Amador Causeway and typical food tours. History, culture and amazing photos."
+        "es": "...",
+        "en": "..."
       },
       "imagen": "./image/tours/Ciudad.png",
       "badge": {
@@ -30,10 +30,9 @@
           "Typical food tours"
         ]
       },
-      "precio": 120,
       "whatsappUrl": {
-        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🌆%0A%0AQuiero%20reservar%20el%20*Welcome%20City%20Tour*%20($120)%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A%0A¿Está%20disponible?",
-        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🌆%0A%0AI%20want%20to%20book%20the%20*Welcome%20City%20Tour*%20($120)%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A%0AIs%20it%20available?"
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🌆%0A%0AQuiero%20reservar%20el%20*Welcome%20City%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A%0A¿Está%20disponible?",
+        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🌆%0A%0AI%20want%20to%20book%20the%20*Welcome%20City%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A%0AIs%20it%20available?"
       }
     },
     {
@@ -64,15 +63,9 @@
           "Reliable and punctual service"
         ]
       },
-      "precioDesde": 100,
-      "precioHasta": 120,
-      "precioDisplay": {
-        "es": "$100 - $120 (solo ida)",
-        "en": "$100 - $120 (one-way)"
-      },
       "whatsappUrl": {
-        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏖️%0A%0AQuiero%20el%20*Beach%20Day%20Escape*%20(solo%20ida)%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🏝️%20Playa:%20[Pacífico%20/%20Atlántico]%0A%0A¿Disponible?",
-        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🏖️%0A%0AI%20want%20the%20*Beach%20Day%20Escape*%20(one-way)%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A🏝️%20Beach:%20[Pacific%20/%20Atlantic]%0A%0AAvailable?"
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏖️%0A%0AQuiero%20el%20*Beach%20Day%20Escape*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🏝️%20Playa:%20[Pacífico%20/%20Atlántico]%0A%0A¿Disponible?",
+        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🏖️%0A%0AI%20want%20the%20*Beach%20Day%20Escape*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A🏝️%20Beach:%20[Pacific%20/%20Atlantic]%0A%0AAvailable?"
       }
     },
     {
@@ -105,10 +98,9 @@
           "Panamanian cuisine"
         ]
       },
-      "precio": 120,
       "whatsappUrl": {
-        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🛕%0A%0AQuiero%20el%20*Cultural%20%26%20History%20Tour*%20($120)%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A%0A¿Qué%20incluye%20exactamente?",
-        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🛕%0A%0AI%20want%20the%20*Cultural%20%26%20History%20Tour*%20($120)%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A%0AWhat%20exactly%20does%20it%20include?"
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🛕%0A%0AQuiero%20el%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A%0A¿Qué%20incluye%20exactamente?",
+        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🛕%0A%0AI%20want%20the%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A%0AWhat%20exactly%20does%20it%20include?"
       }
     },
     {
@@ -118,8 +110,8 @@
         "en": "Airport → Hotel Transfer"
       },
       "descripcion": {
-        "es": "Servicio puerta a puerta desde/hacia Tocumen, Coronado, San Carlos-Gorgona y El Valle de Antón. Te esperamos con letrero y agua fría. ⚠️ Precio varía según destino.",
-        "en": "Door-to-door service from/to Tocumen, Coronado, San Carlos-Gorgona and El Valle de Antón. We wait with sign and cold water. ⚠️ Price varies by destination."
+        "es": "Servicio puerta a puerta desde/hacia Tocumen, Coronado, San Carlos-Gorgona y El Valle de Antón. Te esperamos con letrero y agua fría.",
+        "en": "Door-to-door service from/to Tocumen, Coronado, San Carlos-Gorgona and El Valle de Antón. We wait with sign and cold water."
       },
       "imagen": "./image/tours/Kia-Casco.png",
       "badge": {
@@ -131,21 +123,13 @@
         "es": [
           "Recogida puntual (24/7)",
           "Espera gratis si hay retraso",
-          "Transporte confiable y seguro",
-          "Precio base para 1-2 personas (+$10 por persona adicional)"
+          "Transporte confiable y seguro"
         ],
         "en": [
           "Punctual pickup (24/7)",
           "Free wait if delayed",
-          "Reliable and safe transport",
-          "Base price for 1-2 people (+$10 per additional person)"
+          "Reliable and safe transport"
         ]
-      },
-      "precioDesde": 40,
-      "precioHasta": 120,
-      "precioDisplay": {
-        "es": "$40 - $120 ",
-        "en": "$40 - $120 "
       },
       "whatsappUrl": {
         "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0ANecesito%20*traslado%20aeropuerto*%0A%0A📅%20Fecha:%20[día%20y%20hora]%0A✈️%20Vuelo:%20[número%20de%20vuelo]%0A🏨%20Destino:%20[Ciudad%20Panamá%20/%20Coronado%20/%20San%20Carlos%20/%20El%20Valle]%0A👥%20Personas:%20[cuántos]%0A%0A¿Cuál%20es%20el%20precio%20exacto?",
@@ -180,15 +164,9 @@
           "Round trip transport"
         ]
       },
-      "precioDesde": 300,
-      "precioHasta": 400,
-      "precioDisplay": {
-        "es": "$300 - $400",
-        "en": "$300 - $400"
-      },
       "whatsappUrl": {
-        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏔️%0A%0AQuiero%20el%20*Tour%20Interior*%20($300-$400)%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Destino:%20[Las%20Tablas%20/%20Chitré%20/%20Boquete%20/%20Otro]%0A%0A¿Disponible?",
-        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🏔️%0A%0AI%20want%20the%20*Interior%20Tour*%20($300-$400)%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A🎯%20Destination:%20[Las%20Tablas%20/%20Chitré%20/%20Boquete%20/%20Other]%0A%0AAvailable?"
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏔️%0A%0AQuiero%20el%20*Tour%20Interior*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Destino:%20[Las%20Tablas%20/%20Chitré%20/%20Boquete%20/%20Otro]%0A%0A¿Disponible?",
+        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🏔️%0A%0AI%20want%20the%20*Interior%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A🎯%20Destination:%20[Las%20Tablas%20/%20Chitré%20/%20Boquete%20/%20Other]%0A%0AAvailable?"
       }
     }
   ],

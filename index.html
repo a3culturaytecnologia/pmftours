@@ -642,7 +642,6 @@
 
             const badgeHtml = badge ? `<div class="badge ${service.badgeClass}">${badge}</div>` : '';
             const featuresHtml = Array.isArray(incluye) ? incluye.map(item => `<li>${item}</li>`).join('') : '';
-            const priceHtml = buildPriceHtml(service, currentLang);  // ✅ AGREGAR
 
             return `
                 <div class="service-card">
@@ -654,7 +653,6 @@
                         <h3>${nombre}</h3>
                         <p>${descripcion}</p>
                         <ul class="features">${featuresHtml}</ul>
-                        ${priceHtml}
                         <a href="${whatsappUrl}" class="btn btn-service" target="_blank" rel="noopener noreferrer">
                             ${textos.reservar_ahora}
                         </a>
