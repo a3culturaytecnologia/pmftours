@@ -38,12 +38,15 @@ function buildTestimonialHTML(testimonio) {
         <p>"${review}"</p>
       </div>
       <div class="testimonial-author">
-        <img src="${imagen}"
-             alt="${nombre}"
-             width="40"
-             height="40"
-             loading="lazy"
-             onerror="this.src='./image/testimonios/default.jpg'">
+        <div style="width: 40px; height: 40px; background: #FFC107; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; font-size: 14px;">
+          <img src="${imagen}"
+               alt="${nombre}"
+               width="40"
+               height="40"
+               loading="lazy"
+               style="border-radius: 50%; width: 100%; height: 100%; object-fit: cover;"
+               onerror="this.parentElement.textContent='${nombre.split(' ')[0][0]}'">
+        </div>
         <div class="author-info">
           <strong>${nombre}</strong>
           <span>${pais} • ${fecha}</span>
