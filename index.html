@@ -366,6 +366,14 @@
     </div>
 </div>
 
+<!-- BOTÓN PARA DEJAR RESEÑA ✅ NUEVO -->
+<div style="text-align: center; margin: 30px 0;">
+    <button id="reviewCTAButton" class="btn btn-primary btn-large" type="button">
+        <i class="bx bx-star"></i>
+        <span>⭐ Dejar tu reseña</span>
+    </button>
+</div>
+
 <!-- TESTIMONIOS RECIENTES (DINÁMICOS DE FIREBASE) -->
 <div class="testimonials-recent-section">
     <h3 class="recent-label">
@@ -571,130 +579,6 @@
     <div class="modal-overlay" id="modalOverlay"></div>
 </div>
 
-    <!-- REVIEW FORM - FIREBASE INTEGRATION -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCs6gwEEq47A0AI9cUnlQrgSEGrfH1EDcM",
-  authDomain: "pmftours-testimonios.firebaseapp.com",
-  projectId: "pmftours-testimonios",
-  storageBucket: "pmftours-testimonios.firebasestorage.app",
-  messagingSenderId: "365743560919",
-  appId: "1:365743560919:web:c645f5930ade6205c37892",
-  measurementId: "G-JHZYTEX7LX"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-document.addEventListener('DOMContentLoaded', () => {
-  const reviewModal = document.getElementById('reviewModal');
-  const reviewForm = document.getElementById('reviewForm');
-  const closeBtn = document.getElementById('closeReviewModal');
-  const modalOverlay = document.getElementById('modalOverlay');
-  const starRating = document.getElementById('starRating');
-  const reviewStars = document.getElementById('reviewStars');
-  const charCount = document.getElementById('charCount');
-  const reviewText = document.getElementById('reviewText');
-  const successMessage = document.getElementById('successMessage');
-  const submitBtn = document.getElementById('submitReview');
-
-  // Botón para abrir modal - busca el botón "Dejar tu reseña"
-  const openReviewButtons = document.querySelectorAll('a[id="reviewWhatsApp"]');
-  openReviewButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      reviewModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  // Cerrar modal
-  const closeModal = () => {
-    reviewModal.classList.remove('active');
-    document.body.style.overflow = '';
-    reviewForm.reset();
-    successMessage.style.display = 'none';
-    reviewForm.style.display = 'block';
-    resetStars();
-  };
-
-  closeBtn.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', closeModal);
-
-  // Sistema de estrellas
-  document.querySelectorAll('.star').forEach(star => {
-    star.addEventListener('click', () => {
-      const value = star.dataset.value;
-      reviewStars.value = value;
-      document.querySelectorAll('.star').forEach((s, i) => {
-        s.classList.toggle('active', i < value);
-      });
-    });
-  });
-
-  function resetStars() {
-    reviewStars.value = 5;
-    document.querySelectorAll('.star').forEach((s, i) => {
-      s.classList.toggle('active', i < 5);
-    });
-  }
-
-  // Contador de caracteres
-  reviewText.addEventListener('input', () => {
-    charCount.textContent = reviewText.value.length;
-  });
-
-  // Enviar formulario a Firebase
-  reviewForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = '<i class="bx bx-loader-circle"></i> Enviando...';
-
-    try {
-      const today = new Date();
-      const fecha = today.toLocaleDateString('es-ES', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      });
-
-      const reviewData = {
-        name: document.getElementById('reviewName').value,
-        country: document.getElementById('reviewCountry').value,
-        stars: parseInt(reviewStars.value),
-        review: reviewText.value,
-        date: fecha,
-        timestamp: today.getTime(),
-        featured: false,
-        imagen: 'https://firebasestorage.googleapis.com/v0/b/pmftours-testimonios.appspot.com/o/avatars%2Favatar-default.png?alt=media'
-      };
-
-      // Guardar en Firestore
-      await addDoc(collection(db, 'reviews'), reviewData);
-
-      console.log('✅ Reseña guardada en Firebase');
-
-      // Mostrar mensaje de éxito
-      reviewForm.style.display = 'none';
-      successMessage.style.display = 'block';
-
-      setTimeout(() => {
-        closeModal();
-      }, 2500);
-
-    } catch (error) {
-      console.error('❌ Error:', error);
-      alert('Error al enviar la reseña. Intenta de nuevo.');
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = '<i class="bx bx-send"></i> Enviar reseña';
-    }
-  });
-});
-</script>
 
     <!-- LOAD RECENT TESTIMONIALS FROM FIREBASE -->
 <script type="module" src="./js/firebase-testimonios.js"></script>
@@ -886,13 +770,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('DOMContentLoaded', loadServices);
     </script>
 
-    <!-- BOTÓN PARA DEJAR RESEÑA -->
-<div style="text-align: center; margin-bottom: 30px;">
-    <a href="#" id="reviewWhatsApp" class="btn btn-primary btn-large">
-        <i class="bx bx-star"></i>
-        <span data-translate="leaveReview">⭐ Dejar tu reseña</span>
-    </a>
-</div>
 </body>
 </html><!-- Cache purge: 01/15/2026 16:17:20 -->
 <!-- Force rebuild: 2026-01-15 16:21:59 -->

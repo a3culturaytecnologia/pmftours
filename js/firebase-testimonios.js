@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-import { getFirestore, collection, query, where, orderBy, limit, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+import { getFirestore, collection, query, orderBy, limit, onSnapshot, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
 
 // Configuración Firebase
 const firebaseConfig = {
@@ -12,16 +12,13 @@ const firebaseConfig = {
   measurementId: "G-JHZYTEX7LX"
 };
 
-// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Obtener idioma actual
 function getCurrentLanguage() {
   return localStorage.getItem('preferredLanguage') || 'es';
 }
 
-// Construir HTML de testimonio
 function buildTestimonialHTML(testimonio) {
   const nombre = testimonio.name || 'Viajero Anónimo';
   const pais = testimonio.country || '🌍 Internacional';
@@ -30,7 +27,6 @@ function buildTestimonialHTML(testimonio) {
   const imagen = testimonio.imagen || './image/testimonios/default.jpg';
   const review = testimonio.review || '';
 
-  // Convertir número a estrellas
   const estrellasHTML = '⭐'.repeat(Math.min(estrellas, 5));
 
   return `
@@ -57,7 +53,6 @@ function buildTestimonialHTML(testimonio) {
   `;
 }
 
-// Cargar testimonios desde Firestore
 export function loadTestimonials() {
   const container = document.getElementById('testimonials-grid-container');
 
@@ -67,16 +62,12 @@ export function loadTestimonials() {
   }
 
   try {
-    // Query: últimos 6 testimonios NO destacados
     const q = query(
       collection(db, 'reviews'),
-      where('featured', '!=', true),
-      orderBy('featured'),
       orderBy('timestamp', 'desc'),
       limit(6)
     );
 
-    // Escuchar cambios en tiempo real
     onSnapshot(q, (snapshot) => {
       if (snapshot.empty) {
         console.log('No hay testimonios recientes');
@@ -94,13 +85,13 @@ export function loadTestimonials() {
         return;
       }
 
-      // Mapear documentos
-      const testimonials = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
+      const testimonials = snapshot.docs
+        .map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }))
+        .filter(t => t.featured !== true);
 
-      // Renderizar
       container.innerHTML = testimonials
         .map(testimonio => buildTestimonialHTML(testimonio))
         .join('');
@@ -120,29 +111,22 @@ export function loadTestimonials() {
   }
 }
 
-// REVIEW FORM MODAL SCRIPT
+// ===== FORM HANDLING - UN SOLO LISTENER =====
 document.addEventListener('DOMContentLoaded', () => {
-  const reviewModal = document.getElementById('reviewModal');
   const reviewForm = document.getElementById('reviewForm');
+  const reviewModal = document.getElementById('reviewModal');
   const closeBtn = document.getElementById('closeReviewModal');
   const modalOverlay = document.getElementById('modalOverlay');
-  const starRating = document.getElementById('starRating');
   const reviewStars = document.getElementById('reviewStars');
-  const starLabel = document.getElementById('starLabel');
   const charCount = document.getElementById('charCount');
   const reviewText = document.getElementById('reviewText');
   const successMessage = document.getElementById('successMessage');
+  const submitBtn = document.getElementById('submitReview');
 
-  const starLabels = {
-    1: '⭐ Pobre',
-    2: '⭐⭐ Aceptable',
-    3: '⭐⭐⭐ Bueno',
-    4: '⭐⭐⭐⭐ Muy bueno',
-    5: '⭐⭐⭐⭐⭐ Excelente'
-  };
+  if (!reviewForm) return;
 
-  // Abrir modal
-  const openReviewBtn = document.querySelector('[data-translate="reviewCTAButton"]')?.closest('.btn');
+  // ✅ Abrir modal
+  const openReviewBtn = document.getElementById('reviewCTAButton');
   if (openReviewBtn) {
     openReviewBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -151,20 +135,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Cerrar modal
+  // ✅ Cerrar modal
   const closeModal = () => {
     reviewModal.classList.remove('active');
     document.body.style.overflow = '';
     reviewForm.reset();
     successMessage.style.display = 'none';
     reviewForm.style.display = 'block';
-    resetStars();
+    reviewStars.value = 5;
+    document.querySelectorAll('.star').forEach((s, i) => {
+      s.classList.toggle('active', i < 5);
+    });
   };
 
   closeBtn.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+  });
 
-  // Estrellas
+  // ✅ Estrellas
   document.querySelectorAll('.star').forEach(star => {
     star.addEventListener('click', () => {
       const value = star.dataset.value;
@@ -172,47 +161,40 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.star').forEach((s, i) => {
         s.classList.toggle('active', i < value);
       });
-      starLabel.textContent = starLabels[value];
     });
   });
 
-  function resetStars() {
-    document.querySelectorAll('.star').forEach((s, i) => {
-      s.classList.toggle('active', i < 5);
-    });
-    starLabel.textContent = starLabels[5];
-  }
-
-  // Contador de caracteres
+  // ✅ Contador caracteres
   reviewText.addEventListener('input', () => {
     charCount.textContent = reviewText.value.length;
   });
 
-  // Enviar formulario
+  // ✅ ÚNICO SUBMIT LISTENER - SIN DUPLICACIÓN
   reviewForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const submitBtn = document.getElementById('submitReview');
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="bx bx-loader-circle"></i> Enviando...';
 
-    const data = {
-      name: document.getElementById('reviewName').value,
-      country: document.getElementById('reviewCountry').value,
-      stars: parseInt(reviewStars.value),
-      review: reviewText.value,
-      date: new Date().toLocaleDateString('es-ES'),
-      timestamp: new Date().getTime(),
-      featured: false,
-      imagen: 'https://firebasestorage.googleapis.com/v0/b/pmftours-testimonios.appspot.com/o/avatars%2Favatar-default.png?alt=media'
-    };
-
     try {
-      // Aquí irá el código de Firebase
-      // Por ahora simulamos éxito
-      console.log('Reseña enviada:', data);
+      const reviewData = {
+        name: document.getElementById('reviewName').value.trim(),
+        country: document.getElementById('reviewCountry').value,
+        stars: parseInt(reviewStars.value),
+        review: reviewText.value.trim(),
+        date: new Date().toLocaleDateString('es-ES', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }),
+        timestamp: Date.now(),
+        featured: false,
+        imagen: 'https://firebasestorage.googleapis.com/v0/b/pmftours-testimonios.appspot.com/o/avatars%2Favatar-default.png?alt=media'
+      };
 
-      // Mostrar éxito
+      await addDoc(collection(db, 'reviews'), reviewData);
+      console.log('✅ Reseña guardada UNA SOLA VEZ');
+
       reviewForm.style.display = 'none';
       successMessage.style.display = 'block';
 
@@ -220,17 +202,13 @@ document.addEventListener('DOMContentLoaded', () => {
         closeModal();
       }, 2000);
     } catch (error) {
-      console.error('Error:', error);
-      alert('Error al enviar la reseña');
+      console.error('❌ Error al guardar:', error);
+      alert('Error: ' + error.message);
       submitBtn.disabled = false;
       submitBtn.innerHTML = '<i class="bx bx-send"></i> Enviar reseña';
     }
   });
-});
 
-// Inicializar cuando el DOM esté listo
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', loadTestimonials);
-} else {
+  // Cargar testimonios
   loadTestimonials();
-}
+});
