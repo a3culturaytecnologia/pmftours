@@ -7,8 +7,8 @@
         "en": "Welcome City Tour"
       },
       "descripcion": {
-        "es": "...",
-        "en": "..."
+        "es": "Explora Panamá como local: Canal, Casco Antiguo, Causeway de Amador y lo mejor de la ciudad.",
+        "en": "Explore Panama like a local: Canal, Old Quarter, Amador Causeway and the best of the city."
       },
       "imagen": "./image/tours/Ciudad.png",
       "badge": {
@@ -21,14 +21,19 @@
           "Canal de Panamá (Miraflores)",
           "Casco Antiguo histórico",
           "Calzada de Amador",
-          "Tours comidas típicas"
+          "Comida típica panameña"
         ],
         "en": [
           "Panama Canal (Miraflores)",
           "Historic Old Quarter",
           "Amador Causeway",
-          "Typical food tours"
+          "Authentic Panamanian cuisine"
         ]
+      },
+      "precio": 80,
+      "precioDisplay": {
+        "es": "$80 USD (hasta 4 personas)",
+        "en": "$80 USD (up to 4 people)"
       },
       "whatsappUrl": {
         "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🌆%0A%0AQuiero%20reservar%20el%20*Welcome%20City%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A%0A¿Está%20disponible?",
@@ -42,30 +47,36 @@
         "en": "Beach Day Escape"
       },
       "descripcion": {
-        "es": "Transporte cómodo y seguro hacia las mejores playas de Panamá.",
-        "en": "Comfortable and safe transport to the best beaches of Panama."
+        "es": "Transporte cómodo y seguro hacia las mejores playas de Panamá. Precios flexibles según destino y tipo de servicio (ida o ida/vuelta).",
+        "en": "Comfortable and safe transport to Panama's best beaches. Flexible pricing based on destination and service type (one-way or round-trip)."
       },
       "imagen": "./image/tours/Playa.png",
       "badge": {
-        "es": "🏖️ Solo Ida",
-        "en": "🏖️ One-Way"
+        "es": "🏖️ Flexible",
+        "en": "🏖️ Flexible"
       },
       "badgeClass": "beach",
       "incluye": {
         "es": [
-          "Playas del Pacífico",
-          "Playas del Atlántico",
-          "Servicio confiable y puntual"
+          "Playas del Pacífico o Atlántico",
+          "Servicio ida o ida/vuelta",
+          "Precio según destino y duración"
         ],
         "en": [
-          "Pacific beaches",
-          "Atlantic beaches",
-          "Reliable and punctual service"
+          "Pacific or Atlantic beaches",
+          "One-way or round-trip service",
+          "Price based on destination & duration"
         ]
       },
+      "precioDesde": 50,
+      "precioHasta": 150,
+      "precioDisplay": {
+        "es": "desde $50 USD",
+        "en": "from $50 USD"
+      },
       "whatsappUrl": {
-        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏖️%0A%0AQuiero%20el%20*Beach%20Day%20Escape*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🏝️%20Playa:%20[Pacífico%20/%20Atlántico]%0A%0A¿Disponible?",
-        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🏖️%0A%0AI%20want%20the%20*Beach%20Day%20Escape*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A🏝️%20Beach:%20[Pacific%20/%20Atlantic]%0A%0AAvailable?"
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏖️%0A%0AQuiero%20el%20*Beach%20Day%20Escape*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🏝️%20Playa:%20[Pacífico%20/%20Atlántico]%0A🔄%20Servicio:%20[Solo%20ida%20/%20Ida%20y%20vuelta]%0A%0A¿Disponible?",
+        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🏖️%0A%0AI%20want%20the%20*Beach%20Day%20Escape*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A🏝️%20Beach:%20[Pacific%20/%20Atlantic]%0A🔄%20Service:%20[One-way%20/%20Round-trip]%0A%0AAvailable?"
       }
     },
     {
@@ -75,8 +86,8 @@
         "en": "Cultural & History Tour"
       },
       "descripcion": {
-        "es": "Sumérgete en la historia: Canal de Panamá, Causeway de Amador, mercado de artesanías y gastronomía auténtica panameña.",
-        "en": "Immerse yourself in history: Panama Canal, Amador Causeway, handicraft market and authentic Panamanian cuisine."
+        "es": "Sumérgete en la rica historia y cultura de Panamá con un recorrido auténtico.",
+        "en": "Immerse yourself in Panama's rich history and culture with an authentic tour."
       },
       "imagen": "./image/tours/Casco-Antiguo.png",
       "badge": {
@@ -86,17 +97,22 @@
       "badgeClass": "cultural",
       "incluye": {
         "es": [
-          "Canal de Panamá",
+          "Canal de Panamá (Miraflores)",
           "Causeway de Amador",
           "Mercado de artesanías",
-          "Gastronomía panameña"
+          "Gastronomía panameña auténtica"
         ],
         "en": [
-          "Panama Canal",
+          "Panama Canal (Miraflores)",
           "Amador Causeway",
           "Handicraft market",
-          "Panamanian cuisine"
+          "Authentic Panamanian cuisine"
         ]
+      },
+      "precio": 85,
+      "precioDisplay": {
+        "es": "$85 USD (hasta 4 personas)",
+        "en": "$85 USD (up to 4 people)"
       },
       "whatsappUrl": {
         "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🛕%0A%0AQuiero%20el%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A%0A¿Qué%20incluye%20exactamente?",
@@ -131,6 +147,12 @@
           "Reliable and safe transport"
         ]
       },
+      "precioDesde": 30,
+      "precioHasta": 120,
+      "precioDisplay": {
+        "es": "desde $30 USD",
+        "en": "from $30 USD"
+      },
       "whatsappUrl": {
         "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0ANecesito%20*traslado%20aeropuerto*%0A%0A📅%20Fecha:%20[día%20y%20hora]%0A✈️%20Vuelo:%20[número%20de%20vuelo]%0A🏨%20Destino:%20[Ciudad%20Panamá%20/%20Coronado%20/%20San%20Carlos%20/%20El%20Valle]%0A👥%20Personas:%20[cuántos]%0A%0A¿Cuál%20es%20el%20precio%20exacto?",
         "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20✈️%0A%0AI%20need%20*airport%20transfer*%0A%0A📅%20Date:%20[day%20and%20time]%0A✈️%20Flight:%20[flight%20number]%0A🏨%20Destination:%20[Panama%20City%20/%20Coronado%20/%20San%20Carlos%20/%20El%20Valle]%0A👥%20People:%20[how%20many]%0A%0AWhat's%20the%20exact%20price?"
@@ -146,7 +168,7 @@
         "es": "Descubre el interior de Panamá: cultura, tradiciones y paisajes únicos. Bebidas incluidas, ida y vuelta.",
         "en": "Discover Panama's interior: culture, traditions and unique landscapes. Drinks included, round trip."
       },
-      "imagen": "./image/gallery/imagen2.jpg",
+      "imagen": "./image/tours/interior.png",
       "badge": {
         "es": "🏔️ Aventura Total",
         "en": "🏔️ Total Adventure"
@@ -154,19 +176,27 @@
       "badgeClass": "popular",
       "incluye": {
         "es": [
-          "Las Tablas, Chitré, Ocú, Boquete, entre otros destinos del interior",
-          "Bebidas incluidas",
-          "Transporte ida y vuelta"
+          "El Valle de Antón (volcán, pozas termales, mercado)",
+          "Las Tablas, Chitré, Ocú",
+          "Boquete y otros destinos del interior",
+          "Bebidas incluidas • Ida y vuelta"
         ],
         "en": [
-          "Las Tablas, Chitré, Ocú, Boquete, among other interior destinations",
-          "Drinks included",
-          "Round trip transport"
+          "El Valle de Antón (volcano, hot springs, market)",
+          "Las Tablas, Chitré, Ocú",
+          "Boquete and other interior destinations",
+          "Drinks included • Round trip"
         ]
       },
+      "precioDesde": 100,
+      "precioHasta": 250,
+      "precioDisplay": {
+        "es": "desde $100 USD",
+        "en": "from $100 USD"
+      },
       "whatsappUrl": {
-        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏔️%0A%0AQuiero%20el%20*Tour%20Interior*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Destino:%20[Las%20Tablas%20/%20Chitré%20/%20Boquete%20/%20Otro]%0A%0A¿Disponible?",
-        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🏔️%0A%0AI%20want%20the%20*Interior%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A🎯%20Destination:%20[Las%20Tablas%20/%20Chitré%20/%20Boquete%20/%20Other]%0A%0AAvailable?"
+        "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏔️%0A%0AQuiero%20el%20*Tour%20Interior*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Destino:%20[El%20Valle%20/%20Las%20Tablas%20/%20Chitré%20/%20Boquete%20/%20Otro]%0A%0A¿Disponible?",
+        "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🏔️%0A%0AI%20want%20the%20*Interior%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A🎯%20Destination:%20[El%20Valle%20/%20Las%20Tablas%20/%20Chitré%20/%20Boquete%20/%20Other]%0A%0AAvailable?"
       }
     }
   ],
@@ -190,14 +220,16 @@
       "footer_contacto": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20información%20sobre%20PMF%20Tours.%0A%0A¿Me%20ayudas?",
       "about_contactar": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20👋%0A%0AQuiero%20conocer%20más%20sobre%20PMF%20Tours.%0A%0A¿Me%20cuentas%20sobre%20tus%20servicios?",
       "custom_tour": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🎯%0A%0AQuiero%20un%20*tour%20personalizado*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A💡%20Intereses:%20[qué%20te%20gustaría%20ver/hacer]%0A%0A¿Me%20ayudas%20a%20diseñarlo?",
-      "cta_final": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0A¡Listo%20para%20reservar!%0A%0A📅%20Fecha:%20[escribe%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Tour:%20[cual%20te%20interesa]%0A%0A¿Confirmas%20disponibilidad?"
+      "cta_final": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0A¡Listo%20para%20reservar!%0A%0A📅%20Fecha:%20[escribe%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Tour:%20[cual%20te%20interesa]%0A%0A¿Confirmas%20disponibilidad?",
+      "review_whatsapp": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20⭐%0A%0AQuiero%20dejar%20mi%20reseña%20sobre%20el%20tour%20con%20PMF%20Tours.%0A%0A¿Me%20ayudas?"
     },
     "en": {
       "hero_reservar": "https://wa.me/50765347412?text=Hi%20Pierre!%20👋%0A%0AI%20want%20to%20book%20a%20tour.%0A%0A📅%20Date:%20[write%20date]%0A👥%20People:%20[how%20many]%0A%0AWhat%20tours%20available?",
       "footer_contacto": "https://wa.me/50765347412?text=Hi%20Pierre!%20👋%0A%0AI%20want%20info%20about%20PMF%20Tours.%0A%0ACan%20you%20help?",
       "about_contactar": "https://wa.me/50765347412?text=Hi%20Pierre!%20👋%0A%0AI%20want%20to%20know%20more%20about%20PMF%20Tours.%0A%0ACan%20you%20tell%20me%20about%20your%20services?",
       "custom_tour": "https://wa.me/50765347412?text=Hi%20Pierre!%20🎯%0A%0AI%20want%20a%20*custom%20tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A💡%20Interests:%20[what%20you'd%20like]%0A%0ACan%20you%20help%20design%20it?",
-      "cta_final": "https://wa.me/50765347412?text=Hi%20Pierre!%20✈️%0A%0AReady%20to%20book!%0A%0A📅%20Date:%20[write%20date]%0A👥%20People:%20[how%20many]%0A🎯%20Tour:%20[which%20one]%0A%0AConfirm%20availability?"
+      "cta_final": "https://wa.me/50765347412?text=Hi%20Pierre!%20✈️%0A%0AReady%20to%20book!%0A%0A📅%20Date:%20[write%20date]%0A👥%20People:%20[how%20many]%0A🎯%20Tour:%20[which%20one]%0A%0AConfirm%20availability?",
+      "review_whatsapp": "https://wa.me/50765347412?text=Hi%20Pierre!%20⭐%0A%0AI%20want%20to%20leave%20my%20review%20about%20the%20tour%20with%20PMF%20Tours.%0A%0ACan%20you%20help?"
     }
   }
 }
