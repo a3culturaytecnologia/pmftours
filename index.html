@@ -696,6 +696,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+    <!-- LOAD RECENT TESTIMONIALS FROM FIREBASE -->
+<script type="module" src="./js/firebase-testimonios.js"></script>
+
     <!-- SCRIPTS -->
     <!-- Year dinámico -->
     <script>
@@ -882,6 +885,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('languageChanged', loadServices);
         document.addEventListener('DOMContentLoaded', loadServices);
     </script>
+
+    <!-- BOTÓN PARA DEJAR RESEÑA -->
+<div style="text-align: center; margin-bottom: 30px;">
+    <a href="#" id="reviewWhatsApp" class="btn btn-primary btn-large">
+        <i class="bx bx-star"></i>
+        <span data-translate="leaveReview">⭐ Dejar tu reseña</span>
+    </a>
+</div>
 </body>
 </html><!-- Cache purge: 01/15/2026 16:17:20 -->
 <!-- Force rebuild: 2026-01-15 16:21:59 -->
