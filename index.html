@@ -296,70 +296,24 @@
         </div>
     </section>
 
-    <!-- TESTIMONIOS - CON SISTEMA DE EVALUACIÓN Y TRADUCCIONES COMPLETAS -->
+    <!-- TESTIMONIOS - DINÁMICOS CON FIREBASE -->
     <section class="section testimonials" id="testimonios">
         <div class="section-container">
             <div class="section-header">
                 <span class="section-label" data-translate="testimonialsLabel">Lo que dicen</span>
                 <h2 class="section-title" data-translate="testimonialsTitle">Testimonios</h2>
-                <!-- Subtítulo con traducción -->
                 <p class="section-subtitle" data-translate="testimonialsSubtitleReview">Deja tu comentario de tu experiencia con nosotros</p>
             </div>
 
-            <div class="testimonials-grid-compact">
-                <!-- Testimonio 1 -->
-                <div class="testimonial-item">
-                    <div class="testimonial-stars">
-                        <span class="stars-display">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <div class="testimonial-content">
-                        <p data-translate="testimonial1">"Pierre nos llevó a Playa Blanca. Mi hija todavía habla de las estrellas de mar. ¡Aventura familiar inolvidable!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="./image/testimonios/Usuario1.jpg" alt="Lady Rouse" width="40" height="40" loading="lazy">
-                        <div class="author-info">
-                            <strong>Lady Rouse</strong>
-                            <span>🇺🇸 USA • Dic 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonio 2 -->
-                <div class="testimonial-item">
-                    <div class="testimonial-stars">
-                        <span class="stars-display">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <div class="testimonial-content">
-                        <p data-translate="testimonial2">"Conoce cada rincón y cuenta historias que no están en las guías. El mejor ceviche de nuestras vidas. ¡100% auténtico!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="./image/testimonios/Usuario2.jpg" alt="Anand Divekar" width="40" height="40" loading="lazy">
-                        <div class="author-info">
-                            <strong>Anand Divekar</strong>
-                            <span>🇮🇳 India • Abr 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonio 3 -->
-                <div class="testimonial-item">
-                    <div class="testimonial-stars">
-                        <span class="stars-display">⭐⭐⭐⭐⭐</span>
-                    </div>
-                    <div class="testimonial-content">
-                        <p data-translate="testimonial3">"Llegué a las 11pm y Pierre estaba esperando. Kia impecable, agua fría, 25 minutos al hotel. Servicio de lujo a precio justo."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="./image/testimonios/Usuario3.jpg" alt="Juan Carlos Vargas" width="40" height="40" loading="lazy">
-                        <div class="author-info">
-                            <strong>Juan Carlos Vargas</strong>
-                            <span>🇨🇴 Colombia • Sep 2024</span>
-                        </div>
-                    </div>
+            <!-- Contenedor dinámico que se llena con JavaScript -->
+            <div class="testimonials-grid-compact" id="testimonials-grid-container">
+                <!-- Los testimonios se cargan aquí automáticamente desde Firestore -->
+                <div class="loading-testimonials" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                    <p data-translate="loadingTestimonials">Cargando testimonios...</p>
                 </div>
             </div>
 
-            <!-- CTA para dejar reseñas - CON TRADUCCIONES -->
+            <!-- CTA para dejar reseñas -->
             <div class="testimonial-cta">
                 <h3 data-translate="reviewCTATitle">¿Viajaste con nosotros?</h3>
                 <p data-translate="reviewCTADesc">Comparte tu experiencia y ayuda a otros viajeros</p>
