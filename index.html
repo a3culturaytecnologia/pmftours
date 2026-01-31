@@ -305,27 +305,82 @@
                 <p class="section-subtitle" data-translate="testimonialsSubtitleReview">Deja tu comentario de tu experiencia con nosotros</p>
             </div>
 
-            <!-- Contenedor dinámico que se llena con JavaScript -->
-            <div class="testimonials-grid-compact" id="testimonials-grid-container">
-                <!-- Los testimonios se cargan aquí automáticamente desde Firestore -->
-                <div class="loading-testimonials" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
-                    <p data-translate="loadingTestimonials">Cargando testimonios...</p>
+            <!-- TESTIMONIOS DESTACADOS (FIJOS) -->
+<div class="testimonials-featured-section">
+    <h3 class="featured-label">
+        <i class="bx bx-star"></i>
+        <span data-translate="featuredTestimonials">Testimonios Destacados</span>
+    </h3>
+
+    <div class="testimonials-grid-compact testimonials-featured">
+        <!-- Testimonio 1 - FIJO -->
+        <div class="testimonial-item testimonial-featured">
+            <div class="testimonial-stars">
+                <span class="stars-display">⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="testimonial-content">
+                <p data-translate="testimonial1">"Pierre nos llevó a Playa Blanca. Mi hija todavía habla de las estrellas de mar. ¡Aventura familiar inolvidable!"</p>
+            </div>
+            <div class="testimonial-author">
+                <img src="./image/testimonios/Usuario1.jpg" alt="Lady Rouse" width="40" height="40" loading="lazy">
+                <div class="author-info">
+                    <strong>Lady Rouse</strong>
+                    <span>🇺🇸 USA • Dic 2024</span>
                 </div>
             </div>
+        </div>
 
-            <!-- CTA para dejar reseñas -->
-            <div class="testimonial-cta">
-                <h3 data-translate="reviewCTATitle">¿Viajaste con nosotros?</h3>
-                <p data-translate="reviewCTADesc">Comparte tu experiencia y ayuda a otros viajeros</p>
-                <a href="https://wa.me/50765347412"
-                   id="reviewWhatsApp"
-                   class="btn btn-primary"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    <i class="bx bx-star"></i>
-                    <span data-translate="reviewCTAButton">Dejar tu reseña</span>
-                </a>
+        <!-- Testimonio 2 - FIJO -->
+        <div class="testimonial-item testimonial-featured">
+            <div class="testimonial-stars">
+                <span class="stars-display">⭐⭐⭐⭐⭐</span>
             </div>
+            <div class="testimonial-content">
+                <p data-translate="testimonial2">"Conoce cada rincón y cuenta historias que no están en las guías. El mejor ceviche de nuestras vidas. ¡100% auténtico!"</p>
+            </div>
+            <div class="testimonial-author">
+                <img src="./image/testimonios/Usuario2.jpg" alt="Anand Divekar" width="40" height="40" loading="lazy">
+                <div class="author-info">
+                    <strong>Anand Divekar</strong>
+                    <span>🇮🇳 India • Abr 2024</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonio 3 - FIJO -->
+        <div class="testimonial-item testimonial-featured">
+            <div class="testimonial-stars">
+                <span class="stars-display">⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="testimonial-content">
+                <p data-translate="testimonial3">"Llegué a las 11pm y Pierre estaba esperando. Kia impecable, agua fría, 25 minutos al hotel. Servicio de lujo a precio justo."</p>
+            </div>
+            <div class="testimonial-author">
+                <img src="./image/testimonios/Usuario3.jpg" alt="Juan Carlos Vargas" width="40" height="40" loading="lazy">
+                <div class="author-info">
+                    <strong>Juan Carlos Vargas</strong>
+                    <span>🇨🇴 Colombia • Sep 2024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TESTIMONIOS RECIENTES (DINÁMICOS DE FIREBASE) -->
+<div class="testimonials-recent-section">
+    <h3 class="recent-label">
+        <i class="bx bx-time-five"></i>
+        <span data-translate="recentTestimonials">Reseñas Recientes</span>
+    </h3>
+
+    <div class="testimonials-grid-compact" id="testimonials-grid-container">
+        <!-- Contenido dinámico cargado desde Firebase -->
+        <div class="loading-testimonials" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+            <div class="loading-spinner"></div>
+            <p data-translate="loadingTestimonials">Cargando testimonios...</p>
+        </div>
+    </div>
+</div>
         </div>
     </section>
 

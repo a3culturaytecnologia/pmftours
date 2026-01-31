@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-import { getFirestore, collection, query, orderBy, limit, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+import { getFirestore, collection, query, orderBy, limit, onSnapshot, where } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
 
 // Configuración Firebase
 const firebaseConfig = {
@@ -42,7 +42,12 @@ function buildTestimonialHTML(testimonio) {
         <p>"${review}"</p>
       </div>
       <div class="testimonial-author">
-        <img src="${imagen}" alt="${nombre}" width="40" height="40" loading="lazy" onerror="this.src='./image/testimonios/default.jpg'">
+        <img src="${imagen}"
+             alt="${nombre}"
+             width="40"
+             height="40"
+             loading="lazy"
+             onerror="this.src='./image/testimonios/default.jpg'">
         <div class="author-info">
           <strong>${nombre}</strong>
           <span>${pais} • ${fecha}</span>
@@ -62,20 +67,28 @@ export function loadTestimonials() {
   }
 
   try {
-    // Query: últimos 6 testimonios, ordenados por fecha descendente
+    // Query: últimos 6 testimonios NO destacados
     const q = query(
       collection(db, 'reviews'),
-      orderBy('date', 'desc'),
+      where('featured', '!=', true),
+      orderBy('featured'),
+      orderBy('timestamp', 'desc'),
       limit(6)
     );
 
     // Escuchar cambios en tiempo real
     onSnapshot(q, (snapshot) => {
       if (snapshot.empty) {
-        console.log('No hay testimonios aún');
+        console.log('No hay testimonios recientes');
+        const lang = getCurrentLanguage();
+        const emptyMessage = lang === 'es'
+          ? 'Aún no hay reseñas recientes. ¡Sé el primero!'
+          : 'No recent reviews yet. Be the first!';
+
         container.innerHTML = `
-          <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
-            <p>Sé el primero en compartir tu experiencia</p>
+          <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--gris);">
+            <i class="bx bx-comment-dots" style="font-size: 48px; opacity: 0.3; margin-bottom: 15px;"></i>
+            <p>${emptyMessage}</p>
           </div>
         `;
         return;
@@ -92,19 +105,24 @@ export function loadTestimonials() {
         .map(testimonio => buildTestimonialHTML(testimonio))
         .join('');
 
-      console.log(`${testimonials.length} testimonios cargados`);
+      console.log(`✅ ${testimonials.length} testimonios recientes cargados`);
     }, (error) => {
-      console.error('Error cargando testimonios:', error);
+      console.error('❌ Error cargando testimonios:', error);
       container.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; color: #e74c3c; padding: 20px;">
+          <i class="bx bx-error-circle" style="font-size: 40px; margin-bottom: 10px;"></i>
           <p>Error al cargar los testimonios</p>
         </div>
       `;
     });
   } catch (error) {
-    console.error('Error en loadTestimonials:', error);
+    console.error('❌ Error crítico en loadTestimonials:', error);
   }
 }
 
 // Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', loadTestimonials);
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', loadTestimonials);
+} else {
+  loadTestimonials();
+}

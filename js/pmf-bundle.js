@@ -102,7 +102,9 @@
 
             // OTROS
             carTooltip: "Safe and reliable transport!",
-            loadingTestimonials: "Loading testimonials..."
+            loadingTestimonials: "Loading testimonials...",
+            featuredTestimonials: "Featured Reviews",
+            recentTestimonials: "Recent Reviews",
         },
 
         es: {
@@ -192,7 +194,9 @@
 
             // OTROS
             carTooltip: "¡Transporte seguro y confiable!",
-            loadingTestimonials: "Cargando testimonios..."
+            loadingTestimonials: "Cargando testimonios...",
+            featuredTestimonials: "Testimonios Destacados",
+            recentTestimonials: "Reseñas Recientes",
         }
     };
 
