@@ -101,7 +101,8 @@
             ctaFinalBtn: "Book Now via WhatsApp",
 
             // OTROS
-            carTooltip: "Safe and reliable transport!"
+            carTooltip: "Safe and reliable transport!",
+            loadingTestimonials: "Loading testimonials..."
         },
 
         es: {
@@ -190,7 +191,8 @@
             ctaFinalBtn: "Reservar Ahora por WhatsApp",
 
             // OTROS
-            carTooltip: "¡Transporte seguro y confiable!"
+            carTooltip: "¡Transporte seguro y confiable!",
+            loadingTestimonials: "Cargando testimonios..."
         }
     };
 
@@ -931,6 +933,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }).catch(error => {
         console.error('Error initializing PMF Tours:', error);
     });
+});
+
+// ===== FIREBASE TESTIMONIOS =====
+// Cargar testimonios dinámicos desde Firestore
+document.addEventListener('DOMContentLoaded', () => {
+  // Importar dinámicamente el módulo de Firebase
+  import('./firebase-testimonios.js').then(module => {
+    module.loadTestimonials();
+  }).catch(error => {
+    console.error('Error loading Firebase testimonials:', error);
+  });
 });
 
 window.pmfTours = {
