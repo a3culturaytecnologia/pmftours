@@ -105,6 +105,17 @@
             loadingTestimonials: "Loading testimonials...",
             featuredTestimonials: "Featured Reviews",
             recentTestimonials: "Recent Reviews",
+
+            // FORMULARIO DE RESEÑAS
+            reviewFormTitle: "Share Your Experience",
+            reviewFormSubtitle: "Your feedback matters to us and other travelers",
+            formName: "Name",
+            formCountry: "Country",
+            formRating: "Rating",
+            formReview: "Your Review",
+            formSubmit: "Send Review",
+            reviewSuccess: "Thank you!",
+            reviewSuccessDesc: "Your review will appear shortly",
         },
 
         es: {
@@ -197,6 +208,17 @@
             loadingTestimonials: "Cargando testimonios...",
             featuredTestimonials: "Testimonios Destacados",
             recentTestimonials: "Reseñas Recientes",
+
+            // FORMULARIO DE RESEÑAS
+            reviewFormTitle: "Comparte tu experiencia",
+            reviewFormSubtitle: "Tu opinión es importante para nosotros y otros viajeros",
+            formName: "Nombre",
+            formCountry: "País",
+            formRating: "Calificación",
+            formReview: "Tu reseña",
+            formSubmit: "Enviar reseña",
+            reviewSuccess: "¡Gracias!",
+            reviewSuccessDesc: "Tu reseña aparecerá en breve",
         }
     };
 

@@ -120,6 +120,114 @@ export function loadTestimonials() {
   }
 }
 
+// REVIEW FORM MODAL SCRIPT
+document.addEventListener('DOMContentLoaded', () => {
+  const reviewModal = document.getElementById('reviewModal');
+  const reviewForm = document.getElementById('reviewForm');
+  const closeBtn = document.getElementById('closeReviewModal');
+  const modalOverlay = document.getElementById('modalOverlay');
+  const starRating = document.getElementById('starRating');
+  const reviewStars = document.getElementById('reviewStars');
+  const starLabel = document.getElementById('starLabel');
+  const charCount = document.getElementById('charCount');
+  const reviewText = document.getElementById('reviewText');
+  const successMessage = document.getElementById('successMessage');
+
+  const starLabels = {
+    1: '⭐ Pobre',
+    2: '⭐⭐ Aceptable',
+    3: '⭐⭐⭐ Bueno',
+    4: '⭐⭐⭐⭐ Muy bueno',
+    5: '⭐⭐⭐⭐⭐ Excelente'
+  };
+
+  // Abrir modal
+  const openReviewBtn = document.querySelector('[data-translate="reviewCTAButton"]')?.closest('.btn');
+  if (openReviewBtn) {
+    openReviewBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      reviewModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  // Cerrar modal
+  const closeModal = () => {
+    reviewModal.classList.remove('active');
+    document.body.style.overflow = '';
+    reviewForm.reset();
+    successMessage.style.display = 'none';
+    reviewForm.style.display = 'block';
+    resetStars();
+  };
+
+  closeBtn.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', closeModal);
+
+  // Estrellas
+  document.querySelectorAll('.star').forEach(star => {
+    star.addEventListener('click', () => {
+      const value = star.dataset.value;
+      reviewStars.value = value;
+      document.querySelectorAll('.star').forEach((s, i) => {
+        s.classList.toggle('active', i < value);
+      });
+      starLabel.textContent = starLabels[value];
+    });
+  });
+
+  function resetStars() {
+    document.querySelectorAll('.star').forEach((s, i) => {
+      s.classList.toggle('active', i < 5);
+    });
+    starLabel.textContent = starLabels[5];
+  }
+
+  // Contador de caracteres
+  reviewText.addEventListener('input', () => {
+    charCount.textContent = reviewText.value.length;
+  });
+
+  // Enviar formulario
+  reviewForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = document.getElementById('submitReview');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="bx bx-loader-circle"></i> Enviando...';
+
+    const data = {
+      name: document.getElementById('reviewName').value,
+      country: document.getElementById('reviewCountry').value,
+      stars: parseInt(reviewStars.value),
+      review: reviewText.value,
+      date: new Date().toLocaleDateString('es-ES'),
+      timestamp: new Date().getTime(),
+      featured: false,
+      imagen: 'https://firebasestorage.googleapis.com/v0/b/pmftours-testimonios.appspot.com/o/avatars%2Favatar-default.png?alt=media'
+    };
+
+    try {
+      // Aquí irá el código de Firebase
+      // Por ahora simulamos éxito
+      console.log('Reseña enviada:', data);
+
+      // Mostrar éxito
+      reviewForm.style.display = 'none';
+      successMessage.style.display = 'block';
+
+      setTimeout(() => {
+        closeModal();
+      }, 2000);
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error al enviar la reseña');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="bx bx-send"></i> Enviar reseña';
+    }
+  });
+});
+
 // Inicializar cuando el DOM esté listo
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', loadTestimonials);
