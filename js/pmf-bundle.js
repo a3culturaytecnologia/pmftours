@@ -246,11 +246,24 @@
             } else if (tag === 'META') {
                 el.setAttribute('content', val);
             } else {
+                // Para SPAN, BUTTON, etc: actualizar el textContent
+                // sin sobrescribir hijos (como <i> tags)
                 const textNodes = Array.from(el.childNodes).filter(n => n.nodeType === Node.TEXT_NODE);
                 if (textNodes.length > 0) {
                     textNodes[textNodes.length - 1].nodeValue = ' ' + val;
-                } else {
+                } else if (el.children.length === 0) {
+                    // Si no tiene hijos elementos, es seguro cambiar textContent
                     el.textContent = val;
+                } else {
+                    // Si tiene hijos (como <i>), solo actualizar el primer text node
+                    // o crear uno si no existe
+                    let textNode = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+                    if (textNode) {
+                        textNode.nodeValue = val;
+                    } else {
+                        // Crear un text node al inicio
+                        el.insertBefore(document.createTextNode(val + ' '), el.firstChild);
+                    }
                 }
             }
         });
