@@ -343,7 +343,7 @@ function buildPriceHtml(service, textos, currentLang) {
     }
 
     // 4. FALLBACK
-    return `<div class="price">Consultar</div>`;
+    return `<div class="price"></div>`;
 }
 
 async function renderServices() {
