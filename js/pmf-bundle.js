@@ -1,6 +1,6 @@
 // ============================================
-// PMF TOURS - OPTIMIZED JAVASCRIPT v2.4
-// FEATURES: Servicios dinámicos, WhatsApp inteligente, Performance móvil
+// PMF TOURS - OPTIMIZED JAVASCRIPT v2.5
+// FIXES: Precios en español, traducción botón reseñas
 // ============================================
 
 // ============================================
@@ -9,10 +9,6 @@
 
 (function initTranslations() {
     'use strict';
-
-    // ============================================
-    // TRADUCCIONES COMPLETAS - PMF TOURS v3.0
-    // ============================================
 
     globalThis.translations = {
         en: {
@@ -41,7 +37,7 @@
             step4Title: "Enjoy Without Worries",
             step4Desc: "Comfortable transport, local guide and total flexibility during your tour.",
 
-            // ABOUT - COMPLETO CON TODAS LAS TRADUCCIONES
+            // ABOUT
             aboutLabel: "Our Story",
             aboutTitle: "About PMF Tours",
             aboutHighlightText: "Founded by Pierre Flores, from the Land of the Canal, 100% Panamanian passionate about his country, its customs and culture.",
@@ -50,7 +46,7 @@
             aboutBadge: "Panamanian at heart",
             aboutPierreTitle: "Founder",
 
-            // VALORES - COMPLETOS
+            // VALORES
             valuesTitle: "Our Values",
             valueSecurity: "Security",
             valuePunctuality: "Punctuality",
@@ -70,7 +66,7 @@
             galleryTitle: "Captured Moments",
             gallerySubtitle: "Discover the magic of Panama through our eyes.",
 
-            // TESTIMONIOS - COMPLETO
+            // TESTIMONIOS
             testimonialsLabel: "What They Say",
             testimonialsTitle: "Testimonials",
             testimonialsSubtitleReview: "Leave your comment about your experience with us",
@@ -78,10 +74,11 @@
             testimonial2: "\"Knows every corner and tells stories not in the guides. Best ceviche ever. 100% authentic!\"",
             testimonial3: "\"Arrived at 11pm and Pierre was waiting. Impeccable Kia, cold water, 25 minutes to hotel. Luxury service at fair price.\"",
 
-            // CTA TESTIMONIOS
+            // CTA TESTIMONIOS - TRADUCCIÓN CORREGIDA
             reviewCTATitle: "Did you travel with us?",
             reviewCTADesc: "Share your experience and help other travelers",
             reviewCTAButton: "Leave your review",
+            leaveReview: "⭐ Leave Your Review",
 
             // FAQ
             faqTitle: "Frequently Asked Questions",
@@ -116,7 +113,6 @@
             formSubmit: "Send Review",
             reviewSuccess: "Thank you!",
             reviewSuccessDesc: "Your review will appear shortly",
-            leaveReview: "⭐ Leave Your Review",
             noTestimonials: "Be the first to leave a review"
         },
 
@@ -146,7 +142,7 @@
             step4Title: "Disfruta sin preocupaciones",
             step4Desc: "Transporte cómodo, guía local y flexibilidad total durante tu tour.",
 
-            // NOSOTROS - COMPLETO CON TODAS LAS TRADUCCIONES
+            // NOSOTROS
             aboutLabel: "Nuestra Historia",
             aboutTitle: "Sobre PMF Tours",
             aboutHighlightText: "Fundada por Pierre Flores, de la Tierra del Canal, 100% Panameño apasionado por su país y sus costumbres y cultura.",
@@ -155,7 +151,7 @@
             aboutBadge: "Panameño de corazón",
             aboutPierreTitle: "Fundador",
 
-            // VALORES - COMPLETOS
+            // VALORES
             valuesTitle: "Nuestros Valores",
             valueSecurity: "Seguridad",
             valuePunctuality: "Puntualidad",
@@ -175,7 +171,7 @@
             galleryTitle: "Momentos Capturados",
             gallerySubtitle: "Descubre la magia de Panamá a través de nuestros ojos.",
 
-            // TESTIMONIOS - COMPLETO
+            // TESTIMONIOS
             testimonialsLabel: "Lo que dicen",
             testimonialsTitle: "Testimonios",
             testimonialsSubtitleReview: "Deja tu comentario de tu experiencia con nosotros",
@@ -183,10 +179,11 @@
             testimonial2: "\"Conoce cada rincón y cuenta historias que no están en las guías. El mejor ceviche de nuestras vidas. ¡100% auténtico!\"",
             testimonial3: "\"Llegué a las 11pm y Pierre estaba esperando. Kia impecable, agua fría, 25 minutos al hotel. Servicio de lujo a precio justo.\"",
 
-            // CTA TESTIMONIOS
+            // CTA TESTIMONIOS - TRADUCCIÓN CORREGIDA
             reviewCTATitle: "¿Viajaste con nosotros?",
             reviewCTADesc: "Comparte tu experiencia y ayuda a otros viajeros",
             reviewCTAButton: "Dejar tu reseña",
+            leaveReview: "⭐ Dejar tu reseña",
 
             // FAQ
             faqTitle: "Preguntas Frecuentes",
@@ -199,8 +196,6 @@
             faqA3: "Sí, Pierre se comunica efectivamente en inglés. Experiencia comprobada con clientes de USA, Canadá, India y Europa.",
             faqQ4: "¿Qué vehículo usan?",
             faqA4: "Kia Sportage 2023/2024 con A/C.",
-            leaveReview: "⭐ Dejar tu reseña",
-            noRecentReviews: "Aún no hay reseñas recientes. ¡Sé el primero!",
 
             // CTA FINAL
             ctaFinalTitle: "¿Listo para descubrir Panamá como un local?",
@@ -223,8 +218,7 @@
             formSubmit: "Enviar reseña",
             reviewSuccess: "¡Gracias!",
             reviewSuccessDesc: "Tu reseña aparecerá en breve",
-            leaveReview: "⭐ Leave Your Review",
-            noTestimonials: "Be the first to leave a review"
+            noTestimonials: "Sé el primero en dejar tu reseña"
         }
     };
 
@@ -246,24 +240,11 @@
             } else if (tag === 'META') {
                 el.setAttribute('content', val);
             } else {
-                // Para SPAN, BUTTON, etc: actualizar el textContent
-                // sin sobrescribir hijos (como <i> tags)
                 const textNodes = Array.from(el.childNodes).filter(n => n.nodeType === Node.TEXT_NODE);
                 if (textNodes.length > 0) {
                     textNodes[textNodes.length - 1].nodeValue = ' ' + val;
-                } else if (el.children.length === 0) {
-                    // Si no tiene hijos elementos, es seguro cambiar textContent
-                    el.textContent = val;
                 } else {
-                    // Si tiene hijos (como <i>), solo actualizar el primer text node
-                    // o crear uno si no existe
-                    let textNode = Array.from(el.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
-                    if (textNode) {
-                        textNode.nodeValue = val;
-                    } else {
-                        // Crear un text node al inicio
-                        el.insertBefore(document.createTextNode(val + ' '), el.firstChild);
-                    }
+                    el.textContent = val;
                 }
             }
         });
@@ -306,7 +287,7 @@ function buildServiceCard(service, currentLang, textos) {
 
     const badgeHtml = badge ? `<div class="badge ${service.badgeClass}">${badge}</div>` : '';
     const featuresHtml = Array.isArray(incluye) ? incluye.map(item => `<li>✓ ${item}</li>`).join('') : '';
-    const priceHtml = buildPriceHtml(service, textos);
+    const priceHtml = buildPriceHtml(service, textos, currentLang);
 
     return `
         <div class="service-card">
@@ -327,9 +308,7 @@ function buildServiceCard(service, currentLang, textos) {
     `;
 }
 
-function buildPriceHtml(service, textos) {
-    const currentLang = localStorage.getItem('preferredLanguage') || 'es';
-
+function buildPriceHtml(service, textos, currentLang) {
     // 1. RANGOS DE PRECIO (Beach, Airport, Interior Tours)
     if (service.precioDesde !== undefined && service.precioHasta !== undefined) {
         const precioDisplay = typeof service.precioDisplay === 'object'
@@ -363,7 +342,7 @@ function buildPriceHtml(service, textos) {
         `;
     }
 
-    // 4. FALLBACK (nunca debería llegar aquí)
+    // 4. FALLBACK
     return `<div class="price">Consultar</div>`;
 }
 
@@ -478,13 +457,11 @@ function initLanguagePreference() {
         const detectedLang = detectUserLanguage();
         localStorage.setItem('preferredLanguage', detectedLang);
 
-        // Actualizar UI
         const currentLangEl = document.getElementById('currentLang');
         if (currentLangEl) {
             currentLangEl.textContent = detectedLang.toUpperCase();
         }
 
-        // Aplicar traducciones detectadas
         if (typeof globalThis.updateTexts === 'function') {
             globalThis.updateTexts(detectedLang);
         }
@@ -520,7 +497,6 @@ async function updateWhatsAppLinks() {
     const currentLang = localStorage.getItem('preferredLanguage') || 'es';
     const mensajes = data[currentLang];
 
-    // Actualizar todos los enlaces de WhatsApp
     const linksToUpdate = [
         { selector: '.hero-buttons .btn-primary', key: 'hero_reservar' },
         { selector: '.btn-whatsapp-nav', key: 'footer_contacto' },
@@ -539,7 +515,6 @@ async function updateWhatsAppLinks() {
     });
 }
 
-// === WHATSAPP DYNAMIC LINKS MANAGER ===
 async function updateWhatsAppMessages() {
     try {
         const response = await fetch('./data/precios.json');
@@ -552,7 +527,6 @@ async function updateWhatsAppMessages() {
             return;
         }
 
-        // Mapeo de IDs a claves de mensaje
         const linkMap = {
             'headerWhatsApp': messages.header,
             'heroReservar': messages.hero_reservar,
@@ -560,10 +534,9 @@ async function updateWhatsAppMessages() {
             'customTour': messages.custom_tour,
             'ctaFinal': messages.cta_final,
             'footerContacto': messages.footer_contacto,
-            'reviewWhatsApp': messages.review_whatsapp  // ← AGREGADO
+            'reviewWhatsApp': messages.review_whatsapp
         };
 
-        // Actualizar cada enlace
         Object.entries(linkMap).forEach(([elementId, url]) => {
             const element = document.getElementById(elementId);
             if (element && url) {
@@ -577,10 +550,7 @@ async function updateWhatsAppMessages() {
     }
 }
 
-// Ejecutar al cargar la página
 document.addEventListener('DOMContentLoaded', updateWhatsAppMessages);
-
-// Actualizar cuando cambie el idioma
 document.addEventListener('languageChanged', updateWhatsAppMessages);
 
 // ============================================
@@ -604,13 +574,11 @@ document.addEventListener('languageChanged', updateWhatsAppMessages);
             slides[currentSlide].classList.add('active');
         }
 
-        // Solo iniciar si no es móvil (performance)
         const isMobile = window.innerWidth <= 768;
 
         if (!isMobile) {
             intervalId = setInterval(nextSlide, slideInterval);
 
-            // Preload images
             slides.forEach((slide, index) => {
                 if (index > 0) {
                     const img = slide.querySelector('img');
@@ -701,7 +669,6 @@ document.addEventListener('languageChanged', updateWhatsAppMessages);
         const car = document.getElementById('pmfCar');
         const progressBar = document.getElementById('tourProgress');
 
-        // Desactivar en móvil para mejor performance
         const isMobile = window.innerWidth <= 768;
 
         if (!car || isMobile) {
@@ -715,7 +682,6 @@ document.addEventListener('languageChanged', updateWhatsAppMessages);
         function updateCarPosition() {
             const scrollTop = window.pageYOffset;
 
-            // Solo actualizar si hay cambio significativo
             if (Math.abs(scrollTop - lastScrollY) < 10) {
                 ticking = false;
                 return;
@@ -748,7 +714,6 @@ document.addEventListener('languageChanged', updateWhatsAppMessages);
 
                 const progressText = progressBar.querySelector('.progress-text');
                 if (progressText) {
-                    // Mensajes dinámicos multiidioma
                     const messages = {
                         es: ["¡Preparando tu aventura!", "Panamá te espera", "Descubriendo lo auténtico", "¡Casi llegamos!"],
                         en: ["Getting ready for adventure!", "Panama awaits you", "Discovering authenticity", "Almost there!"]
@@ -764,7 +729,6 @@ document.addEventListener('languageChanged', updateWhatsAppMessages);
             ticking = false;
         }
 
-        // Throttle scroll events
         window.addEventListener('scroll', function() {
             if (!ticking) {
                 requestAnimationFrame(updateCarPosition);
@@ -791,7 +755,6 @@ document.addEventListener('languageChanged', updateWhatsAppMessages);
         console.log('✅ All components initialized');
     });
 
-    // Debounce helper
     function debounce(func, wait) {
         let timeout;
         return function executedFunction(...args) {
@@ -928,7 +891,6 @@ document.addEventListener('languageChanged', updateWhatsAppMessages);
 (function initAnalytics() {
     'use strict';
 
-    // Función para trackear eventos de WhatsApp
     function trackWhatsAppClick(label) {
         if (typeof gtag === 'function') {
             gtag('event', 'click', {
@@ -938,7 +900,6 @@ document.addEventListener('languageChanged', updateWhatsAppMessages);
         }
     }
 
-    // Trackear clics en botones de WhatsApp
     document.addEventListener('DOMContentLoaded', function() {
         const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
         whatsappButtons.forEach(button => {
@@ -964,31 +925,26 @@ document.addEventListener('languageChanged', updateWhatsAppMessages);
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar preferencia de idioma (detectar si es primera vez)
     initLanguagePreference();
 
-    // Cargar datos iniciales
     Promise.all([
         loadServiciosData(),
         loadWhatsAppData()
     ]).then(() => {
         updateWhatsAppMessages();
         renderServices();
-        console.log('✅ PMF Tours v2.4 fully loaded with auto-detected language');
+        console.log('✅ PMF Tours v2.5 fully loaded - Fixed: Precios español + Review button translation');
     }).catch(error => {
         console.error('Error initializing PMF Tours:', error);
     });
 });
 
-// ===== FIREBASE TESTIMONIOS =====
-// Cargar testimonios dinámicos desde Firestore
 document.addEventListener('DOMContentLoaded', () => {
-  // Importar dinámicamente el módulo de Firebase
-  import('./firebase-testimonios.js').then(module => {
-    module.loadTestimonials();
-  }).catch(error => {
-    console.error('Error loading Firebase testimonials:', error);
-  });
+    import('./firebase-testimonios.js').then(module => {
+        module.loadTestimonials();
+    }).catch(error => {
+        console.error('Error loading Firebase testimonials:', error);
+    });
 });
 
 window.pmfTours = {
@@ -1005,13 +961,11 @@ window.pmfTours = {
 
 console.log(`
 ╔═══════════════════════════════════════╗
-║  PMF TOURS OPTIMIZED v2.4             ║
+║  PMF TOURS OPTIMIZED v2.5             ║
 ╠═══════════════════════════════════════╣
-║ ✅ Servicios Dinámicos Integrados      ║
-║ ✅ Traducciones Actualizadas           ║
+║ ✅ Precios Español CORREGIDOS         ║
+║ ✅ Botón Reseña TRADUCIENDO           ║
 ║ ✅ WhatsApp Inteligente                ║
 ║ ✅ Performance Móvil Mejorado         ║
-║ ✅ Google Analytics Tracking           ║
-║ ✅ Código Limpio y Mantenible         ║
 ╚═══════════════════════════════════════╝
 `);
