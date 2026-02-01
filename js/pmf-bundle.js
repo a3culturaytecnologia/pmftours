@@ -116,14 +116,8 @@
             formSubmit: "Send Review",
             reviewSuccess: "Thank you!",
             reviewSuccessDesc: "Your review will appear shortly",
-            leaveReview: {
-              es: "⭐ Dejar tu reseña",
-              en: "⭐ Leave Your Review"
-            },
-            noTestimonials: {
-              es: "Sé el primero en dejar tu reseña",
-              en: "Be the first to leave a review"
-            }
+            leaveReview: "⭐ Leave Your Review",
+            noTestimonials: "Be the first to leave a review"
         },
 
         es: {
@@ -229,14 +223,8 @@
             formSubmit: "Enviar reseña",
             reviewSuccess: "¡Gracias!",
             reviewSuccessDesc: "Tu reseña aparecerá en breve",
-            leaveReview: {
-              es: "⭐ Dejar tu reseña",
-              en: "⭐ Leave Your Review"
-            },
-            noTestimonials: {
-              es: "Sé el primero en dejar tu reseña",
-              en: "Be the first to leave a review"
-            }
+            leaveReview: "⭐ Leave Your Review",
+            noTestimonials: "Be the first to leave a review"
         }
     };
 
