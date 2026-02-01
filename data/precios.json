@@ -30,11 +30,6 @@
           "Authentic Panamanian cuisine"
         ]
       },
-      "precio": 80,
-      "precioDisplay": {
-        "es": "$80 USD (hasta 4 personas)",
-        "en": "$80 USD (up to 4 people)"
-      },
       "whatsappUrl": {
         "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🌆%0A%0AQuiero%20reservar%20el%20*Welcome%20City%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A%0A¿Está%20disponible?",
         "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🌆%0A%0AI%20want%20to%20book%20the%20*Welcome%20City%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A%0AIs%20it%20available?"
@@ -67,12 +62,6 @@
           "One-way or round-trip service",
           "Price based on destination & duration"
         ]
-      },
-      "precioDesde": 50,
-      "precioHasta": 150,
-      "precioDisplay": {
-        "es": "desde $50 USD",
-        "en": "from $50 USD"
       },
       "whatsappUrl": {
         "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏖️%0A%0AQuiero%20el%20*Beach%20Day%20Escape*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🏝️%20Playa:%20[Pacífico%20/%20Atlántico]%0A🔄%20Servicio:%20[Solo%20ida%20/%20Ida%20y%20vuelta]%0A%0A¿Disponible?",
@@ -109,11 +98,6 @@
           "Authentic Panamanian cuisine"
         ]
       },
-      "precio": 85,
-      "precioDisplay": {
-        "es": "$85 USD (hasta 4 personas)",
-        "en": "$85 USD (up to 4 people)"
-      },
       "whatsappUrl": {
         "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🛕%0A%0AQuiero%20el%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A%0A¿Qué%20incluye%20exactamente?",
         "en": "https://wa.me/50765347412?text=Hi%20Pierre!%20🛕%0A%0AI%20want%20the%20*Cultural%20%26%20History%20Tour*%0A%0A📅%20Date:%20[your%20date]%0A👥%20People:%20[how%20many]%0A%0AWhat%20exactly%20does%20it%20include?"
@@ -146,12 +130,6 @@
           "Free wait if delayed",
           "Reliable and safe transport"
         ]
-      },
-      "precioDesde": 30,
-      "precioHasta": 120,
-      "precioDisplay": {
-        "es": "desde $30 USD",
-        "en": "from $30 USD"
       },
       "whatsappUrl": {
         "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20✈️%0A%0ANecesito%20*traslado%20aeropuerto*%0A%0A📅%20Fecha:%20[día%20y%20hora]%0A✈️%20Vuelo:%20[número%20de%20vuelo]%0A🏨%20Destino:%20[Ciudad%20Panamá%20/%20Coronado%20/%20San%20Carlos%20/%20El%20Valle]%0A👥%20Personas:%20[cuántos]%0A%0A¿Cuál%20es%20el%20precio%20exacto?",
@@ -187,12 +165,6 @@
           "Boquete and other interior destinations",
           "Drinks included • Round trip"
         ]
-      },
-      "precioDesde": 100,
-      "precioHasta": 250,
-      "precioDisplay": {
-        "es": "desde $100 USD",
-        "en": "from $100 USD"
       },
       "whatsappUrl": {
         "es": "https://wa.me/50765347412?text=¡Hola%20Pierre!%20🏔️%0A%0AQuiero%20el%20*Tour%20Interior*%0A%0A📅%20Fecha:%20[tu%20fecha]%0A👥%20Personas:%20[cuántos]%0A🎯%20Destino:%20[El%20Valle%20/%20Las%20Tablas%20/%20Chitré%20/%20Boquete%20/%20Otro]%0A%0A¿Disponible?",
